@@ -1,0 +1,21 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#ececec, #161616);
+  --fg: light-dark(#000, #f2f2f2);
+  --muted: light-dark(#4a4a4a, #b0b0b0);
+  --panel: light-dark(#fff, #222);
+  --shade: light-dark(rgb(0 0 0 / 14%), rgb(0 0 0 / 45%));
+  --yellow: #ffd600;
+  --pink: #ff6b9a;
+  --blue: #4d6bff;
+  --green: #00c46a;
+  --orange: #ff7a1a;
+  --red: #ff4d3d;
+  --on-color: #000;
+  --hard-shadow: 5px 5px 0 var(--fg);
+  --line: color-mix(in oklab, var(--fg) 13%, transparent);
+  --graph-blue: light-dark(#2549d8, #93a6ff);
+  --graph-red: light-dark(#b92a1b, #ff9288);
+  --graph-green: light-dark(#00763e, #39df92);
+  accent-color: var(--fg);
+}

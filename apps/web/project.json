@@ -1,0 +1,39 @@
+{
+  "name": "web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/web/src",
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/web",
+        "browser": "apps/web/src/main.ts",
+        "index": "apps/web/src/index.html",
+        "tsConfig": "apps/web/tsconfig.app.json",
+        "assets": [{ "glob": "**/*", "input": "apps/web/public" }],
+        "styles": ["apps/web/src/styles.css"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": { "styles": { "inlineCritical": false } },
+          "outputHashing": "all",
+          "budgets": [{ "type": "initial", "maximumWarning": "1.5mb", "maximumError": "3mb" }]
+        },
+        "development": { "optimization": false, "extractLicenses": false, "sourceMap": true }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "defaultConfiguration": "development",
+      "configurations": {
+        "development": { "buildTarget": "web:build:development" },
+        "production": { "buildTarget": "web:build:production" }
+      },
+      "options": { "port": 8200, "proxyConfig": "apps/web/proxy.conf.json" }
+    }
+  }
+}

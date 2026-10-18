@@ -1,0 +1,21 @@
+name: math-on-the-go
+services:
+  localstack:
+    image: localstack/localstack:4
+    ports:
+      - '127.0.0.1:4566:4566'
+    environment:
+      LOCALSTACK_AUTH_TOKEN: ${LOCALSTACK_TOKEN:-}
+      SERVICES: s3,dynamodb
+      AWS_DEFAULT_REGION: us-east-2
+    volumes:
+      - ./tools/localstack/init.sh:/etc/localstack/init/ready.d/init.sh:ro
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'awslocal dynamodb list-tables >/dev/null && awslocal s3api list-buckets >/dev/null',
+        ]
+      interval: 3s
+      timeout: 5s
+      retries: 30

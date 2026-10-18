@@ -1,0 +1,8 @@
+node_modules
+.nx
+dist
+cdk.out
+apps/api/target
+pnpm-lock.yaml
+materials
+.env

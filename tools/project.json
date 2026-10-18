@@ -1,0 +1,8 @@
+{
+  "name": "tooling",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools",
+  "projectType": "library",
+  "tags": ["scope:shared", "type:tooling"],
+  "targets": {}
+}

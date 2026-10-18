@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "preserve",
+    "lib": ["es2022", "dom"],
+    "skipLibCheck": true,
+    "strict": true,
+    "paths": {
+      "@math/contract": ["./libs/contract/src/index.ts"],
+      "@math/tooling": ["./tools/environment.ts"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "cdk.out", "apps/api/target"]
+}

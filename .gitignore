@@ -1,0 +1,15 @@
+node_modules/
+.nx/
+.angular/
+dist/
+out-tsc/
+cdk.out/
+target/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+materials/
+*.pdf
+*.PDF

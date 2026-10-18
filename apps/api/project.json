@@ -1,0 +1,37 @@
+{
+  "name": "api",
+  "projectType": "application",
+  "sourceRoot": "apps/api/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "inputs": [
+        "default",
+        "{workspaceRoot}/data/catalog.json",
+        "{workspaceRoot}/data/questions.json"
+      ],
+      "outputs": ["{projectRoot}/target/lambda"],
+      "options": { "command": "cargo lambda build --release --arm64 --bins", "cwd": "apps/api" }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": { "command": "cargo run --bin api", "cwd": "apps/api" }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["cargo fmt --check", "cargo clippy --all-targets -- -D warnings"],
+        "parallel": false,
+        "cwd": "apps/api"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": { "command": "cargo check --all-targets", "cwd": "apps/api" }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": { "command": "cargo test", "cwd": "apps/api" }
+    }
+  }
+}

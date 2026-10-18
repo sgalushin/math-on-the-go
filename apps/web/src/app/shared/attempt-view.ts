@@ -12,9 +12,17 @@ import { MathGraph, MathText } from './math';
     @let a = attempt(); @let q = a.question;
     <article class="question-card">
       <div class="question-meta">
-        <span class="tag">{{ q.kind === 'flashcard' ? 'Recall card' : 'Practice task' }}</span
-        ><span>{{ q.difficulty }}</span
-        ><span>{{ a.assessment === 'self' ? 'Self-assessed' : 'Automatically checked' }}</span>
+        <span class="tag">{{
+          q.verification.method === 'handbook'
+            ? 'Handbook formula'
+            : q.kind === 'flashcard'
+              ? 'Recall card'
+              : 'Practice task'
+        }}</span>
+        @if (q.kind === 'task') {
+          <span>{{ q.difficulty }}</span>
+        }
+        <span>{{ a.assessment === 'self' ? 'Self-assessed' : 'Automatically checked' }}</span>
       </div>
       <div class="question-prompt"><math-text [text]="q.prompt" /></div>
       @if (q.graph; as graph) {
@@ -211,12 +219,23 @@ import { MathGraph, MathText } from './math';
         </div>
       }
       <details class="source-details">
-        <summary>Reference & verification</summary>
+        <summary>
+          {{
+            q.verification.method === 'handbook' ? 'Handbook reference' : 'Reference & verification'
+          }}
+        </summary>
         <p>{{ q.source.handbook }}, page {{ q.source.page }} · {{ q.source.section }}</p>
-        <p>
-          Original practice question, aligned to the handbook topic. The source handbook is not
-          reproduced.
-        </p>
+        @if (q.verification.method === 'handbook') {
+          <p>
+            Fixed card based on the supplied handbook. No questions or answers are generated when
+            you practise this formula.
+          </p>
+        } @else {
+          <p>
+            Original practice question, aligned to the handbook topic. The source handbook is not
+            reproduced.
+          </p>
+        }
         <p>
           Verification: {{ q.verification.method }}
           @if (q.verification.models.length) {

@@ -41,17 +41,33 @@ import { AttemptView } from '../shared/attempt-view';
         </div>
       }
       @if (store.session(); as session) {
-        @if (session.status === 'generating') {
+        @if (session.status === 'finished' && session.error) {
+          <section class="panel" role="status">
+            <h2>Switch to the handbook deck</h2>
+            <p>{{ session.error }}</p>
+            <p>Your previous attempts remain in history.</p>
+            <button
+              class="button"
+              (click)="finish()"
+              [disabled]="store.busy() || store.refreshing()"
+            >
+              Start a new session
+            </button>
+          </section>
+        } @else if (session.status === 'generating') {
           <section class="panel preparation" aria-live="polite" aria-busy="true">
             <p class="eyebrow">Getting everything ready</p>
-            <h2>Preparing your session</h2>
-            <p>Every question is independently verified before your session starts.</p>
+            <h2>Preparing your tasks</h2>
+            <p>
+              Generated tasks are independently checked. Formula cards come from the fixed handbook
+              deck and are never generated.
+            </p>
             <div class="session-meter">
-              <strong>Verified {{ session.generated }} / {{ session.length }}</strong>
+              <strong>Ready {{ session.generated }} / {{ session.length }}</strong>
               <progress
                 [value]="session.generated"
                 [max]="session.length"
-                aria-label="Verified questions"
+                aria-label="Prepared questions"
               ></progress>
             </div>
             <p class="small muted">
@@ -88,6 +104,11 @@ import { AttemptView } from '../shared/attempt-view';
           @if (session.request.mode === 'review') {
             <p class="small muted">
               This finite review queue contains {{ session.length }} available due or new cards.
+            </p>
+          } @else if (session.request.kind === 'formula') {
+            <p class="small muted">
+              {{ session.length }} fixed handbook cards. Due and new cards come first, followed by
+              extra recall practice.
             </p>
           }
           @if (store.current(); as attempt) {
@@ -254,15 +275,15 @@ import { AttemptView } from '../shared/attempt-view';
                 <p class="field-help kind-help">
                   {{
                     kind === 'formula'
-                      ? 'Recall formulas, identities and mathematical rules — not calculation tasks or general definitions.'
+                      ? 'Fixed formulas, identities and rules from your handbooks. Opens immediately — no AI generation.'
                       : kind === 'mixed'
-                        ? 'A varied session of tasks and recall cards.'
+                        ? 'Available handbook formula cards alongside newly generated tasks. Only tasks use AI.'
                         : 'Work through mathematical tasks with hints and explanations.'
                   }}
                 </p>
               } @else {
                 <p class="field-help">
-                  Scheduled review of existing due and new cards, without creating new questions.
+                  Scheduled review of due and new handbook cards. No AI generation.
                 </p>
               }
               <div class="scope-options">
@@ -389,10 +410,14 @@ import { AttemptView } from '../shared/attempt-view';
               >
                 {{
                   store.busy()
-                    ? 'Preparing your session…'
+                    ? mode === 'review' || kind === 'formula'
+                      ? 'Opening your cards…'
+                      : 'Preparing your tasks…'
                     : mode === 'review'
                       ? 'Begin review'
-                      : 'Begin practice'
+                      : kind === 'formula'
+                        ? 'Begin flashcards'
+                        : 'Begin practice'
                 }}
                 <span aria-hidden="true">→</span>
               </button>
@@ -409,20 +434,21 @@ import { AttemptView } from '../shared/attempt-view';
                           : kind === 'task'
                             ? 'tasks'
                             : 'formula flashcards'
-                    }}{{ mode !== 'review' ? ' · ' + difficulty : '' }}</small
+                    }}{{ mode !== 'review' && kind !== 'formula' ? ' · ' + difficulty : '' }}</small
                   >
                 </summary>
-                @if (mode !== 'review') {
+                @if (mode !== 'review' && kind !== 'formula') {
                   <label for="practice-mode">Session style</label>
                   <select id="practice-mode" name="mode" [(ngModel)]="mode">
                     <option value="suggested">Suggested · weak & underpractised topics</option>
                     <option value="focused">Focused · my chosen scope</option>
                   </select>
                 }
-                @if (mode === 'review') {
+                @if (mode === 'review' || kind === 'formula') {
                   <p class="field-help">
-                    Uses available existing cards, up to your chosen length. Review ignores task
-                    difficulty.
+                    Uses distinct handbook cards, up to your chosen length. Task difficulty does not
+                    apply. Scheduled review uses due/new cards; formula practice also allows extra
+                    recall before a card is due.
                   </p>
                 } @else {
                   <label for="practice-difficulty">Difficulty</label>
@@ -621,9 +647,9 @@ export class PracticePage {
     this.finished.set(false);
     await this.store.start(
       {
-        mode: this.mode,
+        mode: this.mode !== 'review' && this.kind === 'formula' ? 'focused' : this.mode,
         kind: this.mode === 'review' ? 'mixed' : this.kind,
-        difficulty: this.mode === 'review' ? 'any' : this.difficulty,
+        difficulty: this.mode === 'review' || this.kind === 'formula' ? 'any' : this.difficulty,
         unitIds,
         topicIds,
       },
@@ -631,7 +657,18 @@ export class PracticePage {
     );
   }
   async finish(): Promise<void> {
-    if (await this.store.finish()) this.finished.set(true);
+    const previous = this.store.session();
+    if (!(await this.store.finish())) return;
+    this.finished.set(true);
+    if (previous?.status === 'finished' && previous.error) {
+      this.mode = previous.request.mode;
+      this.kind = previous.request.kind;
+      this.difficulty = previous.request.difficulty;
+      this.length = previous.length;
+      this.scope.set('specific');
+      this.chosenUnits.set([...previous.request.unitIds]);
+      this.chosenTopics.set([...previous.request.topicIds]);
+    }
   }
   async newTopicSession(): Promise<void> {
     const attempt = this.store.current();

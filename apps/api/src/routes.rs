@@ -201,8 +201,13 @@ async fn action(
             Write::new(key, &result, Some(record.version))?,
             Write::new(&event_key, &action_record, None)?,
         ];
-        if event.action == ActionKind::Grade && result.question.kind == Kind::Flashcard {
-            let card_key = format!("CARD#{}", variants::canonical(&result.question.id));
+        if event.action == ActionKind::Grade
+            && result.question.kind == Kind::Flashcard
+            && s.bank
+                .iter()
+                .any(|q| practice::is_handbook_card(q) && q.id == result.question.id)
+        {
+            let card_key = format!("CARD#{}", result.question.id);
             let card = s.store.get::<CardRecord>(&u, &card_key).await?;
             let schedule = card
                 .as_ref()
@@ -215,7 +220,7 @@ async fn action(
             writes.push(Write::new(
                 card_key,
                 &CardRecord {
-                    question_id: variants::canonical(&result.question.id).into(),
+                    question_id: result.question.id.clone(),
                     schedule: next,
                 },
                 card.map(|r| r.version),

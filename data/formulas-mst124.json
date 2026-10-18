@@ -1,0 +1,4442 @@
+[
+  {
+    "id": "formula-MST124-1-prime-exponent-hcf-lcm",
+    "topicId": "MST124-1-numbers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do prime exponents determine the HCF and LCM of positive integers?",
+    "answer": "Write all numbers using the same primes, allowing exponent $0$. For each prime, the HCF takes the minimum exponent and the LCM the maximum: $\\gcd(a,b)=\\prod_p p^{\\min(\\alpha_p,\\beta_p)}$, $\\operatorname{lcm}(a,b)=\\prod_p p^{\\max(\\alpha_p,\\beta_p)}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A common divisor cannot contain more of a prime than any input contains; a common multiple must contain enough for every input. Missing primes therefore have exponent zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 16,
+      "section": "Common factors and common multiples of integers"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-multiply-divide-powers",
+    "topicId": "MST124-1-powers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the product and quotient laws for powers of the same base?",
+    "answer": "$a^m a^n=a^{m+n}$ and $a^m/a^n=a^{m-n}$. The quotient requires $a\\ne0$; for arbitrary real exponents take $a>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplication combines copies of the same base; division cancels them. These rules do not combine powers with different bases by adding their exponents.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Index laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-power-of-power",
+    "topicId": "MST124-1-powers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do you simplify a power raised to another power?",
+    "answer": "$(a^m)^n=a^{mn}$. This is valid for positive real $a$ and real $m,n$; other bases require checking that the powers are defined and that the rule applies.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The outer exponent multiplies every inner exponent. Positivity avoids real-root branch problems that can make this identity fail for negative bases.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Index laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-zero-negative-powers",
+    "topicId": "MST124-1-powers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the zero-index and negative-index rules?",
+    "answer": "$a^0=1$ and $a^{-n}=1/a^n$ for $a\\ne0$ (and where the powers are defined). In particular, these rules do not define $0^0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Negative exponents indicate reciprocals, not negative values. A nonzero base is essential because a reciprocal of zero does not exist.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Index laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-power-product-quotient",
+    "topicId": "MST124-1-powers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do powers distribute over products and quotients?",
+    "answer": "$(ab)^n=a^n b^n$ and $(a/b)^n=a^n/b^n$. For arbitrary real $n$, take $a,b>0$; for integer $n$, require all denominators and negative powers to be defined.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A power applies to every factor in a product or quotient. There is no corresponding rule distributing a power over addition.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Index laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-rational-indices",
+    "topicId": "MST124-1-powers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How are rational powers expressed using roots?",
+    "answer": "For $a>0$, integers $m$ and $n>0$, $a^{1/n}=\\sqrt[n]{a}$ and $a^{m/n}=(\\sqrt[n]{a})^m=\\sqrt[n]{a^m}$. For $a=0$, require a positive exponent; negative real bases require separate domain care.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The denominator of a reduced rational exponent specifies a root, while the numerator specifies a power. Even roots impose real-domain restrictions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Index laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-square-root-laws",
+    "topicId": "MST124-1-powers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the real square-root product and quotient laws?",
+    "answer": "$\\sqrt{ab}=\\sqrt a\\sqrt b$ for $a,b\\ge0$; $\\sqrt{a/b}=\\sqrt a/\\sqrt b$ for $a\\ge0$, $b>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "These identities use principal nonnegative square roots. Extending them indiscriminately to negative real radicands is not valid in real arithmetic.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Index laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-rationalise-conjugate",
+    "topicId": "MST124-1-powers",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does a conjugate remove a two-term square-root denominator?",
+    "answer": "Use $(u+v\\sqrt w)(u-v\\sqrt w)=u^2-v^2w$. Thus $\\frac1{u+v\\sqrt w}=\\frac{u-v\\sqrt w}{u^2-v^2w}$ when $w\\ge0$ and $u^2-v^2w\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplying by the conjugate cancels the cross terms and leaves a difference of squares. The transformed denominator must remain nonzero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 16,
+      "section": "Surds"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-difference-of-squares",
+    "topicId": "MST124-1-equations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does a difference of two squares factorise?",
+    "answer": "$A^2-B^2=(A+B)(A-B)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The mixed terms cancel when the two brackets are expanded. A sum of squares does not have the same real factorisation.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 17,
+      "section": "Difference of two squares"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-square-brackets",
+    "topicId": "MST124-1-equations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the expansions of $(A+B)^2$ and $(A-B)^2$?",
+    "answer": "$(A+B)^2=A^2+2AB+B^2$; $(A-B)^2=A^2-2AB+B^2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The middle term comes from two cross products. Squaring each term separately omits this contribution and usually gives a wrong result.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 17,
+      "section": "Squaring brackets"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-1-equivalent-equations",
+    "topicId": "MST124-1-equations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which operations preserve an equation without adding or losing solutions?",
+    "answer": "Apply the same addition or subtraction to both sides; multiply or divide both sides by a nonzero expression. Raising both nonnegative sides to the same nonzero power is reversible where that power is defined. Multiplying by a quantity that may vanish or squaring unrestricted signed sides needs extra checks.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A rearrangement preserves solutions only when the operation is reversible on the allowed domain. Dividing by a possibly zero expression can discard legitimate solutions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 18,
+      "section": "To rearrange an equation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-gradient",
+    "topicId": "MST124-2-lines",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the gradient through two points, and when is it undefined?",
+    "answer": "$m=\\frac{y_2-y_1}{x_2-x_1}$ for $x_2\\ne x_1$. A vertical line has undefined gradient.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Gradient compares vertical change with horizontal change, so the order of the two points must be consistent in numerator and denominator. A zero run gives a vertical line.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 19,
+      "section": "Straight-line graphs"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-line-equations",
+    "topicId": "MST124-2-lines",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the slope-intercept and point-slope forms of a line.",
+    "answer": "$y=mx+c$ has gradient $m$ and $y$-intercept $c$. Through $(x_1,y_1)$ with gradient $m$: $y-y_1=m(x-x_1)$. Vertical lines instead have form $x=d$; horizontal lines have form $y=c$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Point-slope form builds in a known point directly. Slope-intercept form cannot represent vertical lines because they have no finite gradient.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 19,
+      "section": "Equations of lines"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-parallel-perpendicular-gradients",
+    "topicId": "MST124-2-lines",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How are the gradients of parallel or perpendicular lines related?",
+    "answer": "Parallel nonvertical lines have equal gradients. Perpendicular lines with finite nonzero gradients satisfy $m_1m_2=-1$. A vertical line is perpendicular to a horizontal line.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Equal finite gradients describe the same direction. The negative-reciprocal rule for perpendicular lines excludes the horizontal–vertical case, which must be handled separately.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 19,
+      "section": "Parallel and perpendicular lines"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-factor-pair",
+    "topicId": "MST124-2-quadratics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What conditions on $p,q$ give a factorisation of $x^2+bx+c$?",
+    "answer": "$x^2+bx+c=(x+p)(x+q)$ when $p+q=b$ and $pq=c$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Expanding the brackets makes the two constants contribute their sum to the linear coefficient and their product to the constant term.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 21,
+      "section": "To factorise a quadratic of the form x² + bx + c"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-complete-square",
+    "topicId": "MST124-2-quadratics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the completed-square form of a general quadratic?",
+    "answer": "For $a\\ne0$, $ax^2+bx+c=a\\left(x+\\frac{b}{2a}\\right)^2+c-\\frac{b^2}{4a}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The shift inside the square is half the linear coefficient after factoring out the leading coefficient. Subtract the introduced constant to preserve the original quadratic.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 21,
+      "section": "To complete the square in a quadratic of the form ax² + bx + c"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-quadratic-formula",
+    "topicId": "MST124-2-quadratics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What formula solves $ax^2+bx+c=0$?",
+    "answer": "$x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$, where $a\\ne0$. Real roots require $b^2-4ac\\ge0$; a zero discriminant gives one repeated root.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The denominator contains the full factor twice the leading coefficient. The plus–minus sign records both square-root choices rather than an optional sign convention.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 22,
+      "section": "The quadratic formula"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-discriminant",
+    "topicId": "MST124-2-quadratics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does the discriminant determine the real roots of a quadratic?",
+    "answer": "For real coefficients and $a\\ne0$, let $\\Delta=b^2-4ac$. If $\\Delta>0$, there are two distinct real roots; if $\\Delta=0$, one repeated real root; if $\\Delta<0$, no real roots.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The discriminant is the quantity under the square root in the quadratic formula. Its sign decides whether that square root gives two, one or no real choices.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 22,
+      "section": "The number of real solutions of a quadratic equation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-zero-product",
+    "topicId": "MST124-2-quadratics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What algebraic rule turns a factorised equation into simpler equations?",
+    "answer": "For real or complex numbers, $AB=0$ if and only if $A=0$ or $B=0$ (possibly both).",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A product can vanish only when at least one factor vanishes. This rule applies to products, not to a sum of terms equalling zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 22,
+      "section": "Factorisation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-composition-domain",
+    "topicId": "MST124-3-composition",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the composition rule and its domain condition.",
+    "answer": "$(g\\circ f)(x)=g(f(x))$, with domain $\\{x\\in\\operatorname{dom}f:f(x)\\in\\operatorname{dom}g\\}$. The order matters: $g\\circ f$ need not equal $f\\circ g$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The inner function acts first, and its output must be an allowed input of the outer function. An algebraically simplified rule does not automatically restore excluded inputs.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 26,
+      "section": "Composite functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-inverse-identities",
+    "topicId": "MST124-3-composition",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What identities characterise an inverse function?",
+    "answer": "For one-to-one $f:A\\to B$ with image $B$, $f^{-1}(f(x))=x$ for $x\\in A$ and $f(f^{-1}(y))=y$ for $y\\in B$. Its inverse has domain $B$ and image $A$; $f^{-1}$ does not mean $1/f$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An inverse reverses a one-to-one mapping between its domain and image. Confusing inverse-function notation with a reciprocal changes the operation entirely.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 26,
+      "section": "Inverse functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-vertical-translation",
+    "topicId": "MST124-3-transformations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which rule moves $y=f(x)$ vertically by $c$?",
+    "answer": "$y=f(x)+c$: up $c$ units if $c>0$, down $|c|$ units if $c<0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Adding outside the function changes every output by the same amount while leaving its input coordinate unchanged.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 28,
+      "section": "Translating graphs vertically"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-horizontal-translation",
+    "topicId": "MST124-3-transformations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which rule moves $y=f(x)$ horizontally by $c$?",
+    "answer": "$y=f(x-c)$: right $c$ units if $c>0$, left $|c|$ units if $c<0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The new input must compensate for the shift before it reaches the original rule. This is why a minus sign inside the argument produces a rightward movement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 28,
+      "section": "Translating graphs horizontally"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-graph-scalings",
+    "topicId": "MST124-3-transformations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do vertical and horizontal graph scalings change a function rule?",
+    "answer": "For $c>0$, $y=cf(x)$ scales vertically by $c$, while $y=f(x/c)$ scales horizontally by $c$. In particular, $y=f(kx)$ with $k>0$ scales horizontally by $1/k$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplying outputs changes vertical distances; dividing the input changes horizontal distances. A multiplier inside the argument therefore produces the reciprocal horizontal scale.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 29,
+      "section": "Scaling graphs horizontally"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-axis-reflections",
+    "topicId": "MST124-3-transformations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What rules reflect $y=f(x)$ in the coordinate axes?",
+    "answer": "In the $x$-axis: $y=-f(x)$. In the $y$-axis: $y=f(-x)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Negating outputs reverses vertical coordinates, whereas negating inputs reverses horizontal coordinates. The unchanged coordinate distinguishes the two reflections.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 29,
+      "section": "Reflecting graphs in the coordinate axes"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-log-inverse",
+    "topicId": "MST124-3-logs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do logarithmic and exponential equations correspond?",
+    "answer": "$y=\\log_b x\\iff x=b^y$, with $b>0$, $b\\ne1$, $x>0$. Thus $\\log_b(b^t)=t$ for real $t$ and $b^{\\log_b x}=x$ for positive $x$. Natural logarithms use $b=e$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A logarithm returns an exponent. Real logarithms require a positive argument, and a base of one cannot provide an invertible exponential function.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 30,
+      "section": "Logarithms"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-log-special-values",
+    "topicId": "MST124-3-logs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the logarithms of $1$ and of the base?",
+    "answer": "$\\log_b1=0$ and $\\log_bb=1$, for $b>0$, $b\\ne1$. In particular, $\\ln1=0$ and $\\ln e=1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "These values follow from the zeroth and first powers of the base. The logarithm of zero is not a special finite value.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Logarithm laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-log-product-quotient",
+    "topicId": "MST124-3-logs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the product and quotient laws for logarithms.",
+    "answer": "$\\log_b(xy)=\\log_bx+\\log_by$ and $\\log_b(x/y)=\\log_bx-\\log_by$, for $x,y>0$, $b>0$, $b\\ne1$. The same laws hold for $\\ln$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Products become sums and quotients become differences only when each logarithm is defined. There is no analogous law turning the logarithm of a sum into a sum of logarithms.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Logarithm laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-log-power",
+    "topicId": "MST124-3-logs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the power law for logarithms?",
+    "answer": "$\\log_b(x^r)=r\\log_bx$ for $x>0$, real $r$, $b>0$, $b\\ne1$. In particular, $\\ln(x^r)=r\\ln x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The exponent becomes a multiplier only after the logarithm’s domain is respected. In real arithmetic, applying this version to a negative base is unsafe.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 6,
+      "section": "Logarithm laws"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-exponential-period-factor",
+    "topicId": "MST124-3-logs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What factor relates $f(x+p)$ to $f(x)$ for $f(x)=ae^{kx}$?",
+    "answer": "$f(x+p)=e^{kp}f(x)$. For $a>0$ and $p>0$, the factor exceeds $1$ when $k>0$ (growth), and lies between $0$ and $1$ when $k<0$ (decay).",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Advancing the input adds a constant to the exponent, producing a fixed multiplicative factor. The factor depends on the interval length, not on the starting input.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 31,
+      "section": "Growth and decay factors"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-doubling-halving-period",
+    "topicId": "MST124-3-logs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the doubling and halving periods of an exponential model?",
+    "answer": "For $f(t)=ae^{kt}$ with $a>0$: doubling time $T=\\ln2/k$ if $k>0$; halving time $T=-\\ln2/k$ if $k<0$. Both times are positive under their stated conditions.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Taking logarithms isolates the time interval. The sign of the rate distinguishes growth from decay and ensures the reported period is positive.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 31,
+      "section": "To find a doubling or halving period"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-3-inequality-sign",
+    "topicId": "MST124-3-composition",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does multiplying or dividing affect an inequality sign?",
+    "answer": "Multiplying or dividing both sides by a positive quantity preserves the sign; by a negative quantity reverses it. Division by zero is forbidden. If a multiplier has unknown sign, separate the sign cases before using this rule.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplication by a negative number reverses order on the number line. A variable multiplier of unknown sign requires separate cases rather than a single automatic rearrangement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 32,
+      "section": "To rearrange an inequality"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-degree-radian",
+    "topicId": "MST124-4-angles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the degree–radian conversion formulas?",
+    "answer": "$\\theta_{\\rm rad}=\\frac\\pi{180}\\theta_{\\rm deg}$ and $\\theta_{\\rm deg}=\\frac{180}\\pi\\theta_{\\rm rad}$. Thus $2\\pi$ radians is $360^\\circ$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The conversion factor follows from one full turn being both 360 degrees and two pi radians. Match the conversion direction to the units being removed.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 4,
+      "section": "Degrees and radians"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-right-triangle-ratios",
+    "topicId": "MST124-4-angles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall sine, cosine and tangent in a right triangle.",
+    "answer": "For acute $\\theta$, $\\sin\\theta=\\mathrm{opposite}/\\mathrm{hypotenuse}$, $\\cos\\theta=\\mathrm{adjacent}/\\mathrm{hypotenuse}$, $\\tan\\theta=\\mathrm{opposite}/\\mathrm{adjacent}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Opposite and adjacent are named relative to the chosen acute angle, while the hypotenuse is always opposite the right angle.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 33,
+      "section": "Trigonometric ratios for right-angled triangles"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-pythagoras",
+    "topicId": "MST124-4-angles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What equation relates the sides of a right triangle?",
+    "answer": "$c^2=a^2+b^2$, where $c$ is the hypotenuse and $a,b$ are the other two side lengths.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The squared longest side equals the sum of the other squared sides only for a right triangle. For a general triangle, an angle-dependent correction is needed.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 33,
+      "section": "Pythagoras’ theorem"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-special-angle-sine-cosine",
+    "topicId": "MST124-4-angles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall sine and cosine at $0,\\pi/6,\\pi/4,\\pi/3,\\pi/2,\\pi$.",
+    "answer": "$\\begin{array}{c|rrrrrr}\\theta&0&\\pi/6&\\pi/4&\\pi/3&\\pi/2&\\pi\\\\\\hline\\sin\\theta&0&1/2&1/\\sqrt2&\\sqrt3/2&1&0\\\\\\cos\\theta&1&\\sqrt3/2&1/\\sqrt2&1/2&0&-1\\end{array}$",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The exact values come from the unit circle and special right triangles. The first-quadrant sine values increase as the corresponding cosine values decrease.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 4,
+      "section": "Special angles"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-special-angle-tangent",
+    "topicId": "MST124-4-angles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall tangent at $0,\\pi/6,\\pi/4,\\pi/3,\\pi/2,\\pi$.",
+    "answer": "$\\tan0=0$, $\\tan(\\pi/6)=1/\\sqrt3$, $\\tan(\\pi/4)=1$, $\\tan(\\pi/3)=\\sqrt3$, $\\tan\\pi=0$. Tangent is undefined at $\\pi/2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Tangent is obtained by dividing sine by cosine, so the right-angle value is undefined rather than infinitely large as a real number.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 4,
+      "section": "Special angles"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-reciprocal-trig",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express tangent, cosecant, secant and cotangent using sine and cosine.",
+    "answer": "$\\tan\\theta=\\sin\\theta/\\cos\\theta$, $\\sec\\theta=1/\\cos\\theta$ when $\\cos\\theta\\ne0$; $\\operatorname{cosec}\\theta=1/\\sin\\theta$, $\\cot\\theta=\\cos\\theta/\\sin\\theta$ when $\\sin\\theta\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each reciprocal or quotient excludes angles where its denominator vanishes. In particular, cotangent’s sine denominator differs from tangent’s cosine denominator.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "tan, cosec, sec, cot in terms of sin and cos"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-pythagorean-trig",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the three Pythagorean trigonometric identities.",
+    "answer": "$\\sin^2\\theta+\\cos^2\\theta=1$; $1+\\tan^2\\theta=\\sec^2\\theta$ where $\\cos\\theta\\ne0$; $\\cot^2\\theta+1=\\operatorname{cosec}^2\\theta$ where $\\sin\\theta\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The basic unit-circle identity gives the other two after division by squared cosine or squared sine. Those divisions explain the extra domain restrictions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Pythagorean identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-trig-parity-periods",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall parity and periodicity for sine, cosine and tangent.",
+    "answer": "$\\sin(-\\theta)=-\\sin\\theta$, $\\cos(-\\theta)=\\cos\\theta$, $\\tan(-\\theta)=-\\tan\\theta$. Also $\\sin(\\theta+2\\pi)=\\sin\\theta$, $\\cos(\\theta+2\\pi)=\\cos\\theta$, $\\tan(\\theta+\\pi)=\\tan\\theta$. Tangent identities require defined arguments.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Reflection in zero gives parity, while complete turns give periodicity. Tangent repeats after a half-turn because sine and cosine both change sign.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Symmetry identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-complement-identities",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do sine and cosine of complementary angles relate?",
+    "answer": "$\\sin(\\pi/2-\\theta)=\\cos\\theta$ and $\\cos(\\pi/2-\\theta)=\\sin\\theta$ for every real $\\theta$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Complementary acute angles exchange opposite and adjacent sides; the unit-circle identities extend this interchange to every real angle.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Symmetry identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-sine-sum-difference",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the sine addition and subtraction formulas?",
+    "answer": "$\\sin(A+B)=\\sin A\\cos B+\\cos A\\sin B$; $\\sin(A-B)=\\sin A\\cos B-\\cos A\\sin B$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Sine’s two cross terms have the same sign for addition and opposite signs for subtraction. Replacing the second angle by its negative links the two formulas.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Angle sum and angle difference identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-cosine-sum-difference",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the cosine addition and subtraction formulas?",
+    "answer": "$\\cos(A+B)=\\cos A\\cos B-\\sin A\\sin B$; $\\cos(A-B)=\\cos A\\cos B+\\sin A\\sin B$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Cosine’s sine-product term changes sign in the opposite direction to the sign between the angles. This is a common source of memorisation errors.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Angle sum and angle difference identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-tangent-sum-difference",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the tangent addition and subtraction formulas?",
+    "answer": "$\\tan(A+B)=\\frac{\\tan A+\\tan B}{1-\\tan A\\tan B}$; $\\tan(A-B)=\\frac{\\tan A-\\tan B}{1+\\tan A\\tan B}$. Require $\\tan A,\\tan B$ to exist and the corresponding denominator to be nonzero.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Dividing the sine addition formula by the cosine addition formula produces the tangent rule. The denominators record angles where that quotient fails.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Angle sum and angle difference identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-sine-tangent-double-angle",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the sine and tangent double-angle formulas.",
+    "answer": "$\\sin2\\theta=2\\sin\\theta\\cos\\theta$; $\\tan2\\theta=\\frac{2\\tan\\theta}{1-\\tan^2\\theta}$ where $\\tan\\theta$ exists and $1-\\tan^2\\theta\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Substitute the same angle twice into the addition formulas. The tangent version has extra exclusions inherited from both tangent and its denominator.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Double-angle and half-angle identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-cosine-double-angle",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the three common forms of the cosine double-angle identity?",
+    "answer": "$\\cos2\\theta=\\cos^2\\theta-\\sin^2\\theta=1-2\\sin^2\\theta=2\\cos^2\\theta-1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Substituting the Pythagorean identity into the difference of squared cosine and sine yields the two alternative forms. Choose the version matching the expression being simplified.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Double-angle and half-angle identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-power-reduction",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How can squared sine and cosine be replaced by double-angle expressions?",
+    "answer": "$\\sin^2\\theta=\\tfrac12(1-\\cos2\\theta)$ and $\\cos^2\\theta=\\tfrac12(1+\\cos2\\theta)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Rearranging the cosine double-angle identities replaces squared trigonometric functions with first powers. The constant term must not be dropped during integration.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Double-angle and half-angle identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-sine-sum-product",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do sums and differences of sines become products?",
+    "answer": "$\\sin A+\\sin B=2\\sin\\frac{A+B}{2}\\cos\\frac{A-B}{2}$; $\\sin A-\\sin B=2\\cos\\frac{A+B}{2}\\sin\\frac{A-B}{2}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The average angle and half-difference replace the two original angles. Reversing the order in a sine difference also reverses the product’s sign.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Sum to product identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-cosine-sum-product",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do sums and differences of cosines become products?",
+    "answer": "$\\cos A+\\cos B=2\\cos\\frac{A+B}{2}\\cos\\frac{A-B}{2}$; $\\cos A-\\cos B=-2\\sin\\frac{A+B}{2}\\sin\\frac{A-B}{2}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The minus sign in the cosine-difference identity is essential. It follows from subtracting the cosine addition formulas in the appropriate order.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Sum to product identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-product-sum",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the product-to-sum identities.",
+    "answer": "$\\sin A\\sin B=\\tfrac12[\\cos(A-B)-\\cos(A+B)]$; $\\cos A\\cos B=\\tfrac12[\\cos(A+B)+\\cos(A-B)]$; $\\sin A\\cos B=\\tfrac12[\\sin(A+B)+\\sin(A-B)]$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Adding or subtracting angle-sum identities isolates the original product. The factor one-half compensates for obtaining two copies of that product.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 5,
+      "section": "Product to sum identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-inverse-trig-ranges",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which principal ranges make inverse trigonometric identities single-valued?",
+    "answer": "$y=\\arcsin x\\iff\\sin y=x$, $x\\in[-1,1]$, $y\\in[-\\pi/2,\\pi/2]$; $y=\\arccos x\\iff\\cos y=x$, $x\\in[-1,1]$, $y\\in[0,\\pi]$; $y=\\arctan x\\iff\\tan y=x$, $x\\in\\mathbb R$, $y\\in(-\\pi/2,\\pi/2)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Restricting the original trigonometric function to a one-to-one interval makes its inverse single-valued. Applying an inverse does not return every angle with the same ratio.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 35,
+      "section": "Inverse sine, cosine and tangent functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-inverse-trig-symmetry",
+    "topicId": "MST124-4-circle",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the inverse trigonometric identities for negative arguments.",
+    "answer": "$\\arcsin(-x)=-\\arcsin x$ and $\\arccos(-x)=\\pi-\\arccos x$ for $x\\in[-1,1]$; $\\arctan(-x)=-\\arctan x$ for all real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Sine and tangent inverses inherit odd symmetry, but inverse cosine does not. Its principal range forces a subtraction from pi instead.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 35,
+      "section": "Identities for inverse trigonometric functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-sine-rule",
+    "topicId": "MST124-4-triangle-rules",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the sine rule, and what angle ambiguity can arise?",
+    "answer": "$\\frac a{\\sin A}=\\frac b{\\sin B}=\\frac c{\\sin C}$, where each side is opposite its matching angle in a nondegenerate triangle. Solving for an angle from its sine may give both $A$ and $\\pi-A$; use the triangle constraints to decide which apply.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A side is paired with its opposite angle, not an adjacent angle. The acute and supplementary angles have equal sine, creating the ambiguous-angle case.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 37,
+      "section": "Sine rule"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-cosine-rule",
+    "topicId": "MST124-4-triangle-rules",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the cosine rule for a triangle.",
+    "answer": "$a^2=b^2+c^2-2bc\\cos A$, and cyclic versions, where $A$ is opposite $a$. Equivalently, $\\cos A=(b^2+c^2-a^2)/(2bc)$ for positive side lengths.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The angle in the cosine term lies between the other two sides. A right included angle makes the correction vanish and recovers Pythagoras’ theorem.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 37,
+      "section": "Cosine rule"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-triangle-area",
+    "topicId": "MST124-4-triangle-rules",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do two side lengths and their included angle give triangle area?",
+    "answer": "$K=\\tfrac12ab\\sin\\theta$, where $a,b$ are side lengths and $\\theta\\in(0,\\pi)$ is their included angle.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The perpendicular height is one side multiplied by the sine of the included angle. Using a non-included angle with the two supplied sides gives the wrong height.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 37,
+      "section": "Area of a triangle"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-line-inclination",
+    "topicId": "MST124-4-angles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does a nonvertical line’s inclination determine its gradient?",
+    "answer": "$m=\\tan\\theta$, where $\\theta$ is measured anticlockwise from the positive $x$-axis and the axes use equal scales. Vertical lines have no finite gradient.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A right triangle along the line identifies rise divided by run with tangent. Unequal axis scales distort the drawn inclination even though the coordinate gradient is unchanged.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 37,
+      "section": "Angle of inclination of a line"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-distance",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the distance between two points in Cartesian coordinates?",
+    "answer": "$d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ in two dimensions. In three dimensions, $d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Coordinate differences are perpendicular displacements, so Pythagoras combines their squares. The final square root makes distance nonnegative regardless of the order of the points.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 38,
+      "section": "Distance formula (for two or three dimensions)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-midpoint",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the coordinates of the midpoint of a line segment?",
+    "answer": "Between $(x_1,y_1)$ and $(x_2,y_2)$, the midpoint is $\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2}\\right)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Averaging each coordinate places the point halfway along the segment. Averaging distances from the origin would not generally locate that midpoint.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 38,
+      "section": "Midpoint formula (for two dimensions)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-circle-sphere",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the standard equations of a circle and a sphere.",
+    "answer": "A circle with centre $(a,b)$ and radius $r>0$ has $(x-a)^2+(y-b)^2=r^2$. A sphere with centre $(a,b,c)$ has $(x-a)^2+(y-b)^2+(z-c)^2=r^2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Subtracting the centre coordinates measures displacement from the centre. The signs inside the brackets are therefore opposite to the displayed centre coordinates.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 38,
+      "section": "Standard form of the equation of a circle or a sphere"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-quadrilateral-areas",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall areas of a rectangle, parallelogram and trapezium.",
+    "answer": "Rectangle: $A=ab$. Parallelogram: $A=bh$. Trapezium with parallel sides $a,b$: $A=\\tfrac12(a+b)h$. In the latter two formulas, $h$ is the perpendicular height.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Height is measured perpendicular to the base, not along a sloping side. A trapezium uses the average of its two parallel side lengths.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 10,
+      "section": "Areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-triangle-base-height",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the base–height formula for triangle area?",
+    "answer": "$A=\\tfrac12bh$, where $b$ is the base length and $h$ the perpendicular height to that base.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Two congruent copies of a triangle form a parallelogram with the same base and perpendicular height, explaining the factor one-half.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 10,
+      "section": "Areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-circle-measures",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the circumference and area of a circle.",
+    "answer": "For radius $r\\ge0$, circumference $C=2\\pi r$ and area $A=\\pi r^2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Circumference scales linearly with radius, whereas area scales with its square. Confusing radius with diameter introduces different factors in the two formulas.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 10,
+      "section": "Circles"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-4-sector-measures",
+    "topicId": "MST124-4-angles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are a circular sector’s arc length and area?",
+    "answer": "$s=r\\theta$ and $A=\\tfrac12r^2\\theta$, where $r$ is the radius and $\\theta\\ge0$ the central angle measured in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Both formulas assume radians: an angle in degrees must be converted first. The sector’s area is the same fraction of the whole circle as its angle is of a full turn.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 10,
+      "section": "Circles"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-cuboid-measures",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall a cuboid’s volume and surface area.",
+    "answer": "For edge lengths $w,h,d>0$, $V=whd$ and $S=2wh+2wd+2hd$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Volume multiplies three perpendicular lengths. The surface-area terms account for three pairs of matching opposite faces, not just the visible faces.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 11,
+      "section": "Volumes and surface areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-prism-measures",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall a right prism’s volume and total surface area.",
+    "answer": "For base area $A$, base perimeter $p$, and perpendicular height $h$, $V=Ah$ and $S=2A+hp$. The surface-area formula assumes a right prism.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A constant cross-section gives volume as base area times height. For a right prism, unfolding the side faces gives a strip whose width is the base perimeter.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 11,
+      "section": "Volumes and surface areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-cylinder-measures",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall a closed right circular cylinder’s volume and total surface area.",
+    "answer": "For radius $r$ and height $h$, $V=\\pi r^2h$ and $S=2\\pi r^2+2\\pi rh$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The curved surface unwraps to a rectangle with width equal to the base circumference. A closed cylinder also has two circular ends.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 11,
+      "section": "Volumes and surface areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-cone-measures",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall a right circular cone’s volume and total surface area.",
+    "answer": "$V=\\tfrac13\\pi r^2h$ and $S=\\pi r^2+\\pi r\\ell$, where $r$ is the base radius, $h$ the perpendicular height, and $\\ell$ the slant height. The surface area includes the base.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Slant height belongs in the curved-area term, while perpendicular height belongs in the volume term. These two lengths are not interchangeable.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 11,
+      "section": "Volumes and surface areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-sphere-measures",
+    "topicId": "MST124-5-geometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall a sphere’s volume and surface area.",
+    "answer": "For radius $r$, $V=\\tfrac43\\pi r^3$ and $S=4\\pi r^2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Surface area involves squared length, while volume involves cubed length. This distinction helps catch an incorrect exponent or a misplaced factor of radius.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 11,
+      "section": "Volumes and surface areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-component-algebra",
+    "topicId": "MST124-5-components",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do vector addition, subtraction and scalar multiplication work in components?",
+    "answer": "If $\\mathbf a=(a_1,a_2,a_3)$ and $\\mathbf b=(b_1,b_2,b_3)$, then $\\mathbf a\\pm\\mathbf b=(a_1\\pm b_1,a_2\\pm b_2,a_3\\pm b_3)$ and $m\\mathbf a=(ma_1,ma_2,ma_3)$. Omit the third component in two dimensions.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Components are measured along fixed common axes, so corresponding components combine independently. Adding vector magnitudes would generally lose directional information.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 41,
+      "section": "Vector algebra using component form"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-vector-magnitude",
+    "topicId": "MST124-5-components",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is a vector’s magnitude in component form?",
+    "answer": "$|(a,b)|=\\sqrt{a^2+b^2}$ and $|(a,b,c)|=\\sqrt{a^2+b^2+c^2}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The magnitude follows from perpendicular Cartesian components. Adding absolute component values measures a different distance and does not give the Euclidean magnitude.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 42,
+      "section": "To find the magnitude of a two- or three-dimensional vector from its components"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-magnitude-direction-components",
+    "topicId": "MST124-5-components",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do magnitude and direction give a plane vector’s components?",
+    "answer": "$\\mathbf v=|\\mathbf v|\\cos\\theta\\,\\mathbf i+|\\mathbf v|\\sin\\theta\\,\\mathbf j$, with $\\theta$ measured anticlockwise from the positive $x$-direction. For a nonzero vector, the component signs determine the quadrant.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Cosine gives the horizontal projection and sine the vertical projection for an angle measured from the positive horizontal axis. Their signs automatically select the correct quadrant.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 42,
+      "section": "Component form of a two-dimensional vector in terms of its magnitude and the angle that it makes with the positive x-direction"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-displacement-position",
+    "topicId": "MST124-5-components",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do position vectors give a displacement vector?",
+    "answer": "If $A,B$ have position vectors $\\mathbf a,\\mathbf b$, then $\\overrightarrow{AB}=\\mathbf b-\\mathbf a$. Order matters: reversing the points negates the displacement.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A displacement takes the endpoint minus the starting point. Translating both points by the same vector leaves their difference unchanged.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 43,
+      "section": "Position vectors"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-vector-midpoint",
+    "topicId": "MST124-5-components",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the position vector of the midpoint of $AB$?",
+    "answer": "$\\mathbf m=\\tfrac12(\\mathbf a+\\mathbf b)$, where $\\mathbf a$ and $\\mathbf b$ are the endpoints’ position vectors.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The midpoint is reached by adding half the displacement to either endpoint. This gives the average position vector in any Cartesian dimension.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 43,
+      "section": "Midpoint formula in terms of position vectors"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-scalar-magnitude-direction",
+    "topicId": "MST124-5-components",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does scalar multiplication change a vector’s magnitude and direction?",
+    "answer": "$|m\\mathbf a|=|m|\\,|\\mathbf a|$. For nonzero $\\mathbf a$, a positive $m$ preserves direction and a negative $m$ reverses it; $0\\mathbf a=\\mathbf0$, which has no direction.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Magnitude cannot be negative, so it depends on the scalar’s absolute value. The scalar’s sign is recorded by direction instead.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 40,
+      "section": "Scalar multiple of a vector"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-vector-distributivity",
+    "topicId": "MST124-5-components",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the distributive laws for vectors and scalars.",
+    "answer": "$m(\\mathbf a+\\mathbf b)=m\\mathbf a+m\\mathbf b$, $(m+n)\\mathbf a=m\\mathbf a+n\\mathbf a$, and $m(n\\mathbf a)=(mn)\\mathbf a$. Vector addition is associative and commutative.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Scalar multiplication acts on each component, so the distributive rules follow component by component. Adding vectors does not require their directions to agree.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 40,
+      "section": "Properties of vector algebra"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-dot-angle",
+    "topicId": "MST124-5-dot-product",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is the scalar product related to the angle between vectors?",
+    "answer": "$\\mathbf a\\cdot\\mathbf b=|\\mathbf a||\\mathbf b|\\cos\\theta$, for nonzero vectors and $0\\le\\theta\\le\\pi$. If either vector is zero, the scalar product is $0$, but the angle is undefined.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The scalar product measures how much one vector lies in the other’s direction. It is positive for acute angles, negative for obtuse angles, and zero at a right angle.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 43,
+      "section": "Scalar product of two vectors"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-dot-components",
+    "topicId": "MST124-5-dot-product",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is a scalar product calculated from Cartesian components?",
+    "answer": "$\\mathbf a\\cdot\\mathbf b=a_1b_1+a_2b_2$ in two dimensions, and $\\mathbf a\\cdot\\mathbf b=a_1b_1+a_2b_2+a_3b_3$ in three dimensions.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each Cartesian component is multiplied only by its matching component before summation. Cross-component products do not occur because the coordinate unit vectors are perpendicular.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 43,
+      "section": "Scalar product in terms of components"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-angle-from-dot",
+    "topicId": "MST124-5-dot-product",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do you recover the angle between nonzero vectors?",
+    "answer": "$\\theta=\\arccos\\!\\left(\\frac{\\mathbf a\\cdot\\mathbf b}{|\\mathbf a||\\mathbf b|}\\right)$ with $0\\le\\theta\\le\\pi$. Neither vector may be zero.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Dividing by both magnitudes removes scale and leaves the cosine of the angle. A zero vector prevents this normalisation and has no direction to compare.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 43,
+      "section": "To find the angle between two vectors in component form"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-perpendicular-dot",
+    "topicId": "MST124-5-dot-product",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What scalar-product test detects perpendicular vectors?",
+    "answer": "For nonzero $\\mathbf a,\\mathbf b$, $\\mathbf a\\perp\\mathbf b\\iff\\mathbf a\\cdot\\mathbf b=0$. Also $\\mathbf a\\cdot\\mathbf a=|\\mathbf a|^2$. A zero vector has zero dot product with every vector but no direction.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A zero scalar product indicates a right angle only when both vectors have directions. The self-product gives squared length and is never negative.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 43,
+      "section": "Properties of the scalar product"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-5-dot-algebra",
+    "topicId": "MST124-5-dot-product",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the algebraic laws of the scalar product.",
+    "answer": "$\\mathbf a\\cdot\\mathbf b=\\mathbf b\\cdot\\mathbf a$; $\\mathbf a\\cdot(\\mathbf b+\\mathbf c)=\\mathbf a\\cdot\\mathbf b+\\mathbf a\\cdot\\mathbf c$; $(m\\mathbf a)\\cdot\\mathbf b=m(\\mathbf a\\cdot\\mathbf b)=\\mathbf a\\cdot(m\\mathbf b)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The dot product distributes over vector addition but produces a scalar. Treating the result as another vector leads to invalid later operations.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 43,
+      "section": "Properties of the scalar product"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-first-principles",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What limit defines a derivative from first principles?",
+    "answer": "$f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}h$, if the limit exists. The quotient uses $h\\ne0$ and points in the domain; an interior two-sided derivative needs the same limit from both sides.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The difference quotient is a secant gradient; the limit moves the second point towards the first. Substituting a zero increment before taking the limit gives an undefined quotient.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 44,
+      "section": "Differentiation from first principles"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-constant-power-derivatives",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the derivatives of a constant and a power function.",
+    "answer": "$\\frac{d}{dx}c=0$ and $\\frac{d}{dx}x^n=nx^{n-1}$. For arbitrary real $n$, this power rule applies on $x>0$; other points require the original function and derivative to be defined. For $n=0$, use the constant rule.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiation multiplies by the original exponent and lowers that exponent by one. A constant is handled separately where a formal zero coefficient could hide an undefined power.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-derivative-linearity",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does differentiation act on a linear combination?",
+    "answer": "$\\frac{d}{dx}[af(x)+bg(x)]=af'(x)+bg'(x)$, for constants $a,b$ and differentiable $f,g$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Constant multipliers can be pulled through differentiation. The rule does not permit variable multipliers to be pulled out without an additional product-rule term.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 44,
+      "section": "Constant multiple rule and sum rule for derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-exp-log-derivatives",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the standard exponential and natural logarithm derivatives.",
+    "answer": "$\\frac{d}{dx}e^x=e^x$ for every real $x$; $\\frac{d}{dx}\\ln x=1/x$ for $x>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The natural exponential reproduces itself under differentiation, while its inverse has a reciprocal derivative. The real logarithm’s domain excludes zero and negative inputs.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-sine-cosine-derivatives",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the derivatives of sine and cosine?",
+    "answer": "$\\frac{d}{dx}\\sin x=\\cos x$ and $\\frac{d}{dx}\\cos x=-\\sin x$. Angles must be measured in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The negative sign occurs when differentiating cosine, not sine. Radian measure is essential; degree-based arguments introduce an extra conversion factor.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-tangent-cotangent-derivatives",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the derivatives of tangent and cotangent?",
+    "answer": "$\\frac{d}{dx}\\tan x=\\sec^2x$ where $\\cos x\\ne0$; $\\frac{d}{dx}\\cot x=-\\operatorname{cosec}^2x$ where $\\sin x\\ne0$. Angles are in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A quotient-rule derivation explains the opposite signs for tangent and cotangent. Their derivatives remain undefined at the original functions’ poles.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-secant-cosecant-derivatives",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the derivatives of secant and cosecant?",
+    "answer": "$\\frac{d}{dx}\\sec x=\\sec x\\tan x$ where $\\cos x\\ne0$; $\\frac{d}{dx}\\operatorname{cosec}x=-\\operatorname{cosec}x\\cot x$ where $\\sin x\\ne0$. Angles are in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiating a reciprocal introduces a minus sign, which combines differently with the derivatives of cosine and sine. This explains why the cosecant derivative is negative.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-arcsine-arccosine-derivatives",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the derivatives of inverse sine and inverse cosine.",
+    "answer": "$\\frac{d}{dx}\\arcsin x=\\frac1{\\sqrt{1-x^2}}$ and $\\frac{d}{dx}\\arccos x=-\\frac1{\\sqrt{1-x^2}}$, for $-1<x<1$. These are not finite at $x=\\pm1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Inverse sine increases and inverse cosine decreases, explaining their opposite derivative signs. Their slopes become unbounded at the endpoints of their real domains.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-arctangent-derivative",
+    "topicId": "MST124-6-derivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the derivative of inverse tangent?",
+    "answer": "$\\frac{d}{dx}\\arctan x=\\frac1{1+x^2}$ for every real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The denominator is always positive on the real line, so the derivative exists everywhere and inverse tangent is strictly increasing.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-derivative-monotonicity",
+    "topicId": "MST124-6-stationary",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What derivative-sign rules guarantee increasing or decreasing behaviour?",
+    "answer": "If $f'(x)>0$ throughout an interval, $f$ is strictly increasing there; if $f'(x)<0$ throughout, $f$ is strictly decreasing there. The derivative must exist on the interval’s interior.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The sign of the derivative controls the direction of change throughout an interval. A positive derivative at just one point does not establish monotonicity on the whole interval.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 45,
+      "section": "Increasing/decreasing criterion"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-first-derivative-test",
+    "topicId": "MST124-6-stationary",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What derivative sign changes classify a stationary point?",
+    "answer": "At $f'(c)=0$, inspect immediately adjacent intervals: $+\\to-$ gives a local maximum; $-\\to+$ gives a local minimum; the same nonzero sign on both sides gives a horizontal point of inflection in the handbook’s classification. The signs must hold on intervals, not merely at isolated sample points.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An extremum requires a switch between increasing and decreasing behaviour. A zero derivative without a sign switch need not produce a maximum or minimum.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 45,
+      "section": "First derivative test (for determining the nature of a stationary point)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-second-derivative-test",
+    "topicId": "MST124-6-stationary",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What does the second derivative test say at a stationary point?",
+    "answer": "If $f'(c)=0$ and $f''(c)<0$, there is a local maximum; if $f''(c)>0$, a local minimum. If $f''(c)=0$, the test is inconclusive.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "At a horizontal tangent, positive curvature bends the graph upwards and negative curvature bends it downwards. Zero curvature leaves this classification undecided.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 46,
+      "section": "Second derivative test (for determining the nature of a stationary point)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-concavity",
+    "topicId": "MST124-6-applications",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does the second derivative determine concavity?",
+    "answer": "$f''(x)>0$ throughout an interval implies concave up; $f''(x)<0$ implies concave down. A point of inflection requires a change of concavity; $f''(c)=0$ alone is not enough.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The second derivative tracks whether the first derivative is increasing or decreasing. Concavity concerns changing slope, not whether the function’s values themselves are positive or increasing.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 46,
+      "section": "Concave up/concave down criterion"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-closed-interval-extrema",
+    "topicId": "MST124-6-stationary",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which values must be compared to find absolute extrema on $[a,b]$?",
+    "answer": "For $f$ continuous on $[a,b]$ and differentiable on $(a,b)$, compare $f(a)$, $f(b)$ and $f(c)$ at every interior stationary point $f'(c)=0$. The largest and smallest candidates give the absolute maximum and minimum.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An absolute extremum can occur at a boundary even when its derivative there is not zero. Endpoint values must therefore be compared with interior stationary values.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 46,
+      "section": "To find the greatest or least value of a function on an interval of the form [a, b]"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-motion-derivatives",
+    "topicId": "MST124-6-applications",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do displacement, velocity and acceleration relate by differentiation?",
+    "answer": "$v(t)=\\frac{ds}{dt}$ and $a(t)=\\frac{dv}{dt}=\\frac{d^2s}{dt^2}$ for motion on a straight line, using consistent units and signed displacement and velocity.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Velocity is the rate of displacement change, and acceleration is the rate of velocity change. Negative acceleration does not by itself imply slowing down: the velocity’s sign also matters.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 47,
+      "section": "Displacement, velocity and acceleration"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-6-cost-formulas",
+    "topicId": "MST124-6-applications",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How are average and marginal cost obtained from total cost?",
+    "answer": "If $C(q)$ is total cost at output quantity $q$, average cost is $C(q)/q$ for $q>0$ and marginal cost is $C'(q)$ in the differentiable model.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Average cost divides existing total cost across all units, while marginal cost measures the local rate of increase as output changes. These quantities need not be equal.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 47,
+      "section": "Total cost and marginal cost"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-product-rule",
+    "topicId": "MST124-7-products",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the derivative of a product?",
+    "answer": "$\\frac{d}{dx}(uv)=u\\frac{dv}{dx}+v\\frac{du}{dx}$ for differentiable functions $u,v$ of $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each factor contributes one derivative term while the other factor remains unchanged. Multiplying the two derivatives alone omits both required contributions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 48,
+      "section": "Product rule"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-quotient-rule",
+    "topicId": "MST124-7-products",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the derivative of a quotient?",
+    "answer": "$\\frac{d}{dx}\\left(\\frac uv\\right)=\\frac{v\\,du/dx-u\\,dv/dx}{v^2}$, where $u,v$ are differentiable and $v\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The numerator order is denominator times derivative of numerator, minus numerator times derivative of denominator. The original denominator is squared, not differentiated as a whole in the denominator.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 48,
+      "section": "Quotient rule"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-chain-rule",
+    "topicId": "MST124-7-chain",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the chain rule for a composite function?",
+    "answer": "$\\frac{d}{dx}g(f(x))=g'(f(x))f'(x)$. Equivalently, $\\frac{dy}{dx}=\\frac{dy}{du}\\frac{du}{dx}$ when $y$ is differentiable in $u$ and $u$ in $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiate the outer function at the inner value, then multiply by the inner derivative. Omitting that final factor is the characteristic chain-rule error.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 48,
+      "section": "Chain rule"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-linear-inner-derivative",
+    "topicId": "MST124-7-chain",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do you differentiate $f(ax+b)$?",
+    "answer": "$\\frac{d}{dx}f(ax+b)=a f'(ax+b)$ for constants $a,b$, wherever the composite is differentiable.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A linear inner function has a constant derivative, which multiplies the outer derivative. A shift alone contributes no extra factor beyond one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 48,
+      "section": "Derivative of a function of a linear expression"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-inverse-derivative",
+    "topicId": "MST124-7-chain",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the derivative of an inverse function?",
+    "answer": "$(f^{-1})'(y)=\\frac1{f'(f^{-1}(y))}$. Require a differentiable inverse and a nonzero denominator; locally this applies when the inverse-function conditions hold. Equivalently, $dy/dx=1/(dx/dy)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Inverse graphs exchange horizontal and vertical changes, so their corresponding nonzero slopes are reciprocal. The derivative must be evaluated at the matching inverse input.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 49,
+      "section": "Inverse function rule"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-antiderivative-family",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is an indefinite integral recovered from one antiderivative?",
+    "answer": "If $F'(x)=f(x)$ on an interval, then $\\int f(x)\\,dx=F(x)+C$. The arbitrary constant accounts for every antiderivative on that interval; disconnected domain intervals may have different constants.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiation removes additive constants, so one antiderivative cannot specify the whole indefinite integral. Separate disconnected intervals need not share the same constant.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 50,
+      "section": "Antiderivatives and indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-constant-integral",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the indefinite integral of a constant?",
+    "answer": "$\\int a\\,dx=ax+C$, where $a$ is constant.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A linear function has constant gradient, which makes it an antiderivative of a constant. The arbitrary additive term disappears when differentiated.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-power-integral",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the power rule for indefinite integration and its exception.",
+    "answer": "$\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$, on an interval where the real powers and derivative are defined (in particular $x>0$ for arbitrary real $n$). The $n=-1$ case is logarithmic.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Raising the exponent requires division by the new exponent so differentiation returns the original coefficient. The excluded exponent would make that divisor zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-reciprocal-integral",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the indefinite integral of $1/x$?",
+    "answer": "$\\int\\frac1x\\,dx=\\ln|x|+C$ on an interval not containing $0$. For $x>0$, this is $\\ln x+C$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The absolute value allows the same antiderivative rule on either side of zero. It does not make the original integrand defined at zero or allow integration straight across that singularity.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-exponential-integral",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the indefinite integral of $e^x$?",
+    "answer": "$\\int e^x\\,dx=e^x+C$ for real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Because the natural exponential is its own derivative, it is also its own antiderivative. An extra arbitrary constant is still needed for an indefinite integral.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-sine-cosine-integrals",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the standard indefinite integrals of sine and cosine.",
+    "answer": "$\\int\\sin x\\,dx=-\\cos x+C$ and $\\int\\cos x\\,dx=\\sin x+C$, with angles in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiating the proposed antiderivative fixes the sign: cosine differentiates to negative sine. Keep the constant of integration even when the trigonometric part is exact.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-secant-cosecant-squared-integrals",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the indefinite integrals of squared secant and squared cosecant.",
+    "answer": "$\\int\\sec^2x\\,dx=\\tan x+C$ where $\\cos x\\ne0$; $\\int\\operatorname{cosec}^2x\\,dx=-\\cot x+C$ where $\\sin x\\ne0$. Use an interval without a pole and radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "These reverse the tangent and cotangent derivative rules. The minus sign belongs to the cosecant-squared integral because cotangent has a negative derivative.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-secant-cosecant-product-integrals",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the standard integrals of $\\sec x\\tan x$ and $\\operatorname{cosec}x\\cot x$.",
+    "answer": "$\\int\\sec x\\tan x\\,dx=\\sec x+C$ where $\\cos x\\ne0$; $\\int\\operatorname{cosec}x\\cot x\\,dx=-\\operatorname{cosec}x+C$ where $\\sin x\\ne0$. Use an interval without a pole and radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The integrands match the derivatives of secant and negative cosecant. The cosecant result needs a minus sign to cancel its negative derivative.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-inverse-sine-integral",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which antiderivatives correspond to $1/\\sqrt{1-x^2}$?",
+    "answer": "$\\int\\frac{dx}{\\sqrt{1-x^2}}=\\arcsin x+C=-\\arccos x+K$, for $-1<x<1$. The two arbitrary constants differ because $\\arcsin x+\\arccos x=\\pi/2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Both displayed inverse-trigonometric expressions have the same derivative. Their fixed difference is absorbed by the arbitrary constant, so they describe the same antiderivative family.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-7-inverse-tangent-integral",
+    "topicId": "MST124-7-antiderivatives",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the indefinite integral of $1/(1+x^2)$?",
+    "answer": "$\\int\\frac{dx}{1+x^2}=\\arctan x+C$ for every real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Recognising this denominator as an inverse-tangent derivative avoids trying the ordinary power rule on a sum. The real denominator never vanishes.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 7,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-integral-limit-properties",
+    "topicId": "MST124-8-definite",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What happens to a definite integral when its limits coincide or reverse?",
+    "answer": "$\\int_a^a f(x)\\,dx=0$ and $\\int_b^a f(x)\\,dx=-\\int_a^b f(x)\\,dx$, provided $f$ is continuous on the interval involved.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A definite integral carries orientation: reversing the direction reverses its sign. Coincident limits enclose no interval and therefore contribute zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 51,
+      "section": "Standard properties of definite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-integral-adjoining-intervals",
+    "topicId": "MST124-8-definite",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do definite integrals split at an intermediate point?",
+    "answer": "$\\int_a^c f(x)\\,dx=\\int_a^b f(x)\\,dx+\\int_b^c f(x)\\,dx$, for continuous $f$ on the interval spanning $a,b,c$. Oriented limits make the identity valid regardless of their order.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The contributions of adjacent oriented intervals add. If a splitting point lies outside the interval, the reversed part cancels the extra contribution.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 51,
+      "section": "Standard properties of definite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-riemann-sum",
+    "topicId": "MST124-8-definite",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What equal-width sum gives a definite integral?",
+    "answer": "For continuous $f$ on $[a,b]$, with $w=(b-a)/n$, $\\int_a^b f(x)\\,dx=\\lim_{n\\to\\infty}w\\sum_{k=0}^{n-1}f(a+kw)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each term is a rectangle’s height and the common width converts the height sum into an area approximation. Continuity ensures convergence as the partition is refined.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 51,
+      "section": "Algebraic definition of a definite integral"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-integral-derivative",
+    "topicId": "MST124-8-definite",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the derivative of an integral with a variable upper limit?",
+    "answer": "If $f$ is continuous on an interval and $s$ is fixed in it, then $A(x)=\\int_s^x f(t)\\,dt$ satisfies $A'(x)=f(x)$ at interior points.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Moving the upper endpoint by a small amount adds a thin strip whose height approaches the integrand’s current value. The fixed lower endpoint contributes no derivative term.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 51,
+      "section": "Theorem"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-fundamental-theorem",
+    "topicId": "MST124-8-definite",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does an antiderivative evaluate a definite integral?",
+    "answer": "If $f$ is continuous on the interval between $a,b$ and $F'=f$, then $\\int_a^b f(x)\\,dx=[F(x)]_a^b=F(b)-F(a)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Evaluating an antiderivative converts accumulation over an interval into a difference of endpoint values. The upper value is taken first; reversing that order reverses the integral’s sign.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 51,
+      "section": "Fundamental theorem of calculus"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-signed-area",
+    "topicId": "MST124-8-definite",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does integration distinguish geometric area from signed area?",
+    "answer": "On $[a,b]$ with $a<b$, regions where $f>0$ contribute positively to $\\int_a^b f(x)\\,dx$ and regions where $f<0$ negatively. For total geometric area, split at sign changes and add the absolute values of the separate signed integrals.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Cancellation between regions above and below the axis can make an integral much smaller than the total enclosed area. Split at sign changes when geometric area is required.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 50,
+      "section": "Signed areas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-integral-linearity",
+    "topicId": "MST124-8-definite",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the linearity rule for definite and indefinite integrals?",
+    "answer": "$\\int_a^b[\\alpha f(x)+\\beta g(x)]\\,dx=\\alpha\\int_a^b f(x)\\,dx+\\beta\\int_a^b g(x)\\,dx$, for constants $\\alpha,\\beta$ and integrable $f,g$. The analogous indefinite rule holds, with one overall arbitrary constant.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Integration combines accumulated contributions linearly, just as finite sums do. Constants may be taken outside, but a variable factor generally may not.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 52,
+      "section": "Constant multiple rule and sum rule for integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-indefinite-substitution",
+    "topicId": "MST124-8-substitution",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the substitution rule for an indefinite integral?",
+    "answer": "If $u=g(x)$ and $F'=f$, then $\\int f(g(x))g'(x)\\,dx=\\int f(u)\\,du=F(g(x))+C$. After integration, replace $u$ by $g(x)$; the integrand must include the derivative factor.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The derivative factor converts the differential as the inner expression becomes the new variable. After an indefinite integral, returning to the original variable completes the substitution.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 52,
+      "section": "Integration by substitution"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-definite-substitution",
+    "topicId": "MST124-8-substitution",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do substitution and limits work in a definite integral?",
+    "answer": "For a differentiable substitution $u=g(x)$ with the required continuity, $\\int_a^b f(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$. Convert both limits; their order automatically carries any reversal of orientation.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The endpoints must be expressed in the new variable as well as the integrand. Mixing transformed integrands with original limits evaluates a different integral.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 52,
+      "section": "Integration by substitution"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-linear-inner-integral",
+    "topicId": "MST124-8-substitution",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do you integrate $f(ax+b)$ using an antiderivative of $f$?",
+    "answer": "If $F'=f$ and $a\\ne0$, $\\int f(ax+b)\\,dx=\\frac1aF(ax+b)+C$. The factor is $1/a$, not $a$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The reciprocal slope compensates for the extra inner derivative produced on differentiating the answer. A zero slope needs direct integration of a constant instead.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 52,
+      "section": "Indefinite integral of a function of a linear expression"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-indefinite-parts",
+    "topicId": "MST124-8-parts",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the integration-by-parts formula?",
+    "answer": "$\\int u\\,dv=uv-\\int v\\,du$. Equivalently, $\\int f(x)g'(x)\\,dx=f(x)g(x)-\\int f'(x)g(x)\\,dx$, with an overall arbitrary constant.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Integration by parts reverses the product rule and transfers a derivative from one factor to the other. Choose the differentiated factor so the remaining integral becomes simpler.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 53,
+      "section": "Integration by parts"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-8-definite-parts",
+    "topicId": "MST124-8-parts",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is integration by parts with limits?",
+    "answer": "$\\int_a^b f(x)g'(x)\\,dx=[f(x)g(x)]_a^b-\\int_a^b f'(x)g(x)\\,dx$, assuming the differentiability and integrability required for these expressions.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The product contributes an endpoint difference, not a standalone product evaluated at only one limit. Retaining the second integral’s limits preserves the original interval.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 53,
+      "section": "Integration by parts"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-2-elimination-rule",
+    "topicId": "MST124-2-simultaneous",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What rule eliminates one unknown from two simultaneous linear equations?",
+    "answer": "Multiply the equations by suitable nonzero constants so one variable has matching or opposite coefficients, then subtract or add. For $ax+by=e$ and $cx+dy=f$, subtracting $b$ times the second from $d$ times the first gives $(ad-bc)x=de-bf$. If $ad-bc=0$, do not divide by it: examine whether the equations are inconsistent or dependent.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Matching coefficients cancels one unknown without solving for it first. A vanishing elimination coefficient signals that dependence or inconsistency must be examined before division.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 20,
+      "section": "To solve a pair of simultaneous equations: elimination method"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-matrix-elementwise-operations",
+    "topicId": "MST124-9-multiplication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the entrywise rules for matrix addition, subtraction and scalar multiplication.",
+    "answer": "For matrices of the same size, $(A\\pm B)_{ij}=a_{ij}\\pm b_{ij}$. For a scalar $k$, $(kA)_{ij}=ka_{ij}$. Addition and subtraction are undefined for unequal matrix sizes.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Addition and subtraction pair entries in the same positions, so both shapes must match. Scalar multiplication changes entries without changing the matrix’s dimensions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 54,
+      "section": "Matrix addition and subtraction"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-matrix-product",
+    "topicId": "MST124-9-multiplication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What dimensions and entry rule define a matrix product?",
+    "answer": "If $A$ is $m\\times n$ and $B$ is $n\\times p$, then $AB$ is $m\\times p$ and $(AB)_{ij}=\\sum_{k=1}^n a_{ik}b_{kj}$. The inner dimensions must agree.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A product entry pairs one row with one column, explaining both the matching inner dimensions and the output shape. Multiplying corresponding entries is a different operation.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 55,
+      "section": "Matrix multiplication"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-matrix-product-laws",
+    "topicId": "MST124-9-multiplication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which familiar algebra laws hold for matrix multiplication, and which does not?",
+    "answer": "$A(BC)=(AB)C$, $A(B+C)=AB+AC$, $(A+B)C=AC+BC$, and $k(AB)=(kA)B=A(kB)$ whenever dimensions permit. Generally $AB\\ne BA$; one product may exist when the other does not.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Associativity permits regrouping but not reordering factors. Distributivity preserves factor order on each side, which matters because matrix multiplication is generally noncommutative.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 55,
+      "section": "Properties of matrix multiplication"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-matrix-identity",
+    "topicId": "MST124-9-multiplication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do compatible identity matrices act in products?",
+    "answer": "For $A$ of size $m\\times n$, $I_mA=A$ and $AI_n=A$. An identity matrix has entries $1$ on its main diagonal and $0$ elsewhere.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The diagonal ones select each original row or column without mixing it. The left and right identity matrices may have different sizes when the original matrix is rectangular.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 56,
+      "section": "Identity matrices"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-matrix-inverse-identity",
+    "topicId": "MST124-9-inverse",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What equations must a square matrix’s inverse satisfy?",
+    "answer": "$AA^{-1}=A^{-1}A=I$. A square matrix has at most one inverse. These equations only apply when $A$ is invertible; there is no general matrix division operation.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An inverse undoes multiplication on both sides and must have compatible square dimensions. A nonzero matrix can still fail to have an inverse.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 56,
+      "section": "Inverse of a matrix"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-two-by-two-determinant",
+    "topicId": "MST124-9-inverse",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the determinant of a $2\times2$ matrix?",
+    "answer": "For $A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, $\\det A=ad-bc$. The matrix is invertible exactly when this is nonzero.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The two diagonal products are subtracted in a fixed order. Their cancellation means the matrix loses invertibility even if every entry is nonzero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 56,
+      "section": "Determinant and inverse of a 2 × 2 matrix"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-two-by-two-inverse",
+    "topicId": "MST124-9-inverse",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the inverse of a $2\times2$ matrix?",
+    "answer": "$\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}^{-1}=\\frac1{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$, provided $ad-bc\\ne0$. A zero determinant means no inverse.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The formula swaps the diagonal entries, negates the off-diagonal entries, and divides by the determinant. A zero determinant blocks the final division rather than producing an infinite matrix.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 56,
+      "section": "Determinant and inverse of a 2 × 2 matrix"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-matrix-system-form",
+    "topicId": "MST124-9-systems",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is a two-equation linear system written as one matrix equation?",
+    "answer": "$ax+by=e$, $cx+dy=f$ become $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}e\\\\f\\end{pmatrix}$. More generally, $A\\mathbf x=\\mathbf b$ uses the coefficient matrix and the ordered vector of unknowns.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each row reproduces one equation and each column corresponds to a fixed unknown. Changing the unknown order without changing the columns alters the represented system.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 57,
+      "section": "Matrix form of a system of linear equations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-matrix-system-solutions",
+    "topicId": "MST124-9-systems",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What does the determinant tell you about a square linear system?",
+    "answer": "For $A\\mathbf x=\\mathbf b$ with square $A$: if $\\det A\\ne0$, there is a unique solution $\\mathbf x=A^{-1}\\mathbf b$; if $\\det A=0$, there are either no solutions or infinitely many. A singular coefficient matrix alone does not decide which of the latter cases occurs.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An invertible coefficient matrix can be undone uniquely. Singularity means some equations may repeat information or contradict one another, so determinant zero does not distinguish the two outcomes.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 57,
+      "section": "Solutions of a system of linear equations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-9-network-composition",
+    "topicId": "MST124-9-multiplication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What matrix represents two successive linear flow networks?",
+    "answer": "If the first network maps inputs to $A\\mathbf x$ and the second applies $B$, the final output is $B(A\\mathbf x)=(BA)\\mathbf x$. The first network appears on the right of the product; dimensions must match.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The rightmost matrix acts first because the intermediate output becomes the next network’s input. Reversing the matrix order models the opposite composition, if it is defined at all.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 57,
+      "section": "Combining networks"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-arithmetic-sequence",
+    "topicId": "MST124-10-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the recurrence and closed form of an arithmetic sequence.",
+    "answer": "With first term $a$ and common difference $d$: $x_1=a$, $x_n=x_{n-1}+d$ for $n\\ge2$; equivalently, $x_n=a+(n-1)d$ for $n\\ge1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Starting at index one means the first term receives zero increments. Using the index itself rather than one less shifts the whole sequence by one common difference.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 58,
+      "section": "Arithmetic sequences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-arithmetic-sum",
+    "topicId": "MST124-10-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the sum of the first $n$ terms of an arithmetic sequence?",
+    "answer": "$S_n=\\frac n2[2a+(n-1)d]=\\frac n2(a+\\ell)$, where $a$ is the first term, $d$ the common difference, $\\ell=a+(n-1)d$ the last term, and $n$ is a positive integer.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Pairing terms from opposite ends gives the same pair sum throughout. Averaging the first and last terms and multiplying by the term count accounts for every term.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Arithmetic series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-arithmetic-long-term",
+    "topicId": "MST124-10-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does an arithmetic sequence behave as its index increases without bound?",
+    "answer": "For $x_n=a+(n-1)d$: $d>0\\Rightarrow x_n\\to+\\infty$; $d<0\\Rightarrow x_n\\to-\\infty$; $d=0\\Rightarrow x_n=a$ for every $n$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A fixed nonzero increment accumulates without bound, with its sign deciding the direction. Only zero common difference gives a finite limit for an infinite arithmetic sequence.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 60,
+      "section": "Long-term behaviour of arithmetic sequences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-geometric-sequence",
+    "topicId": "MST124-10-geometric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the recurrence and closed form of a geometric sequence.",
+    "answer": "With first term $a$ and ratio $r$: $x_1=a$, $x_n=rx_{n-1}$ for $n\\ge2$; $x_n=ar^{n-1}$ for $n\\ge1$. If $r=0$, interpret the first term separately as $a$, followed by zero terms.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each step introduces one factor of the ratio, so the first term has no such factors yet. A zero ratio is best read from the recurrence to avoid ambiguous zeroth-power notation.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 59,
+      "section": "Geometric sequences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-finite-geometric-sum",
+    "topicId": "MST124-10-geometric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the sum of the first $n$ terms of a geometric sequence?",
+    "answer": "$S_n=a+ar+\\cdots+ar^{n-1}=\\frac{a(1-r^n)}{1-r}$ for $r\\ne1$ and integer $n\\ge1$. If $r=1$, $S_n=na$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplying the sum by its ratio shifts the terms, and subtraction cancels the middle terms. The ratio-one case requires separate treatment because the resulting denominator vanishes.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Geometric series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-infinite-geometric-sum",
+    "topicId": "MST124-10-geometric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "When does the standard infinite geometric sum formula apply?",
+    "answer": "$a+ar+ar^2+\\cdots=\\frac a{1-r}$ if $|r|<1$. For nonzero $a$, the series does not converge when $|r|\\ge1$. The zero series $a=0$ is a separate trivial case.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The finite formula tends to a limit when successive ratio powers vanish. For a nonzero first term, ratios of magnitude at least one prevent the necessary decay of terms.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Geometric series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-geometric-powers-limit",
+    "topicId": "MST124-10-geometric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the long-term behaviour of $r^n$ for real $r$.",
+    "answer": "For $n\\ge1$: if $|r|<1$, $r^n\\to0$; if $r=1$, $r^n=1$; if $r>1$, $r^n\\to+\\infty$; if $r=-1$, values alternate between $-1$ and $1$; if $r<-1$, signs alternate and magnitudes are unbounded.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The ratio’s magnitude controls growth or decay, while a negative sign causes alternation. Oscillation can prevent convergence even when the sequence remains bounded.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 60,
+      "section": "Long-term behaviour of the sequence (rⁿ)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-affine-sequence-limits",
+    "topicId": "MST124-10-geometric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does an affine transformation affect a finite sequence limit?",
+    "answer": "If $x_n\\to L$ and $a,c$ are fixed real constants, then $cx_n+a\\to cL+a$. This combines the constant-multiple and constant-addition limit rules.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A fixed scale and shift carry a finite limit to the correspondingly scaled and shifted value. Negative scaling reverses order but does not destroy finite convergence.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 60,
+      "section": "Effects of adding a constant to each term"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-sum-linearity",
+    "topicId": "MST124-10-binomial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the linearity rules for sums in sigma notation?",
+    "answer": "$\\sum_{k=p}^q cx_k=c\\sum_{k=p}^q x_k$ and $\\sum_{k=p}^q(x_k+y_k)=\\sum_{k=p}^q x_k+\\sum_{k=p}^q y_k$. For infinite sums, require the individual series to converge before applying these rules.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A constant multiplies every term equally, and two finite sums can be paired term by term. Infinite sums require convergence before the same manipulation is justified.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 61,
+      "section": "Rules for manipulating finite series in sigma notation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-sum-remove-prefix",
+    "topicId": "MST124-10-binomial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How can a sum starting at $p$ be rewritten using sums starting at $1$?",
+    "answer": "$\\sum_{k=p}^q x_k=\\sum_{k=1}^q x_k-\\sum_{k=1}^{p-1}x_k$, for integers $1<p\\le q$. For an infinite upper limit, use this only when the infinite series has a sum.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Subtracting the initial block removes exactly the terms before the desired lower index. The removed block ends one index before the retained sum begins.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 61,
+      "section": "Rules for manipulating finite series in sigma notation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-sum-integers",
+    "topicId": "MST124-10-binomial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the sum of the first $n$ positive integers?",
+    "answer": "$\\sum_{k=1}^n k=\\frac{n(n+1)}2$, for integer $n\\ge1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Pairing the first and last integers produces identical pair totals. The resulting formula includes both endpoints, so the term count is the upper index.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Sums of standard finite series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-sum-squares",
+    "topicId": "MST124-10-binomial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the sum of the first $n$ positive integer squares?",
+    "answer": "$\\sum_{k=1}^n k^2=\\frac{n(n+1)(2n+1)}6$, for integer $n\\ge1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The square-sum formula grows cubically with the upper index. It is not the square of the sum of the integers, which includes cross terms.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Sums of standard finite series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-sum-cubes",
+    "topicId": "MST124-10-binomial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the sum of the first $n$ positive integer cubes?",
+    "answer": "$\\sum_{k=1}^n k^3=\\frac{n^2(n+1)^2}4=\\left[\\frac{n(n+1)}2\\right]^2$, for integer $n\\ge1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "This special identity equals the square of the corresponding integer sum. It should not be generalised to other powers without a separate valid identity.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Sums of standard finite series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-binomial-theorem",
+    "topicId": "MST124-10-binomial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the finite binomial theorem.",
+    "answer": "For integer $n\\ge0$, $(a+b)^n=\\sum_{k=0}^n\\binom nk a^{n-k}b^k$. For $n=0$, the polynomial expansion is $1$. This is finite, so there is no smallness restriction on $a$ or $b$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each coefficient counts how many selections of the second term produce the same power. A nonnegative integer exponent makes the expansion finite, unlike a general binomial power series.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 61,
+      "section": "The binomial theorem"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-10-binomial-coefficients",
+    "topicId": "MST124-10-binomial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How are binomial coefficients expressed using factorials?",
+    "answer": "$\\binom nk=\\frac{n!}{k!(n-k)!}$ for integers $n\\ge0$ and $0\\le k\\le n$. For $k>0$, also $\\binom nk=\\frac{n(n-1)\\cdots(n-k+1)}{k(k-1)\\cdots1}$. Use $0!=1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The factorial denominator removes ordering among selected and unselected positions. The convention for zero factorial ensures the two endpoint coefficients are both one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 61,
+      "section": "The binomial theorem"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-taylor-polynomial",
+    "topicId": "MST124-11-coefficients",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the Taylor polynomial of order $n$ about $a$?",
+    "answer": "$p_n(x)=\\sum_{k=0}^n\\frac{f^{(k)}(a)}{k!}(x-a)^k$, where $f^{(0)}=f$ and the required derivatives through order $n$ exist. Its degree may be less than $n$ if the leading coefficient vanishes.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiating a power repeatedly supplies a factorial, which the coefficient denominator cancels. The polynomial records local derivative information at the chosen centre.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 62,
+      "section": "Taylor polynomials"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-maclaurin-polynomial",
+    "topicId": "MST124-11-coefficients",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the Taylor polynomial centred at zero?",
+    "answer": "$p_n(x)=f(0)+f'(0)x+\\frac{f''(0)}{2!}x^2+\\cdots+\\frac{f^{(n)}(0)}{n!}x^n$. This is the Maclaurin polynomial; the derivatives through order $n$ must exist at $0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Setting the centre to zero removes every horizontal shift from the Taylor formula. All derivative values are still evaluated at zero, not at the later approximation point.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 62,
+      "section": "Taylor polynomials"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-matching-derivatives",
+    "topicId": "MST124-11-coefficients",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which derivative equalities does a Taylor polynomial satisfy at its centre?",
+    "answer": "$p_n^{(k)}(a)=f^{(k)}(a)$ for $k=0,1,\\ldots,n$. Thus if $p_n(x)=\\sum_{k=0}^n c_k(x-a)^k$, its coefficients are forced to be $c_k=f^{(k)}(a)/k!$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "At the centre, lower powers disappear after enough differentiations and higher powers still contain a vanishing factor. This isolates one coefficient at each derivative order.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 62,
+      "section": "Taylor polynomials"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-taylor-series",
+    "topicId": "MST124-11-coefficients",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the Taylor series about $a$, and when may it be equated to $f$?",
+    "answer": "$\\sum_{k=0}^{\\infty}\\frac{f^{(k)}(a)}{k!}(x-a)^k$. All derivatives at $a$ must exist to form it. Writing $f(x)$ equal to this series additionally requires that the series converges to $f(x)$ at the chosen $x$; infinite differentiability alone is not that guarantee.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Having derivatives of every order supplies formal coefficients but does not guarantee that their series represents the function. Convergence to the actual function is an additional requirement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 62,
+      "section": "Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-exponential-series",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the Maclaurin series for the exponential and its validity.",
+    "answer": "$e^x=\\sum_{k=0}^{\\infty}\\frac{x^k}{k!}=1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots$, valid for every real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Every derivative of the exponential has value one at zero, leaving factorial denominators as the coefficients. Unlike several other standard series, there is no finite real validity boundary.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Standard Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-sine-series",
+    "topicId": "MST124-11-parity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the Maclaurin series for sine and its validity.",
+    "answer": "$\\sin x=\\sum_{k=0}^{\\infty}\\frac{(-1)^k x^{2k+1}}{(2k+1)!}=x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots$, for every real $x$ in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Odd symmetry eliminates even powers, while successive nonzero derivatives alternate signs. The input is in radians, as required by the derivatives used to obtain the coefficients.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Standard Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-cosine-series",
+    "topicId": "MST124-11-parity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the Maclaurin series for cosine and its validity.",
+    "answer": "$\\cos x=\\sum_{k=0}^{\\infty}\\frac{(-1)^k x^{2k}}{(2k)!}=1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots$, for every real $x$ in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Even symmetry eliminates odd powers, and the constant term records cosine’s value at zero. Alternating signs follow the repeating cycle of its derivatives.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Standard Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-log-one-plus-series",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the standard series for $\\ln(1+x)$ and the stated open interval of validity.",
+    "answer": "$\\ln(1+x)=\\sum_{k=1}^{\\infty}\\frac{(-1)^{k+1}x^k}{k}=x-\\frac{x^2}{2}+\\frac{x^3}{3}-\\cdots$, valid on the handbook’s stated interval $-1<x<1$. This interval statement does not make a claim about convergence at the endpoints.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The stated interval lies within the region where the power expansion represents the real logarithm. Endpoint behaviour is a separate question, not settled by an open-interval statement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Standard Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-geometric-power-series",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the power-series expansion of $1/(1-x)$ and its validity.",
+    "answer": "$\\frac1{1-x}=\\sum_{k=0}^{\\infty}x^k=1+x+x^2+x^3+\\cdots$, valid for $|x|<1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "This is the geometric-sum identity with first term one and variable ratio. Its validity requires the ratio powers to decay, not merely the denominator to be nonzero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Standard Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-general-binomial-series",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the binomial power series for a real exponent.",
+    "answer": "$(1+x)^\\alpha=1+\\alpha x+\\frac{\\alpha(\\alpha-1)}{2!}x^2+\\frac{\\alpha(\\alpha-1)(\\alpha-2)}{3!}x^3+\\cdots$, valid for $|x|<1$ for real $\\alpha$. For nonnegative integer $\\alpha$, it terminates and gives a polynomial valid for all real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Successive coefficients extend the finite binomial pattern to real exponents. A nonnegative integer exponent eventually introduces a zero factor and makes the series terminate.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 8,
+      "section": "Standard Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-parity-coefficients",
+    "topicId": "MST124-11-parity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which Taylor coefficients vanish for even and odd functions at zero?",
+    "answer": "For an even function, $f(-x)=f(x)$ and all odd-power Maclaurin coefficients vanish. For an odd function, $f(-x)=-f(x)$ and all even-power coefficients vanish, including the constant. Assume a domain symmetric about $0$ and existence of the relevant derivatives.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Replacing the input by its negative changes the signs of odd powers only. Matching the function’s even or odd symmetry therefore forces the unwanted coefficients to vanish.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 63,
+      "section": "Taylor polynomials and series about 0 for even and odd functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-hyperbolic-exponentials",
+    "topicId": "MST124-11-parity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express hyperbolic sine and cosine using exponentials.",
+    "answer": "$\\cosh x=\\frac{e^x+e^{-x}}2$ and $\\sinh x=\\frac{e^x-e^{-x}}2$, for real $x$. Consequently $\\cosh$ is even and $\\sinh$ is odd.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Adding and subtracting the positive and negative exponentials separates their even and odd parts. Reversing the input leaves the sum unchanged but negates the difference.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 63,
+      "section": "Hyperbolic functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-hyperbolic-cosine-series",
+    "topicId": "MST124-11-parity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the Maclaurin series for hyperbolic cosine.",
+    "answer": "$\\cosh x=\\sum_{k=0}^{\\infty}\\frac{x^{2k}}{(2k)!}=1+\\frac{x^2}{2!}+\\frac{x^4}{4!}+\\cdots$, valid for every real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Adding the two exponential series cancels odd powers and retains even powers with positive coefficients. Division by two removes the doubled surviving terms.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 63,
+      "section": "Hyperbolic functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-hyperbolic-sine-series",
+    "topicId": "MST124-11-parity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the Maclaurin series for hyperbolic sine.",
+    "answer": "$\\sinh x=\\sum_{k=0}^{\\infty}\\frac{x^{2k+1}}{(2k+1)!}=x+\\frac{x^3}{3!}+\\frac{x^5}{5!}+\\cdots$, valid for every real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Subtracting the negative-input exponential series cancels even powers and retains odd powers. Unlike the circular sine series, these surviving coefficients do not alternate in sign.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 63,
+      "section": "Hyperbolic functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-taylor-approximation",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What approximation rule follows from truncating a valid Taylor series?",
+    "answer": "Near the centre $a$, use $f(x)\\approx p_n(x)=\\sum_{k=0}^n f^{(k)}(a)(x-a)^k/k!$, after checking validity at $x$. Agreement of successive truncations is a practical check, not by itself a rigorous error bound.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Truncation retains local information while discarding the series tail. Proximity to the centre helps, but the validity interval and the omitted terms still matter for accuracy.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 63,
+      "section": "Using Taylor polynomials for approximation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-taylor-uniqueness",
+    "topicId": "MST124-11-coefficients",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "If a power series equals $f$ near $a$, how are its coefficients determined?",
+    "answer": "If $f(x)=\\sum_{k=0}^{\\infty}c_k(x-a)^k$ on an open interval containing $a$, then $c_k=f^{(k)}(a)/k!$. Thus the power-series representation about that centre is unique.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiating a power series at its centre isolates each coefficient. A different sequence of coefficients cannot represent the same function on a neighbourhood of that centre.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 64,
+      "section": "Uniqueness of Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-series-substitution-validity",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does substitution change a known power series and its validity condition?",
+    "answer": "If $f(u)=\\sum_{n=0}^{\\infty}c_nu^n$ is valid for $u$ in an interval $I$, substitution gives $f(g(x))=\\sum_{n=0}^{\\infty}c_n[g(x)]^n$ wherever $g(x)\\in I$. For example, a condition $|u|<1$ becomes $|g(x)|<1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A substitution carries both the algebraic expression and its validity restriction into the new variable. The original inequality must be solved for the new input, not simply copied unchanged.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 64,
+      "section": "Manipulating Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-termwise-series-calculus",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the termwise differentiation and integration rules for a power series?",
+    "answer": "Inside an open interval of validity, if $f(x)=\\sum_{n=0}^{\\infty}c_n(x-a)^n$, then $f'(x)=\\sum_{n=1}^{\\infty}n c_n(x-a)^{n-1}$ and $\\int f(x)\\,dx=C+\\sum_{n=0}^{\\infty}\\frac{c_n}{n+1}(x-a)^{n+1}$. Endpoint validity must be checked separately.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Power series permit these termwise operations in the interior of their convergence interval. Differentiation or integration can change endpoint behaviour, so endpoints need fresh consideration.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 64,
+      "section": "Manipulating Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-11-series-sum-product-validity",
+    "topicId": "MST124-11-approximation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Where are sums, differences and products of two Taylor series guaranteed valid?",
+    "answer": "If series about the same centre represent $f$ and $g$, their sum, difference and product represent $f+g$, $f-g$ and $fg$ throughout the intersection of the original intervals of validity. The resulting function’s series may also be valid on a larger interval.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Both original representations must hold at a point before they can safely be combined there. The overlap gives a guaranteed interval, not necessarily the largest possible one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 64,
+      "section": "Manipulating Taylor series"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-complex-addition-multiplication",
+    "topicId": "MST124-12-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall the Cartesian rules for adding and multiplying complex numbers.",
+    "answer": "$(a+bi)+(c+di)=(a+c)+(b+d)i$; $(a+bi)(c+di)=(ac-bd)+(ad+bc)i$, using $i^2=-1$, for real $a,b,c,d$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Addition pairs real and imaginary parts. In multiplication, the product of the two imaginary terms contributes negatively to the real part because the imaginary unit squares to minus one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 65,
+      "section": "Complex numbers and their arithmetic"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-complex-division",
+    "topicId": "MST124-12-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What conjugate-based formula divides two Cartesian complex numbers?",
+    "answer": "$\\frac{a+bi}{c+di}=\\frac{(a+bi)(c-di)}{c^2+d^2}=\\frac{ac+bd}{c^2+d^2}+i\\frac{bc-ad}{c^2+d^2}$, provided $c+di\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplying numerator and denominator by the denominator’s conjugate makes the denominator real. Only the denominator is being rationalised; both numerator and denominator must be multiplied.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 65,
+      "section": "Complex numbers and their arithmetic"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-negative-real-square-roots",
+    "topicId": "MST124-12-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the two square roots of a negative real number?",
+    "answer": "For $d>0$, the solutions of $z^2=-d$ are $z=\\pm i\\sqrt d$. Both roots are needed when solving the equation.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplication by the imaginary unit changes the sign of a positive real square. A quadratic equation has both opposite square-root choices, not just the principal one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 65,
+      "section": "Square roots of a negative real number"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-conjugate-algebra",
+    "topicId": "MST124-12-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does conjugation act on sums, products and quotients?",
+    "answer": "$\\overline{z\\pm w}=\\bar z\\pm\\bar w$, $\\overline{zw}=\\bar z\\bar w$, and $\\overline{z/w}=\\bar z/\\bar w$ for $w\\ne0$. For $z=a+bi$, $\\bar z=a-bi$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Conjugation reverses the imaginary part while respecting addition and multiplication. For a quotient, the original and conjugated denominators must both be nonzero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 65,
+      "section": "Properties of complex conjugates"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-modulus-cartesian",
+    "topicId": "MST124-12-polar",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is complex modulus calculated from Cartesian form?",
+    "answer": "For $z=a+bi$, $|z|=\\sqrt{a^2+b^2}$. If $z\\ne0$, its principal argument is chosen in $(-\\pi,\\pi]$; all its arguments differ by integer multiples of $2\\pi$. Zero has no argument.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Modulus is the Cartesian distance from the origin. An inverse-tangent calculation alone may choose the wrong quadrant for the argument, so the signs of both components matter.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 65,
+      "section": "Modulus and argument"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-conjugate-reciprocal",
+    "topicId": "MST124-12-arithmetic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do modulus and conjugation give the reciprocal of a complex number?",
+    "answer": "$z\\bar z=|z|^2$ and, for $z\\ne0$, $\\frac1z=\\frac{\\bar z}{|z|^2}$. For $z=a+bi$, the denominator is $a^2+b^2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplication by the conjugate gives a positive real denominator for every nonzero complex number. This is why the reciprocal formula fails only at zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 65,
+      "section": "Properties involving modulus"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-modulus-product-quotient",
+    "topicId": "MST124-12-polar",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are the modulus rules for products and quotients?",
+    "answer": "$|zw|=|z||w|$ and $|z/w|=|z|/|w|$ for $w\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplication multiplies radial distances and division divides them. The corresponding rotations affect arguments but do not alter these modulus rules.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 65,
+      "section": "Properties involving modulus"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-euler-polar-cartesian",
+    "topicId": "MST124-12-polar",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What formula connects Cartesian, polar and exponential complex forms?",
+    "answer": "$e^{i\\theta}=\\cos\\theta+i\\sin\\theta$, so $z=re^{i\\theta}=r(\\cos\\theta+i\\sin\\theta)$ has $a=r\\cos\\theta$ and $b=r\\sin\\theta$. For $z\\ne0$, $r=|z|>0$ and $\\theta$ is an argument in radians.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The real and imaginary parts are horizontal and vertical projections of the radius. Angles differing by a full turn give the same complex exponential.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 66,
+      "section": "Cartesian, polar and exponential form"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-euler-equation",
+    "topicId": "MST124-12-polar",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is Euler’s equation at angle $\\pi$?",
+    "answer": "$e^{i\\pi}+1=0$, equivalently $e^{i\\pi}=-1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The angle pi reaches the negative real point on the unit circle. Substitution into Euler’s formula makes the sine contribution vanish and the cosine contribution negative one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 66,
+      "section": "Euler’s equation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-polar-conjugate",
+    "topicId": "MST124-12-polar",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does conjugation change polar or exponential form?",
+    "answer": "If $z=re^{i\\theta}$, then $\\bar z=re^{-i\\theta}=r[\\cos(-\\theta)+i\\sin(-\\theta)]$. The modulus stays fixed and the argument changes sign, modulo $2\\pi$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Conjugation reflects the complex-plane point in the real axis. Reflection preserves distance from the origin and reverses the direction of angular measurement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 67,
+      "section": "Complex conjugates"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-polar-product-quotient",
+    "topicId": "MST124-12-polar",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do complex multiplication and division work in exponential form?",
+    "answer": "If $z=re^{i\\theta}$ and $w=se^{i\\phi}$, then $zw=rs\\,e^{i(\\theta+\\phi)}$ and $z/w=(r/s)e^{i(\\theta-\\phi)}$ when $s>0$. Arguments are added or subtracted modulo $2\\pi$; principal arguments may need adjustment.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Exponential multiplication adds angle exponents, while division subtracts them. The resulting angle need not already lie in the principal-argument interval.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 67,
+      "section": "Products and quotients"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-de-moivre",
+    "topicId": "MST124-12-powers-roots",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recall de Moivre’s formula and its exponent restriction.",
+    "answer": "For integer $n$, $[r(\\cos\\theta+i\\sin\\theta)]^n=r^n[\\cos(n\\theta)+i\\sin(n\\theta)]=r^ne^{in\\theta}$. Require $r>0$ for negative $n$; the formula is not a single-valued rule for arbitrary noninteger powers.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Integer powers repeatedly multiply moduli and add arguments. Noninteger powers need branch choices, so extending the same single-valued formula to them without qualification is unsafe.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 67,
+      "section": "De Moivre’s formula (formula for powers)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-polar-equality",
+    "topicId": "MST124-12-polar",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "When do two nonzero polar complex forms represent the same number?",
+    "answer": "For positive $r,s$, $re^{i\\theta}=se^{i\\phi}$ exactly when $r=s$ and $\\theta-\\phi=2k\\pi$ for some integer $k$. Zero is excluded because its argument is arbitrary rather than defined.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Equal moduli are not sufficient: the directions must also agree modulo complete turns. Positive radii exclude the ambiguity of assigning any angle to zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 67,
+      "section": "Equality"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-trig-complex-exponentials",
+    "topicId": "MST124-12-powers-roots",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express sine and cosine using complex exponentials.",
+    "answer": "$\\cos\\theta=\\frac{e^{i\\theta}+e^{-i\\theta}}2$ and $\\sin\\theta=\\frac{e^{i\\theta}-e^{-i\\theta}}{2i}$, for real $\\theta$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Adding Euler’s formulas for opposite angles isolates cosine; subtracting them isolates the imaginary sine term. The sine denominator must include the imaginary unit.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 67,
+      "section": "Formulas deduced from Euler’s formula"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-nth-complex-roots",
+    "topicId": "MST124-12-powers-roots",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are all $n$th roots of a nonzero complex number?",
+    "answer": "For $a=Re^{i\\phi}$ with $R>0$ and positive integer $n$, $z_k=R^{1/n}e^{i(\\phi+2k\\pi)/n}$, $k=0,1,\\ldots,n-1$. These are $n$ distinct roots, equally spaced on the circle of radius $R^{1/n}$. If $a=0$, the only root is $0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Comparing moduli fixes the radius, while adding complete turns before dividing the argument produces the distinct roots. Considering only one argument would miss the remaining solutions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 68,
+      "section": "To find the complex solutions of the equation zⁿ = a, where a ≠ 0"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-roots-of-unity",
+    "topicId": "MST124-12-powers-roots",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What are all $n$th roots of unity?",
+    "answer": "$z_k=e^{2\\pi ik/n}=\\cos(2\\pi k/n)+i\\sin(2\\pi k/n)$ for $k=0,\\ldots,n-1$, where $n$ is a positive integer. They lie equally spaced on the unit circle.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "These roots divide a full turn into equal angular steps. The index range excludes the final full-turn point because it would repeat the first root.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 68,
+      "section": "Roots of complex numbers"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST124-12-fundamental-theorem-algebra",
+    "topicId": "MST124-12-powers-roots",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What factorisation does the fundamental theorem of algebra guarantee?",
+    "answer": "If $P(z)=a_nz^n+\\cdots+a_0$ has degree $n\\ge1$ and $a_n\\ne0$, then $P(z)=a_n\\prod_{k=1}^n(z-z_k)$ for complex $z_k$, with repetitions allowed. Thus there are exactly $n$ roots when counted with multiplicity.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Repeated roots contribute repeated linear factors. Counting distinct root locations alone can therefore give fewer roots than the polynomial’s degree without contradicting the theorem.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST124 Handbook",
+      "page": 68,
+      "section": "The fundamental theorem of algebra"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  }
+]

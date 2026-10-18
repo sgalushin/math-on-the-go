@@ -10,7 +10,7 @@ use axum::http::StatusCode;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
-/// Only `session` is returned over the wire. Queue keys and worker claims are private.
+/// Only `session` is public. A generation ID fences workers across migrations.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SessionRecord {
@@ -19,6 +19,10 @@ pub struct SessionRecord {
     pub plans: Vec<GenerationPlan>,
     pub queue: Vec<String>,
     pub worker_started: bool,
+    #[serde(default)]
+    pub handbook_version: u8,
+    #[serde(default)]
+    pub generation_id: String,
 }
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -43,46 +47,30 @@ fn replay(record: SessionRecord, request: &CreateSession) -> ApiResult<PracticeS
     Ok(record.session)
 }
 
-pub async fn create(
+/// Prepare immutable handbook snapshots and task-only plans before committing.
+pub async fn prepare(
     state: &AppState,
     user: &str,
-    request: CreateSession,
-) -> ApiResult<PracticeSession> {
-    valid_id(&request.request_id)?;
-    if !(1..=20).contains(&request.length) {
-        return Err(ApiError::bad("Session length must be between 1 and 20"));
-    }
-    let session_key = key(&request.request_id);
-    if let Some(previous) = state.store.get::<SessionRecord>(user, &session_key).await? {
-        return replay(previous.value, &request);
-    }
+    request: &CreateSession,
+    created_at: i64,
+) -> ApiResult<(SessionRecord, Vec<Write>)> {
     let settings = state.settings(user).await?;
-    practice::validate_selection(&state.catalog, &settings, &request.selection)?;
+    let eligible = practice::validate_selection(&state.catalog, &settings, &request.selection)?;
     let timestamp = now();
     let review = request.selection.mode == PracticeMode::Review;
-    let mut record = SessionRecord {
-        session: PracticeSession {
-            id: request.request_id.clone(),
-            status: if review {
-                SessionStatus::Ready
-            } else {
-                SessionStatus::Generating
-            },
-            request: request.selection.clone(),
-            length: request.length,
-            generated: 0,
-            attempt_ids: vec![],
-            error: None,
-            created_at: timestamp,
-            updated_at: timestamp,
-        },
-        creation: request.clone(),
-        plans: vec![],
-        queue: vec![],
-        worker_started: false,
+    let formula = request.selection.kind == RequestedKind::Formula;
+    if review && request.selection.kind == RequestedKind::Task {
+        return Err(ApiError::bad("Scheduled review contains flashcards only"));
+    }
+    let fixed_limit = if review || formula {
+        request.length
+    } else if request.selection.kind == RequestedKind::Mixed {
+        request.length / 2
+    } else {
+        0
     };
-    let mut writes = vec![];
-    if review {
+    let mut fixed = vec![];
+    if fixed_limit > 0 {
         let cards: HashMap<_, _> = state
             .store
             .list::<CardRecord>(user, "CARD#")
@@ -91,23 +79,59 @@ pub async fn create(
             .map(|r| (r.value.question_id, r.value.schedule))
             .collect();
         let questions = state.questions(user).await?;
-        let queue = practice::review_queue(
-            &questions,
-            &state.catalog,
-            &settings,
-            &request.selection,
-            &cards,
-            timestamp,
-            request.length,
-        )?;
-        record.session.length = queue.len() as u32;
-        record.session.generated = queue.len() as u32;
-        for (slot, question) in queue.iter().enumerate() {
-            let question_key = format!("SESSIONQUESTION#{}#{slot}", request.request_id);
-            writes.push(Write::new(&question_key, question, None)?);
-            record.queue.push(question_key);
-        }
+        fixed = if review {
+            practice::review_queue(&questions, &eligible, &cards, timestamp, fixed_limit)?
+        } else {
+            practice::formula_queue(&questions, &eligible, &cards, timestamp, fixed_limit, true)?
+        };
+    }
+    if formula && fixed.is_empty() {
+        return Err(ApiError::conflict(
+            "No handbook formulas are available in this scope; choose Tasks instead",
+        ));
+    }
+    let length = if review || formula {
+        fixed.len() as u32
     } else {
+        request.length
+    };
+    let mut record = SessionRecord {
+        session: PracticeSession {
+            id: request.request_id.clone(),
+            status: SessionStatus::Ready,
+            request: request.selection.clone(),
+            length,
+            generated: fixed.len() as u32,
+            attempt_ids: vec![],
+            error: None,
+            created_at,
+            updated_at: timestamp,
+        },
+        creation: request.clone(),
+        plans: vec![],
+        queue: vec![String::new(); length as usize],
+        worker_started: false,
+        handbook_version: 1,
+        generation_id: uuid::Uuid::new_v4().to_string(),
+    };
+    let mut writes = vec![];
+    for (index, question) in fixed.iter().enumerate() {
+        let slot = if !review && !formula {
+            index * 2 + 1
+        } else {
+            index
+        };
+        let question_key = format!("SESSIONQUESTION#{}#handbook-1#{slot}", request.request_id);
+        writes.push(Write::new(&question_key, question, None)?);
+        record.queue[slot] = question_key;
+    }
+    let task_slots: Vec<_> = record
+        .queue
+        .iter()
+        .enumerate()
+        .filter_map(|(slot, key)| key.is_empty().then_some(slot))
+        .collect();
+    if !task_slots.is_empty() {
         if state.openrouter_key.is_none() && std::env::var_os("AWS_LAMBDA_RUNTIME_API").is_none() {
             return Err(ApiError::unavailable(
                 "AI generation is not configured on this server",
@@ -118,49 +142,168 @@ pub async fn create(
             &settings,
             &request.selection,
             &state.attempts(user).await?,
-            request.length,
+            task_slots.len() as u32,
         )?;
-    }
-    writes.push(Write::new(&session_key, &record, None)?);
-    match state.store.transaction(user, writes).await {
-        Ok(()) => {}
-        Err(error) if error.0 == StatusCode::CONFLICT => {
-            let previous = state
-                .store
-                .get::<SessionRecord>(user, &session_key)
-                .await?
-                .ok_or(error)?;
-            return replay(previous.value, &request);
+        for (plan, slot) in record.plans.iter_mut().zip(task_slots) {
+            plan.slot = slot;
         }
-        Err(error) => return Err(error),
+        record.session.status = SessionStatus::Generating;
     }
-    // Only the winner of the conditional create dispatches. A crashed dispatch is
-    // failed by stale-session handling, never retried into duplicate model calls.
-    if !review {
+    Ok((record, writes))
+}
+
+async fn dispatch(state: &AppState, user: &str, record: &SessionRecord) -> ApiResult<()> {
+    if record.session.status == SessionStatus::Generating {
         if let Err(error) = ai::dispatch(
             state.clone(),
             WorkerEvent {
                 user_id: user.into(),
-                session_id: request.request_id,
+                session_id: record.session.id.clone(),
             },
         )
         .await
         {
-            fail(state, user, &record.session.id, error.1).await?;
-            return get(state, user, &record.session.id).await;
+            fail(
+                state,
+                user,
+                &record.session.id,
+                &record.generation_id,
+                error.1,
+            )
+            .await?;
         }
     }
-    Ok(record.session)
+    Ok(())
+}
+
+pub async fn create(
+    state: &AppState,
+    user: &str,
+    request: CreateSession,
+) -> ApiResult<PracticeSession> {
+    valid_id(&request.request_id)?;
+    if !(1..=20).contains(&request.length) {
+        return Err(ApiError::bad("Session length must be between 1 and 20"));
+    }
+    if let Some(previous) = state
+        .store
+        .get::<SessionRecord>(user, &key(&request.request_id))
+        .await?
+    {
+        // Reject a changed replay before making any migration writes.
+        replay(previous.value.clone(), &request)?;
+        return replay(
+            load(state, user, &request.request_id).await?.value,
+            &request,
+        );
+    }
+    let (record, mut writes) = prepare(state, user, &request, now()).await?;
+    writes.push(Write::new(key(&request.request_id), &record, None)?);
+    match state.store.transaction(user, writes).await {
+        Ok(()) => {}
+        Err(error) if error.0 == StatusCode::CONFLICT => {
+            return replay(
+                load(state, user, &request.request_id).await?.value,
+                &request,
+            );
+        }
+        Err(error) => return Err(error),
+    }
+    dispatch(state, user, &record).await?;
+    Ok(state
+        .store
+        .get::<SessionRecord>(user, &key(&record.session.id))
+        .await?
+        .ok_or_else(ApiError::missing)?
+        .value
+        .session)
+}
+
+const RETIRED_NOTICE: &str = "This session used retired generated formula cards. Your attempts and review history are preserved. Start a new session to practise the fixed handbook formulas.";
+
+/// Conditional replacement fences old queue transitions and workers in the same
+/// transaction as its immutable fixed snapshots. No historical rows are removed.
+async fn load(state: &AppState, user: &str, id: &str) -> ApiResult<Record<SessionRecord>> {
+    for _ in 0..5 {
+        let mut stored = state
+            .store
+            .get::<SessionRecord>(user, &key(id))
+            .await?
+            .ok_or_else(ApiError::missing)?;
+        if stored.value.handbook_version == 1
+            || stored.value.session.status == SessionStatus::Finished
+        {
+            return Ok(stored);
+        }
+        let record = &mut stored.value;
+        let formula = record.session.request.kind == RequestedKind::Formula;
+        let review = record.session.request.mode == PracticeMode::Review;
+        let mut incompatible = formula || record.plans.iter().any(|p| p.kind == Kind::Flashcard);
+        let mut presented_generated = false;
+        for attempt_id in &record.session.attempt_ids {
+            if let Some(attempt) = state
+                .store
+                .get::<Attempt>(user, &format!("ATTEMPT#{attempt_id}"))
+                .await?
+            {
+                presented_generated |= attempt.value.question.kind == Kind::Flashcard
+                    && !state.bank.iter().any(|q| {
+                        practice::is_handbook_card(q) && q.id == attempt.value.question.id
+                    });
+            }
+        }
+        for question_key in &record.queue {
+            if let Some(question) = state.store.get::<Question>(user, question_key).await? {
+                incompatible |= question.value.kind == Kind::Flashcard
+                    && !state
+                        .bank
+                        .iter()
+                        .any(|q| practice::is_handbook_card(q) && q.id == question.value.id);
+            }
+        }
+        let mut writes = vec![];
+        if record.session.attempt_ids.is_empty() && (formula || review) {
+            match prepare(state, user, &record.creation, record.session.created_at).await {
+                Ok((replacement, snapshots)) => {
+                    *record = replacement;
+                    writes = snapshots;
+                }
+                Err(error)
+                    if error.0 == StatusCode::CONFLICT || error.0 == StatusCode::BAD_REQUEST =>
+                {
+                    record.session.status = SessionStatus::Finished;
+                    record.session.error = Some(format!("{RETIRED_NOTICE} {}", error.1));
+                    record.plans.clear();
+                    record.session.updated_at = now();
+                }
+                Err(error) => return Err(error),
+            }
+        } else if presented_generated || incompatible {
+            record.session.status = SessionStatus::Finished;
+            record.session.error = Some(RETIRED_NOTICE.into());
+            record.session.updated_at = now();
+            record.plans.clear();
+        }
+        record.handbook_version = 1;
+        writes.push(Write::new(key(id), record, Some(stored.version))?);
+        match state.store.transaction(user, writes).await {
+            Ok(()) => {
+                stored.version += 1;
+                return Ok(stored);
+            }
+            Err(error) if error.0 == StatusCode::CONFLICT => continue,
+            Err(error) => return Err(error),
+        }
+    }
+    Err(ApiError::conflict(
+        "Session changed concurrently; reload the session",
+    ))
 }
 
 pub async fn get(state: &AppState, user: &str, id: &str) -> ApiResult<PracticeSession> {
     valid_id(id)?;
     for _ in 0..5 {
-        let mut record = state
-            .store
-            .get::<SessionRecord>(user, &key(id))
-            .await?
-            .ok_or_else(ApiError::missing)?;
+        let mut record = load(state, user, id).await?;
         if record.value.session.status != SessionStatus::Generating
             || now() - record.value.session.updated_at <= ai::STALE_SESSION_MILLIS
         {
@@ -184,14 +327,16 @@ pub async fn get(state: &AppState, user: &str, id: &str) -> ApiResult<PracticeSe
     ))
 }
 
-/// A conditional claim is durable before any provider request. Duplicate worker
-/// deliveries (including after interruption) must never rerun a pipeline.
+/// A durable conditional claim precedes every provider request.
 pub async fn claim(state: &AppState, user: &str, id: &str) -> ApiResult<Option<SessionRecord>> {
-    let Some(mut record) = state.store.get::<SessionRecord>(user, &key(id)).await? else {
-        return Err(ApiError::missing());
-    };
+    let mut record = load(state, user, id).await?;
     if record.value.worker_started || record.value.session.status != SessionStatus::Generating {
         return Ok(None);
+    }
+    if record.value.plans.is_empty() || record.value.plans.iter().any(|p| p.kind != Kind::Task) {
+        return Err(ApiError::conflict(
+            "Only task generation plans may reach the worker",
+        ));
     }
     record.value.worker_started = true;
     record.value.session.updated_at = now();
@@ -206,18 +351,32 @@ pub async fn claim(state: &AppState, user: &str, id: &str) -> ApiResult<Option<S
     }
 }
 
-pub async fn progress(state: &AppState, user: &str, id: &str, generated: u32) -> ApiResult<()> {
+fn active_worker(record: &SessionRecord, generation_id: &str) -> ApiResult<()> {
+    if record.session.status != SessionStatus::Generating
+        || record.handbook_version != 1
+        || record.generation_id != generation_id
+    {
+        return Err(ApiError::conflict(
+            "Session preparation is no longer active",
+        ));
+    }
+    Ok(())
+}
+pub async fn progress(
+    state: &AppState,
+    user: &str,
+    id: &str,
+    generation_id: &str,
+    generated: u32,
+) -> ApiResult<()> {
     let mut record = state
         .store
         .get::<SessionRecord>(user, &key(id))
         .await?
         .ok_or_else(ApiError::missing)?;
-    if record.value.session.status != SessionStatus::Generating {
-        return Err(ApiError::conflict(
-            "Session preparation is no longer active",
-        ));
-    }
-    record.value.session.generated = generated;
+    active_worker(&record.value, generation_id)?;
+    let fixed = record.value.session.length - record.value.plans.len() as u32;
+    record.value.session.generated = fixed + generated;
     record.value.session.updated_at = now();
     state
         .store
@@ -227,29 +386,48 @@ pub async fn progress(state: &AppState, user: &str, id: &str, generated: u32) ->
 
 pub fn publish_queue(record: &mut SessionRecord, questions: &[Question]) -> ApiResult<()> {
     if record.session.status != SessionStatus::Generating
-        || questions.len() != record.session.length as usize
+        || record.handbook_version != 1
+        || questions.len() != record.plans.len()
+        || record.queue.len() != record.session.length as usize
     {
         return Err(ApiError::conflict(
             "Only a complete active session can be published",
         ));
     }
     let mut prompts = std::collections::HashSet::new();
-    if questions.iter().any(|q| {
-        !prompts.insert(
-            q.prompt
+    let mut slots = std::collections::HashSet::new();
+    for (plan, question) in record.plans.iter().zip(questions) {
+        if question.kind != Kind::Task
+            || plan.kind != Kind::Task
+            || plan.slot >= record.queue.len()
+            || !record.queue[plan.slot].is_empty()
+            || !slots.insert(plan.slot)
+        {
+            return Err(ApiError::bad("Only planned task slots may be generated"));
+        }
+        if !prompts.insert(
+            question
+                .prompt
                 .split_whitespace()
                 .collect::<Vec<_>>()
                 .join(" ")
                 .to_lowercase(),
-        )
-    }) {
-        return Err(ApiError::bad("Independent pipelines produced duplicate question prompts; the session was not published"));
+        ) {
+            return Err(ApiError::bad("Independent pipelines produced duplicate question prompts; the session was not published"));
+        }
     }
-    record.queue = questions
+    if record
+        .queue
         .iter()
-        .map(|q| format!("QUESTION#{}", q.id))
-        .collect();
-    record.session.generated = questions.len() as u32;
+        .enumerate()
+        .any(|(slot, key)| key.is_empty() && !slots.contains(&slot))
+    {
+        return Err(ApiError::bad("A prepared question slot is missing"));
+    }
+    for (plan, question) in record.plans.iter().zip(questions) {
+        record.queue[plan.slot] = format!("QUESTION#{}", question.id);
+    }
+    record.session.generated = record.session.length;
     record.session.status = SessionStatus::Ready;
     record.session.updated_at = now();
     Ok(())
@@ -259,6 +437,7 @@ pub async fn publish(
     state: &AppState,
     user: &str,
     id: &str,
+    generation_id: &str,
     questions: Vec<Question>,
 ) -> ApiResult<()> {
     let mut record = state
@@ -266,25 +445,30 @@ pub async fn publish(
         .get::<SessionRecord>(user, &key(id))
         .await?
         .ok_or_else(ApiError::missing)?;
+    active_worker(&record.value, generation_id)?;
     publish_queue(&mut record.value, &questions)?;
     let mut writes = questions
         .iter()
         .map(|q| Write::new(format!("QUESTION#{}", q.id), q, None))
         .collect::<ApiResult<Vec<_>>>()?;
     writes.push(Write::new(key(id), &record.value, Some(record.version))?);
-    // All questions and the ready metadata become visible in the same DynamoDB
-    // transaction. No partial bank additions or partial ready queue can escape.
     state.store.transaction(user, writes).await
 }
 
-pub async fn fail(state: &AppState, user: &str, id: &str, message: String) -> ApiResult<()> {
+pub async fn fail(
+    state: &AppState,
+    user: &str,
+    id: &str,
+    generation_id: &str,
+    message: String,
+) -> ApiResult<()> {
     for _ in 0..5 {
         let mut record = state
             .store
             .get::<SessionRecord>(user, &key(id))
             .await?
             .ok_or_else(ApiError::missing)?;
-        if record.value.session.status != SessionStatus::Generating {
+        if active_worker(&record.value, generation_id).is_err() {
             return Ok(());
         }
         record.value.session.status = SessionStatus::Failed;
@@ -310,7 +494,11 @@ pub fn next_slot(
 ) -> ApiResult<usize> {
     if record.session.status != SessionStatus::Ready {
         return Err(ApiError::conflict(
-            "Session is not ready for another question",
+            record
+                .session
+                .error
+                .clone()
+                .unwrap_or_else(|| "Session is not ready for another question".into()),
         ));
     }
     if record.session.attempt_ids.last() != request.after_attempt_id.as_ref() {
@@ -347,6 +535,8 @@ pub async fn next(
     valid_id(&request.event_id)?;
     let event_key = format!("SESSIONNEXT#{}", request.event_id);
     for _ in 0..5 {
+        // Migrate even when replaying an old event, but preserve its exact snapshot.
+        let mut record = load(state, user, id).await?;
         if let Some(previous) = state.store.get::<NextEvent>(user, &event_key).await? {
             if previous.value.session_id != id || previous.value.request != request {
                 return Err(ApiError::conflict(
@@ -355,11 +545,6 @@ pub async fn next(
             }
             return Ok(previous.value.result);
         }
-        let mut record = state
-            .store
-            .get::<SessionRecord>(user, &key(id))
-            .await?
-            .ok_or_else(ApiError::missing)?;
         let current = match record.value.session.attempt_ids.last() {
             Some(attempt_id) => {
                 state
@@ -376,6 +561,14 @@ pub async fn next(
             .await?
             .ok_or_else(|| ApiError::unavailable("Prepared question is missing"))?
             .value;
+        if question.kind == Kind::Flashcard
+            && !state
+                .bank
+                .iter()
+                .any(|q| practice::is_handbook_card(q) && q.id == question.id)
+        {
+            return Err(ApiError::conflict(RETIRED_NOTICE));
+        }
         let attempt = Attempt::new(question, now());
         record.value.session.attempt_ids.push(attempt.id.clone());
         record.value.session.updated_at = now();
@@ -403,11 +596,7 @@ pub async fn next(
 pub async fn finish(state: &AppState, user: &str, id: &str) -> ApiResult<PracticeSession> {
     valid_id(id)?;
     for _ in 0..5 {
-        let Record { mut value, version } = state
-            .store
-            .get::<SessionRecord>(user, &key(id))
-            .await?
-            .ok_or_else(ApiError::missing)?;
+        let Record { mut value, version } = load(state, user, id).await?;
         if value.session.status == SessionStatus::Finished {
             return Ok(value.session);
         }

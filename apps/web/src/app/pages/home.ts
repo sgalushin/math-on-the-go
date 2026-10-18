@@ -19,7 +19,7 @@ import { Store, messageOf } from '../core/store';
           <p>
             @if (store.session(); as session) {
               @if (session.status === 'generating') {
-                Preparing your session · verified {{ session.generated }} / {{ session.length }}.
+                Preparing tasks · {{ session.generated }} / {{ session.length }} questions ready.
               } @else if (session.status === 'failed') {
                 Preparation needs your attention.
               } @else {
@@ -39,13 +39,13 @@ import { Store, messageOf } from '../core/store';
       <a class="start-card formula-card" routerLink="/practice" [queryParams]="{ kind: 'formula' }">
         <span class="card-index">01 / FORMULAS</span>
         <h2>Formula flashcards<span aria-hidden="true">↗</span></h2>
-        <p>Recall formulas, identities and mathematical rules from your studied units.</p>
-        <span class="card-foot">A new formula-only practice session</span>
+        <p>Fixed formulas, identities and rules from your MST124 and MST125 handbooks.</p>
+        <span class="card-foot">Opens immediately · no AI generation</span>
       </a>
       <a class="start-card review-card" routerLink="/practice" [queryParams]="{ mode: 'review' }"
         ><span class="card-index">02 / REVIEW</span>
         <h2>Scheduled review<span aria-hidden="true">↗</span></h2>
-        <p>Revisit existing cards with spaced repetition.</p>
+        <p>Revisit due and new handbook cards with spaced repetition.</p>
         @if (store.progress.hasValue()) {
           <span class="card-foot"
             >{{ store.progress.value().dueFlashcards }} due ·

@@ -2,7 +2,7 @@ use crate::{
     model::*,
     schedule::CardState,
     store::{ApiError, ApiResult},
-    variants, AppState,
+    AppState,
 };
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, HashMap, HashSet};
@@ -113,7 +113,7 @@ pub async fn progress(state: &AppState, user: &str, now: i64) -> ApiResult<Progr
     let eligible = eligible_topics(&state.catalog, &settings, &settings.studied_unit_ids, &[]);
     let available: Vec<_> = questions
         .iter()
-        .filter(|q| q.kind == Kind::Flashcard && !q.flagged && eligible.contains(&q.topic_id))
+        .filter(|q| is_handbook_card(q) && !q.flagged && eligible.contains(&q.topic_id))
         .collect();
     let new_flashcards = available
         .iter()
@@ -126,7 +126,7 @@ pub async fn progress(state: &AppState, user: &str, now: i64) -> ApiResult<Progr
     let reviewed_flashcards = questions
         .iter()
         .filter(|q| {
-            q.kind == Kind::Flashcard && !q.flagged && cards.get(&q.id).is_some_and(|c| c.reps > 0)
+            is_handbook_card(q) && !q.flagged && cards.get(&q.id).is_some_and(|c| c.reps > 0)
         })
         .count();
     let independent = topics.iter().map(|t| t.independent).sum();
@@ -194,7 +194,6 @@ pub struct GenerationPlan {
     pub topic_id: String,
     pub kind: Kind,
     pub difficulty: Difficulty,
-    pub formula_only: bool,
 }
 
 pub fn validate_selection(
@@ -231,6 +230,11 @@ pub fn generation_plan(
     length: u32,
 ) -> ApiResult<Vec<GenerationPlan>> {
     let eligible = validate_selection(catalog, settings, request)?;
+    if request.kind == RequestedKind::Formula {
+        return Err(ApiError::bad(
+            "Formula sessions use the fixed handbook deck",
+        ));
+    }
     let stats = topic_stats(catalog, attempts);
     let mut topics: Vec<_> = stats
         .iter()
@@ -253,12 +257,7 @@ pub fn generation_plan(
         .map(|slot| GenerationPlan {
             slot,
             topic_id: topics[slot % topics.len()].topic_id.clone(),
-            kind: match request.kind {
-                RequestedKind::Formula => Kind::Flashcard,
-                RequestedKind::Task => Kind::Task,
-                RequestedKind::Mixed if slot % 2 == 1 => Kind::Flashcard,
-                RequestedKind::Mixed => Kind::Task,
-            },
+            kind: Kind::Task,
             difficulty: match request.difficulty {
                 RequestedDifficulty::Quick => Difficulty::Quick,
                 RequestedDifficulty::Standard => Difficulty::Standard,
@@ -267,55 +266,81 @@ pub fn generation_plan(
                     [Difficulty::Quick, Difficulty::Standard, Difficulty::Stretch][slot % 3]
                 }
             },
-            formula_only: request.kind == RequestedKind::Formula,
         })
         .collect())
 }
 
 pub fn review_queue(
     questions: &[Question],
-    catalog: &Catalog,
-    settings: &Settings,
-    request: &PracticeSelection,
+    eligible: &HashSet<String>,
     cards: &HashMap<String, CardState>,
     now: i64,
     length: u32,
 ) -> ApiResult<Vec<Question>> {
-    let eligible = validate_selection(catalog, settings, request)?;
-    if request.kind == RequestedKind::Task {
-        return Err(ApiError::bad("Scheduled review contains flashcards only"));
+    let queue = formula_queue(questions, eligible, cards, now, length, false)?;
+    if queue.is_empty() {
+        return Err(ApiError::conflict(
+            "No distinct due or new handbook flashcards are available in this scope",
+        ));
     }
+    Ok(queue)
+}
+
+pub fn is_handbook_card(q: &Question) -> bool {
+    let prefix = if q.source.handbook == "MST124 Handbook" {
+        "formula-MST124-"
+    } else if q.source.handbook == "MST125 Handbook" {
+        "formula-MST125-"
+    } else {
+        return false;
+    };
+    q.id.starts_with(prefix)
+        && q.kind == Kind::Flashcard
+        && q.difficulty == Difficulty::Quick
+        && q.answer_format == AnswerFormat::SelfAssessed
+        && q.verification.method == "handbook"
+        && q.verification.models.is_empty()
+        && q.verification.checked_at.is_none()
+        && q.template.is_none()
+        && q.graph.is_none()
+        && q.accepted_answers.is_empty()
+        && q.choices.is_empty()
+}
+
+/// Due cards first, then unseen cards; optional practice may include future cards.
+/// Fixed IDs are never canonicalized or remapped onto legacy generated schedules.
+pub fn formula_queue(
+    questions: &[Question],
+    eligible: &HashSet<String>,
+    cards: &HashMap<String, CardState>,
+    now: i64,
+    length: u32,
+    include_future: bool,
+) -> ApiResult<Vec<Question>> {
     let mut candidates: Vec<_> = questions
         .iter()
         .filter(|q| {
-            !q.flagged
-                && q.kind == Kind::Flashcard
+            is_handbook_card(q)
+                && !q.flagged
                 && eligible.contains(&q.topic_id)
-                && cards
-                    .get(variants::canonical(&q.id))
-                    .is_none_or(|c| c.due <= now)
+                && (include_future || cards.get(&q.id).is_none_or(|c| c.due <= now))
         })
         .collect();
     candidates.sort_by(|a, b| {
-        let score = |q: &Question| {
-            let card = cards.get(variants::canonical(&q.id));
-            (u8::from(card.is_none()), card.map_or(0, |c| c.due))
+        let score = |q: &Question| match cards.get(&q.id) {
+            Some(card) if card.due <= now => (0, card.due),
+            None => (1, 0),
+            Some(card) => (2, card.due),
         };
         score(a).cmp(&score(b)).then_with(|| a.id.cmp(&b.id))
     });
     let mut seen = HashSet::new();
-    let queue: Vec<_> = candidates
+    Ok(candidates
         .into_iter()
-        .filter(|q| seen.insert(variants::canonical(&q.id).to_owned()))
+        .filter(|q| seen.insert(&q.id))
         .take(length as usize)
         .cloned()
-        .collect();
-    if queue.is_empty() {
-        return Err(ApiError::conflict(
-            "No distinct due or new flashcards are available in this scope",
-        ));
-    }
-    Ok(queue)
+        .collect())
 }
 #[cfg(test)]
 mod tests {

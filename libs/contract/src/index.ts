@@ -35,7 +35,7 @@ export interface Graph {
   series: { label: string; points: { x: number; y: number }[] }[];
 }
 export interface Verification {
-  method: 'deterministic' | 'independent-model' | 'self-assessed';
+  method: 'handbook' | 'deterministic' | 'independent-model' | 'self-assessed';
   models: string[];
   checkedAt: number | null;
 }

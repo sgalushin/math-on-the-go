@@ -1,0 +1,4082 @@
+[
+  {
+    "id": "formula-MST125-3-division-theorem",
+    "topicId": "MST125-3-euclid",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the division theorem, including the remainder bounds.",
+    "answer": "For $a\\in\\mathbb Z$ and $n\\in\\mathbb Z_{>0}$, unique integers $q,r$ satisfy $a=qn+r$, $0\\le r<n$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The remainder must be non-negative even when the dividend is negative; its strict upper bound makes the quotient and remainder unique.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 73,
+      "section": "The division theorem"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-euclid-remainder-rule",
+    "topicId": "MST125-3-euclid",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which remainder gives the HCF in Euclid’s algorithm?",
+    "answer": "Apply $r_{k-1}=q_kr_k+r_{k+1}$ with $0\\le r_{k+1}<r_k$ until a zero remainder occurs. The last nonzero remainder is $\\gcd(a,b)$ (initially $a>b>0$).",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Replacing a pair of positive integers by the divisor and remainder preserves their common divisors, so the final nonzero remainder is their HCF.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 73,
+      "section": "Euclid’s algorithm"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-bezout",
+    "topicId": "MST125-3-euclid",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State Bézout’s identity.",
+    "answer": "For integers $a,b$, not both zero, there exist $v,w\\in\\mathbb Z$ with $av+bw=\\gcd(a,b)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Backwards substitution through Euclid’s algorithm expresses the HCF as an integer linear combination; the coefficients need not be positive or unique.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 74,
+      "section": "Bézout’s identity"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-congruence-criterion",
+    "topicId": "MST125-3-modular",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the divisibility criterion for congruence modulo $n$.",
+    "answer": "For $n\\in\\mathbb Z_{>0}$, $a\\equiv b\\pmod n\\iff n\\mid(a-b)\\iff a=b+nk$ for some $k\\in\\mathbb Z$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Two integers have the same remainder precisely when their difference is a whole multiple of the modulus.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 75,
+      "section": "Congruences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-least-residue",
+    "topicId": "MST125-3-modular",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is the least residue obtained from a division equation?",
+    "answer": "If $a=qn+r$ with $0\\le r<n$, then $a\\equiv r\\pmod n$ and $r$ is its least residue.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The restriction to the interval from zero up to, but not including, the modulus chooses one representative from each congruence class.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 75,
+      "section": "Residues"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-combine-congruences",
+    "topicId": "MST125-3-modular",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How may congruences with the same modulus be added, subtracted and multiplied?",
+    "answer": "If $a\\equiv b\\pmod n$ and $c\\equiv d\\pmod n$, then $a+c\\equiv b+d$, $a-c\\equiv b-d$ and $ac\\equiv bd\\pmod n$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differences between corresponding expressions remain multiples of the common modulus. The moduli must agree before these rules are applied.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 75,
+      "section": "Rules for combining congruences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-congruence-powers",
+    "topicId": "MST125-3-modular",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What rule allows powers to be reduced modulo $n$?",
+    "answer": "$a\\equiv b\\pmod n\\implies a^m\\equiv b^m\\pmod n$ for every positive integer $m$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Repeated multiplication preserves congruence, so a convenient residue can replace a base before taking a positive integer power.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 75,
+      "section": "Rules for combining congruences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-fermat",
+    "topicId": "MST125-3-modular",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State Fermat’s little theorem with its hypotheses.",
+    "answer": "If $p$ is prime and $p\\nmid a$, then $a^{p-1}\\equiv1\\pmod p$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Primality of the modulus and the exclusion of multiples of that prime are essential hypotheses for this exponent reduction.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 75,
+      "section": "Fermat’s little theorem"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-digit-sum-tests",
+    "topicId": "MST125-3-modular",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the digit-sum tests for divisibility by $3$ and $9$.",
+    "answer": "For a base-ten integer $a$ with digit sum $s$, $3\\mid a\\iff3\\mid s$ and $9\\mid a\\iff9\\mid s$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "In base ten, each place value is congruent to one modulo both three and nine, so replacing a number by its digit sum preserves these divisibility tests.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 75,
+      "section": "Divisibility tests"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-inverse-existence",
+    "topicId": "MST125-3-inverses",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "When does an integer have a multiplicative inverse modulo $n$?",
+    "answer": "$av\\equiv1\\pmod n$ is solvable exactly when $\\gcd(a,n)=1$. If $av+nw=1$, then $v$ is such an inverse.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Bézout’s identity gives an inverse when the HCF is one; a common divisor greater than one would have to divide one if an inverse existed.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 76,
+      "section": "Multiplicative inverses"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-coprime-linear-congruence",
+    "topicId": "MST125-3-inverses",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is $ax\\equiv b\\pmod n$ solved when $a$ is invertible?",
+    "answer": "If $av\\equiv1\\pmod n$, then all solutions are $x\\equiv vb\\pmod n$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplication by the inverse removes the coefficient of the unknown without changing the modulus.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 76,
+      "section": "Solutions of the linear congruence ax ≡ b (mod n)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-general-linear-congruence",
+    "topicId": "MST125-3-inverses",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the solvability and reduction rule for a general linear congruence.",
+    "answer": "Let $d=\\gcd(a,n)$. If $d\\nmid b$, $ax\\equiv b\\pmod n$ has no solutions. If $d\\mid b$, it is equivalent to $\\frac adx\\equiv\\frac bd\\pmod{n/d}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Every possible left-hand side is divisible by the HCF. When the right-hand side shares this divisor, divide the entire congruence, including its modulus.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 76,
+      "section": "Solutions of the linear congruence ax ≡ b (mod n)"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-3-affine-cipher",
+    "topicId": "MST125-3-inverses",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the enciphering and deciphering rules of an affine cipher.",
+    "answer": "$E(x)\\equiv ax+b\\pmod{26}$, with $\\gcd(a,26)=1$. If $av\\equiv1\\pmod{26}$, then $D(y)\\equiv v(y-b)\\pmod{26}$. More generally use modulus $n\\ge2$ with $\\gcd(a,n)=1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The coprimality condition makes multiplication by the cipher coefficient reversible. Deciphering subtracts the offset before applying the multiplicative inverse.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 77,
+      "section": "Deciphering rule for an affine cipher"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-focus-directrix",
+    "topicId": "MST125-4-eccentricity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the focus–directrix equation and its eccentricity classification.",
+    "answer": "$PF=e\\,Pd$, where $Pd$ is perpendicular distance to a directrix not containing $F$. For $0<e<1$: ellipse; $e=1$: parabola; $e>1$: hyperbola. A circle does not have this focus–directrix property.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Eccentricity is a ratio of distances, and the point-to-line distance is perpendicular. The three ranges separate the noncircular conic types.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 79,
+      "section": "Focus–directrix definitions of conics"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-ellipse-equation",
+    "topicId": "MST125-4-standard",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the standard horizontal ellipse equation and its vertices.",
+    "answer": "$\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1$, $a>b>0$; vertices $(\\pm a,0),(0,\\pm b)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The larger denominator determines the horizontal major axis; setting either coordinate to zero gives the corresponding axis endpoints.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-ellipse-focus",
+    "topicId": "MST125-4-eccentricity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the eccentricity, foci and directrices of $x^2/a^2+y^2/b^2=1$, $a>b>0$.",
+    "answer": "$e=\\sqrt{1-b^2/a^2}$; foci $(\\pm ae,0)$; directrices $x=\\pm a/e$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "For a horizontal ellipse, the focal distance from the centre is smaller than the major semiaxis, which keeps the eccentricity between zero and one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-parabola-equation",
+    "topicId": "MST125-4-standard",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the standard right-opening parabola equation, vertex, focus and directrix.",
+    "answer": "$y^2=4ax$, $a>0$; vertex $(0,0)$, focus $(a,0)$, directrix $x=-a$; eccentricity $e=1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The vertex is midway between the focus and directrix, and the positive parameter makes the parabola open to the right.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-hyperbola-equation",
+    "topicId": "MST125-4-standard",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the standard horizontal hyperbola equation, vertices and asymptotes.",
+    "answer": "$\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1$, $a,b>0$; vertices $(\\pm a,0)$; asymptotes $y=\\pm(b/a)x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The positive squared term places the branches along the horizontal axis. The highest-degree terms determine the two asymptote slopes.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-hyperbola-focus",
+    "topicId": "MST125-4-eccentricity",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the eccentricity, foci and directrices of $x^2/a^2-y^2/b^2=1$.",
+    "answer": "For $a,b>0$, $e=\\sqrt{1+b^2/a^2}$; foci $(\\pm ae,0)$; directrices $x=\\pm a/e$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The focal distance exceeds the transverse semiaxis for a hyperbola, giving eccentricity greater than one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-ellipse-parametrisation",
+    "topicId": "MST125-4-parametric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give a standard parametrisation of $x^2/a^2+y^2/b^2=1$.",
+    "answer": "$x=a\\cos t$, $y=b\\sin t$, $0\\le t\\le2\\pi$, for $a,b>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Substitution reduces the ellipse equation to the sine–cosine Pythagorean identity; a full turn traces the whole curve.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-parabola-parametrisation",
+    "topicId": "MST125-4-parametric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give a parametrisation of $y^2=4ax$, $a>0$.",
+    "answer": "$x=at^2$, $y=2at$, $t\\in\\mathbb R$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Substituting the parameter expressions makes both sides of the parabola equation equal; positive and negative parameters cover its two halves.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-hyperbola-parametrisation",
+    "topicId": "MST125-4-parametric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give a trigonometric parametrisation covering both branches of $x^2/a^2-y^2/b^2=1$.",
+    "answer": "$x=a\\sec t$, $y=b\\tan t$, with $-\\pi/2<t<\\pi/2$ or $\\pi/2<t<3\\pi/2$, for $a,b>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The secant–tangent identity verifies the equation. Separate parameter intervals are needed to trace the two branches without secant poles.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 80,
+      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-ellipse-distance-sum",
+    "topicId": "MST125-4-standard",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What focal-distance identity holds on a standard ellipse with major semiaxis $a$?",
+    "answer": "$PF_1+PF_2=2a$ for $P$ on $x^2/a^2+y^2/b^2=1$, $a>b>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Unlike the focus–directrix ratio, this property uses both foci and keeps their total distance from a point on the ellipse constant.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 82,
+      "section": "Further properties of ellipses"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-rectangular-hyperbola",
+    "topicId": "MST125-4-standard",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give a standard rectangular hyperbola equation and its asymptotes.",
+    "answer": "$x^2-y^2=a^2$ ($a>0$) has perpendicular asymptotes $y=\\pm x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Equal-magnitude coefficients of the two squared terms produce asymptotes with slopes of opposite sign and magnitude one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 82,
+      "section": "Further properties of hyperbolas"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-conic-discriminant",
+    "topicId": "MST125-4-standard",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Classify a non-degenerate conic using the quadratic-part discriminant.",
+    "answer": "For $Ax^2+Bxy+Cy^2+Dx+Ey+F=0$ known to represent a non-degenerate conic: $B^2-4AC<0$ gives ellipse/circle; $=0$ gives parabola; $>0$ gives hyperbola. In the first case it is a circle exactly when $A=C$ and $B=0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The classification presupposes a genuine non-degenerate conic; the discriminant alone does not rule out empty or degenerate loci.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 82,
+      "section": "To determine the type of a conic"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-line-two-points",
+    "topicId": "MST125-4-parametric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give parametric equations of the line through two distinct points $(x_0,y_0)$ and $(x_1,y_1)$.",
+    "answer": "$x=x_0+t(x_1-x_0)$, $y=y_0+t(y_1-y_0)$, $t\\in\\mathbb R$. Restrict $0\\le t\\le1$ for the segment.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The parameter multiplies the displacement from the first point to the second. Allowing every real parameter extends the segment to the full line.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 83,
+      "section": "Parametric equations for a straight line, arising from two points on it"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-line-point-gradient",
+    "topicId": "MST125-4-parametric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give parametric equations for the line through $(x_0,y_0)$ with gradient $m$.",
+    "answer": "$x=x_0+t$, $y=y_0+mt$, $t\\in\\mathbb R$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The parameter measures horizontal displacement, while the vertical displacement is that horizontal change multiplied by the gradient.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 83,
+      "section": "Parametric equations for a straight line, arising from a point on it and its gradient"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-circle-parametrisation",
+    "topicId": "MST125-4-parametric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Parametrise a circle of radius $r>0$ with centre $(p,q)$.",
+    "answer": "$x=p+r\\cos t$, $y=q+r\\sin t$, $0\\le t\\le2\\pi$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The squared coordinate offsets sum to the radius squared, so every parameter value lies on the required circle.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 83,
+      "section": "Parametric equations for a circle"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-translated-parametrisation",
+    "topicId": "MST125-4-parametric",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do parametric equations change under translation by $(p,q)$?",
+    "answer": "$x=f(t),y=g(t)$ become $x=p+f(t),y=q+g(t)$. The parameter range is unchanged.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Adding fixed coordinate offsets moves every point equally and does not change which parameter values are permitted.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 83,
+      "section": "Parametric equations for a translated curve"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-4-ellipse-circle-scalings",
+    "topicId": "MST125-4-standard",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How can the standard ellipse be obtained by scaling a circle?",
+    "answer": "$x^2/a^2+y^2/b^2=1$ is the image of $x^2+y^2=a^2$ under $(x,y)\\mapsto(x,(b/a)y)$, or of $x^2+y^2=b^2$ under $(x,y)\\mapsto((a/b)x,y)$, with $a>b>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Only one coordinate is rescaled in each construction, changing the corresponding circular semiaxis while leaving the other unchanged.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 82,
+      "section": "Further properties of ellipses"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-particle-equilibrium",
+    "topicId": "MST125-5-equilibrium",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the equilibrium condition for a particle under $n$ forces.",
+    "answer": "$\\mathbf F_1+\\cdots+\\mathbf F_n=\\mathbf0$. Equivalently, the sums of components in each independent direction are zero.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A particle has no separate rotational equilibrium condition; its resultant force must vanish in every independent component direction.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 84,
+      "section": "Equilibrium condition for a particle"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-action-reaction",
+    "topicId": "MST125-5-equilibrium",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express Newton’s third law as a vector relation between a pair of interacting bodies.",
+    "answer": "$\\mathbf F_{A\\to B}=-\\mathbf F_{B\\to A}$. These equal and opposite forces act on different bodies, not on the same force diagram.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The forces belong to an interaction pair and act on different bodies, so they must not be cancelled on a single-body force diagram.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 84,
+      "section": "Newton’s first and third laws of motion"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-weight",
+    "topicId": "MST125-5-equilibrium",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the magnitude of the weight of a body of mass $m$?",
+    "answer": "$W=mg$, directed vertically downwards; near Earth $g\\approx9.8\\,\\mathrm{m\\,s^{-2}}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Mass is a scalar property of the body, whereas weight is a downward force whose magnitude also depends on the local gravitational acceleration.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 85,
+      "section": "Weight, tension and normal reaction"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-model-pulley-tension",
+    "topicId": "MST125-5-equilibrium",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What relation holds between tensions on either side of a model pulley?",
+    "answer": "$T_1=T_2$ for a light, inextensible string passing over a massless, frictionless model pulley.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The equality depends on the ideal string and pulley assumptions; resistance or pulley inertia can invalidate equal tensions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 85,
+      "section": "Modelling assumptions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-static-friction-bound",
+    "topicId": "MST125-5-friction",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the static-friction bound and the limiting-friction condition.",
+    "answer": "$0\\le |\\mathbf F_{\\!f}|\\le\\mu|\\mathbf N|$. At impending slip, $|\\mathbf F_{\\!f}|=\\mu|\\mathbf N|$; otherwise equality need not hold. Friction opposes the possible sliding direction.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Static friction adjusts to the force balance rather than automatically taking its maximum value. Equality identifies limiting friction only.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 85,
+      "section": "Static friction"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-angle-of-repose",
+    "topicId": "MST125-5-friction",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Relate the coefficient of static friction to the inclination at impending slip.",
+    "answer": "$\\mu=\\tan\\alpha$ for a body at rest on a plane inclined at $\\alpha$, just about to slip under its weight, normal reaction and friction.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "At impending downhill slip, resolving weight along and normal to the plane and dividing the balances eliminates the weight magnitude.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 85,
+      "section": "Coefficient of static friction in terms of angle of inclination"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-force-components",
+    "topicId": "MST125-5-resolution",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Resolve a force of magnitude $F$ making angle $\\theta$ anticlockwise from the positive $\\mathbf i$-direction.",
+    "answer": "$\\mathbf F=F\\cos\\theta\\,\\mathbf i+F\\sin\\theta\\,\\mathbf j$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The angle is measured from the positive first axis anticlockwise, so the signs of the trigonometric functions supply the component signs.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 86,
+      "section": "To resolve a force F in the i- and j-directions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-5-force-magnitude",
+    "topicId": "MST125-5-resolution",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recover the magnitude of a planar force from its Cartesian components.",
+    "answer": "For $\\mathbf F=a\\mathbf i+b\\mathbf j$, $|\\mathbf F|=\\sqrt{a^2+b^2}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Perpendicular Cartesian components form the sides of a right triangle, so Pythagoras gives a non-negative force magnitude.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 86,
+      "section": "To find the magnitude and direction of a force from its components"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-composition-order",
+    "topicId": "MST125-6-isometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the evaluation rule for $g\\circ f$?",
+    "answer": "$(g\\circ f)(\\mathbf x)=g(f(\\mathbf x))$: $f$ acts first. Composition need not commute.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The rightmost map acts first. Reversing the order can change both the transformation and the points for which the composite is defined.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 87,
+      "section": "Composite and inverse transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-translations-compose",
+    "topicId": "MST125-6-isometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the composition and inverse rules for translations.",
+    "answer": "$T_{\\mathbf a}\\circ T_{\\mathbf b}=T_{\\mathbf a+\\mathbf b}$ and $T_{\\mathbf a}^{-1}=T_{-\\mathbf a}$, where $T_{\\mathbf a}(\\mathbf x)=\\mathbf x+\\mathbf a$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Translation displacements add as vectors, and undoing a translation requires the opposite displacement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 89,
+      "section": "Composing isometries"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-rotations-compose",
+    "topicId": "MST125-6-isometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the composition and inverse rules for rotations with a common centre $C$.",
+    "answer": "$R_{C,\\theta}\\circ R_{C,\\phi}=R_{C,\\theta+\\phi}$ and $R_{C,\\theta}^{-1}=R_{C,-\\theta}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Angles add only in this simple way when the rotations share a centre. The inverse reverses the angle without moving that centre.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 89,
+      "section": "Composing isometries"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-intersecting-reflections",
+    "topicId": "MST125-6-isometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is reflection in $\\ell$ followed by reflection in an intersecting line $m$?",
+    "answer": "A rotation about $\\ell\\cap m$ through $2\\alpha$, where $\\alpha$ is the directed angle from $\\ell$ to $m$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The intersection remains fixed, and reflecting twice doubles the directed angle between the lines; reversing the order reverses the rotation.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 89,
+      "section": "Composing isometries"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-parallel-reflections",
+    "topicId": "MST125-6-isometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is reflection in $\\ell$ followed by reflection in a parallel line $m$?",
+    "answer": "A translation by $2d$ perpendicular to the lines, from $\\ell$ towards $m$, where $d$ is their separation.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Two parallel reflections leave orientation unchanged and move every point by the same perpendicular displacement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 89,
+      "section": "Composing isometries"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-reflection-rotation",
+    "topicId": "MST125-6-isometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does a reflection compose with a rotation whose centre lies on the reflection line?",
+    "answer": "For reflection $S_\\ell$ and rotation $R_{P,\\phi}$ with $P\\in\\ell$, $R_{P,\\phi}\\circ S_\\ell$ is reflection in $\\ell$ rotated by $\\phi/2$ about $P$. In the opposite order the reflection line is rotated by $-\\phi/2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The rotation centre lying on the reflection line is essential. Changing the order changes the sign of the half-angle used for the resulting line.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 89,
+      "section": "A reflection and a rotation about a point on the line of reflection"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-reflection-inverse",
+    "topicId": "MST125-6-isometry",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What is the inverse of a reflection?",
+    "answer": "$S_\\ell^{-1}=S_\\ell$, or $S_\\ell\\circ S_\\ell=I$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Reflecting across the same line again returns each point to its original side and position.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 89,
+      "section": "Inverting isometries"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-matrix-columns",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is a linear transformation matrix obtained from images of the coordinate unit vectors?",
+    "answer": "$A=[\\,f(\\mathbf i)\\ \\ f(\\mathbf j)\\,]$, so $f(\\mathbf i)=(a,c)$ and $f(\\mathbf j)=(b,d)$ give $A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A linear map is determined by the images of a basis; multiplying by a coordinate vector combines those image columns with its coordinates.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 90,
+      "section": "To find the matrix of a linear transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-area-orientation",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How does the determinant control area and orientation under an invertible planar linear map?",
+    "answer": "$\\operatorname{area}(f(S))=|\\det A|\\operatorname{area}(S)$. If $\\det A>0$ orientation is preserved; if $\\det A<0$ it is reversed.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The determinant measures signed area change. Its absolute value is the area scale, while its sign records whether orientation flips.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 90,
+      "section": "Properties of one-to-one linear transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-flattening",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the determinant criterion for a planar linear flattening.",
+    "answer": "$f(\\mathbf x)=A\\mathbf x$ is not one-to-one exactly when $\\det A=0$; its image is a line or the origin. Its columns are linearly dependent.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Dependent image columns cannot span the plane, so a singular map collapses the plane to a line or a point.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 90,
+      "section": "Linear transformations that are not one-to-one"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-scaling-matrices",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give matrices for a $(k,l)$-scaling and a $k$-dilation.",
+    "answer": "$\\begin{pmatrix}k&0\\\\0&l\\end{pmatrix}$ and $\\begin{pmatrix}k&0\\\\0&k\\end{pmatrix}$ respectively, with nonzero scale factors.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Diagonal entries act separately on horizontal and vertical coordinates. A dilation uses the same factor in both directions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 91,
+      "section": "Some types of linear transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-horizontal-shear",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the matrix and coordinate rule for a horizontal shear of factor $k$.",
+    "answer": "$H_k=\\begin{pmatrix}1&k\\\\0&1\\end{pmatrix}$, so $(x,y)\\mapsto(x+ky,y)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The vertical coordinate stays fixed while horizontal displacement grows in proportion to height above the shear axis.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 91,
+      "section": "Some types of linear transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-vertical-shear",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the matrix and coordinate rule for a vertical shear of factor $-k$ in the handbook’s convention.",
+    "answer": "$\\begin{pmatrix}1&0\\\\k&1\\end{pmatrix}$, so $(x,y)\\mapsto(x,y+kx)$. The handbook labels this vertical shear factor $-k$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The horizontal coordinate stays fixed. The handbook’s signed shear-factor convention assigns the negative of the displayed lower-left coefficient.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 91,
+      "section": "Some types of linear transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-rotation-matrix",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the matrix for anticlockwise rotation by $\\theta$ about the origin.",
+    "answer": "$R_\\theta=\\begin{pmatrix}\\cos\\theta&-\\sin\\theta\\\\\\sin\\theta&\\cos\\theta\\end{pmatrix}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The columns are the rotated coordinate unit vectors, producing a distance-preserving map with determinant one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 91,
+      "section": "Some types of linear transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-reflection-matrix",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the reflection matrix for a line through the origin inclined at angle $\\alpha$.",
+    "answer": "$S_\\alpha=\\begin{pmatrix}\\cos2\\alpha&\\sin2\\alpha\\\\\\sin2\\alpha&-\\cos2\\alpha\\end{pmatrix}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The double-angle entries encode the direction of the reflection line, and the determinant is minus one because orientation reverses.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 91,
+      "section": "Some types of linear transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-orthogonal-isometry-test",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How can the columns and determinant identify an origin-fixing isometry?",
+    "answer": "Columns $\\mathbf u,\\mathbf v$ must satisfy $|\\mathbf u|=|\\mathbf v|=1$, $\\mathbf u\\cdot\\mathbf v=0$. Then $\\det A=1$ gives a rotation, $\\det A=-1$ a reflection.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Perpendicular unit columns preserve lengths and right angles; the determinant then separates rotations from reflections.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 92,
+      "section": "To recognise the type of a linear transformation f from its matrix A"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-linear-composition",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the matrix for a composite and an inverse linear transformation.",
+    "answer": "If $f(\\mathbf x)=A\\mathbf x$ and $g(\\mathbf x)=B\\mathbf x$, then $(g\\circ f)(\\mathbf x)=BA\\mathbf x$. If $\\det A\\ne0$, $f^{-1}(\\mathbf x)=A^{-1}\\mathbf x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Matrix multiplication follows the order of application from right to left. An inverse map exists precisely when the representing matrix is nonsingular.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 92,
+      "section": "Composite and inverse linear transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-conjugate-shear",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is the matrix of a shear about an oblique line through the origin obtained by conjugation?",
+    "answer": "If $H$ rotates the line to the $x$-axis and $G$ is the horizontal-shear matrix of factor $k$, the required matrix is $H^{-1}GH$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The first rotation aligns the shear axis with a standard axis; the inverse rotation restores the original coordinate placement afterward.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 92,
+      "section": "To use conjugation to find the matrix of the shear with factor k about the line through the origin"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-image-curve",
+    "topicId": "MST125-6-linear",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What substitution gives the image of a curve under an invertible linear map $A$?",
+    "answer": "If the original curve is $F(\\mathbf x)=0$, its image satisfies $F(A^{-1}\\mathbf x)=0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An image point lies on the transformed curve exactly when its preimage satisfies the original equation, hence the inverse-map substitution.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 92,
+      "section": "To find the equation of the image f(C) of a curve C under an invertible linear transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-affine-three-images",
+    "topicId": "MST125-6-affine",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Recover an affine transformation from $f(\\mathbf0)=\\mathbf a$, $f(\\mathbf i)=\\mathbf b$, $f(\\mathbf j)=\\mathbf c$.",
+    "answer": "$f(\\mathbf x)=A\\mathbf x+\\mathbf a$, where $A=[\\,\\mathbf b-\\mathbf a\\ \\ \\mathbf c-\\mathbf a\\,]$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Subtracting the image of the origin removes the translation part, leaving the two columns of the linear part.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 93,
+      "section": "To find an affine transformation from the images of 0, i and j"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-affine-inverse",
+    "topicId": "MST125-6-affine",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the inverse of an invertible affine map $f(\\mathbf x)=A\\mathbf x+\\mathbf a$.",
+    "answer": "$f^{-1}(\\mathbf x)=A^{-1}\\mathbf x-A^{-1}\\mathbf a=A^{-1}(\\mathbf x-\\mathbf a)$, requiring $\\det A\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Undo the translation before undoing the linear part. Applying the inverse matrix to both terms makes this order explicit.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 93,
+      "section": "Composite and inverse affine transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-off-origin-rotation",
+    "topicId": "MST125-6-affine",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the conjugation rule for rotation about a point $C$ rather than the origin.",
+    "answer": "Let $h$ translate $C$ to the origin and $g$ rotate about the origin. The required map is $h^{-1}\\circ g\\circ h$; equivalently $\\mathbf x\\mapsto\\mathbf c+R_\\theta(\\mathbf x-\\mathbf c)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Translate the desired centre to the origin, apply the standard rotation, then translate back; this leaves the chosen centre fixed.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 93,
+      "section": "To use conjugation to find an affine transformation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-6-fixed-point-equation",
+    "topicId": "MST125-6-affine",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What equation determines the fixed points of $f(\\mathbf x)=A\\mathbf x+\\mathbf a$?",
+    "answer": "$A\\mathbf x+\\mathbf a=\\mathbf x$, equivalently $(I-A)\\mathbf x=\\mathbf a$. For an isometry with $A\\ne I$, one fixed point indicates rotation, a line of fixed points reflection, and no fixed points glide-reflection.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A fixed point must equal its own image. The number of solutions distinguishes non-translation planar isometries once the map is known to be an isometry.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 93,
+      "section": "To determine the type of an affine transformation f that is an isometry"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-polynomial-division",
+    "topicId": "MST125-7-partial-fractions",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the polynomial division identity and its remainder condition.",
+    "answer": "$a(x)=q(x)b(x)+r(x)$ for a nonzero polynomial $b(x)$, with unique $q,r$ and either $r=0$ or $\\deg r<\\deg b$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The remainder has lower degree than the divisor, unless it is zero; this restriction makes the quotient and remainder unique.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 94,
+      "section": "The division theorem for polynomial expressions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-improper-rational-division",
+    "topicId": "MST125-7-partial-fractions",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is an improper rational expression reduced before using partial fractions?",
+    "answer": "$\\frac{a(x)}{b(x)}=q(x)+\\frac{r(x)}{b(x)}$, where $a=qb+r$ and $r=0$ or $\\deg r<\\deg b$. Work where $b(x)\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Polynomial division separates the polynomial part from a proper rational remainder, which is the part expanded into partial fractions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 95,
+      "section": "To find the partial fraction expansion of a rational expression without repeated quadratic factors in the denominator"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-linear-factor-expansion",
+    "topicId": "MST125-7-partial-fractions",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What partial-fraction terms are required by a denominator factor $(ax+b)^n$?",
+    "answer": "$\\frac{A_1}{ax+b}+\\frac{A_2}{(ax+b)^2}+\\cdots+\\frac{A_n}{(ax+b)^n}$, with $a\\ne0$ and integer $n\\ge1$. Include every power up to $n$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A repeated linear factor requires one constant numerator for each denominator power, not just a term with the highest power.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 96,
+      "section": "To find the partial fraction expansion of a proper rational expression without repeated quadratic factors in the denominator"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-quadratic-factor-expansion",
+    "topicId": "MST125-7-partial-fractions",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What numerator is needed above an unrepeated irreducible quadratic in partial fractions?",
+    "answer": "Use $\\frac{Ax+B}{ax^2+bx+c}$ when $b^2-4ac<0$; a constant numerator alone is not the general form.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A real quadratic with negative discriminant cannot be split into real linear factors, and its general numerator must have degree less than two.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 96,
+      "section": "To find the partial fraction expansion of a proper rational expression without repeated quadratic factors in the denominator"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-cover-up",
+    "topicId": "MST125-7-partial-fractions",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the cover-up rule for the highest-power term above a repeated linear factor.",
+    "answer": "If $(ax+b)^n$ is the highest power of that factor in the denominator of $f(x)$, the coefficient of $(ax+b)^{-n}$ is $\\left[(ax+b)^nf(x)\\right]_{x=-b/a}$ after cancelling the factor. This does not determine all lower-power coefficients.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Multiplication by the highest factor power removes that pole; evaluating at its root eliminates the other partial-fraction contributions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 96,
+      "section": "Methods for determining the constants in partial fractions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-rational-domain",
+    "topicId": "MST125-7-rational-graphs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the default domain restriction for $f(x)=a(x)/b(x)$.",
+    "answer": "$\\{x\\in\\mathbb R:b(x)\\ne0\\}$. Zeros of the original denominator remain excluded even when a factor can be cancelled.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Cancellation gives an equivalent expression only on the original domain; it does not restore an input that originally made the denominator zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 97,
+      "section": "Domain"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-vertical-asymptotes",
+    "topicId": "MST125-7-rational-graphs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which denominator zeros give vertical asymptotes of a rational function?",
+    "answer": "After cancelling common factors, every real zero $c$ of the remaining denominator gives a vertical asymptote $x=c$. A fully cancelled factor instead gives a removable hole at an excluded original input.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An uncancelled denominator zero makes the magnitude unbounded near that input. A cancelled zero need not produce an asymptote.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 98,
+      "section": "To determine the vertical asymptotes of a rational function f"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-dominant-term",
+    "topicId": "MST125-7-rational-graphs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do leading terms determine rational-function behaviour at large $|x|$?",
+    "answer": "If $f(x)=\\frac{a_mx^m+\\cdots}{b_nx^n+\\cdots}$ with nonzero leading coefficients, its dominant comparison is $\\frac{a_m}{b_n}x^{m-n}$ as $x\\to\\pm\\infty$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "At large input magnitude, lower-degree terms become negligible relative to the leading powers. The remaining power and coefficient determine the end behaviour.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 98,
+      "section": "To determine the asymptotic behaviour of a rational function f as x →∞ and as x →−∞, and find any horizontal or slant asymptote"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-horizontal-asymptotes",
+    "topicId": "MST125-7-rational-graphs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the horizontal-asymptote rules for a rational function.",
+    "answer": "For numerator degree $m$ and denominator degree $n$, $m<n$ gives $y=0$; $m=n$ gives $y=a_m/b_n$, the ratio of leading coefficients. If $m>n$, there is no horizontal asymptote.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A lower numerator degree forces the ratio towards zero; equal degrees leave the ratio of leading coefficients. Higher numerator degree prevents a finite horizontal limit.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 98,
+      "section": "To determine the asymptotic behaviour of a rational function f as x →∞ and as x →−∞, and find any horizontal or slant asymptote"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-slant-asymptote",
+    "topicId": "MST125-7-rational-graphs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "When does a rational function have a slant asymptote, and how is it found?",
+    "answer": "If numerator degree is denominator degree plus $1$, divide to obtain $f(x)=q(x)+h(x)$ with $q$ linear and $h$ proper. Then $h(x)\\to0$ as $x\\to\\pm\\infty$, so the slant asymptote is $y=q(x)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The proper remainder tends to zero, leaving the linear quotient as the approached line. The remainder’s sign indicates the side of approach.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 98,
+      "section": "To determine the asymptotic behaviour of a rational function f as x →∞ and as x →−∞, and find any horizontal or slant asymptote"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-tanh-exponential",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express $\\tanh x$ using exponentials and using $\\sinh x,\\cosh x$.",
+    "answer": "$\\tanh x=\\frac{\\sinh x}{\\cosh x}=\\frac{e^x-e^{-x}}{e^x+e^{-x}}$, $x\\in\\mathbb R$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Dividing the exponential expressions for sinh and cosh cancels their common factor of one half; the real denominator is always positive.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "sinh, cosh and tanh"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-reciprocal-hyperbolics",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the reciprocal hyperbolic identities and excluded real inputs.",
+    "answer": "$\\operatorname{cosech}x=1/\\sinh x$, $\\operatorname{sech}x=1/\\cosh x$, $\\coth x=\\cosh x/\\sinh x=1/\\tanh x$. Exclude $x=0$ for cosech and coth; sech is defined for all real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Real cosh never vanishes, but sinh and tanh vanish at zero; this is why their reciprocals have different domains.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "tanh, cosech, sech, coth in terms of sinh and cosh"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-hyperbolic-pythagorean",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the fundamental identity relating $\\cosh^2x$ and $\\sinh^2x$.",
+    "answer": "$\\cosh^2x-\\sinh^2x=1$ for all real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Expanding the exponential expressions cancels the fourth-power terms and leaves one. The minus sign distinguishes this from the circular identity.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Hyperbolic Pythagorean identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-tanh-sech-identity",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the identity relating $\\tanh^2x$ and $\\operatorname{sech}^2x$.",
+    "answer": "$1-\\tanh^2x=\\operatorname{sech}^2x$, $x\\in\\mathbb R$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Divide the fundamental cosh–sinh identity by cosh squared; this is valid for every real input because cosh is positive.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Hyperbolic Pythagorean identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-coth-cosech-identity",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the identity relating $\\coth^2x$ and $\\operatorname{cosech}^2x$.",
+    "answer": "$\\coth^2x-1=\\operatorname{cosech}^2x$, $x\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Dividing the fundamental identity by sinh squared requires a nonzero input, preserving the domain restrictions of coth and cosech.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Hyperbolic Pythagorean identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-hyperbolic-symmetry",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the parity identities for sinh, cosh and tanh.",
+    "answer": "$\\sinh(-x)=-\\sinh x$, $\\cosh(-x)=\\cosh x$, $\\tanh(-x)=-\\tanh x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Changing the sign of the input swaps the two exponentials. Their difference changes sign, whereas their sum does not.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Symmetry identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-sinh-addition",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Expand $\\sinh(x\\pm y)$.",
+    "answer": "$\\sinh(x+y)=\\sinh x\\cosh y+\\cosh x\\sinh y$; $\\sinh(x-y)=\\sinh x\\cosh y-\\cosh x\\sinh y$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The cross terms use one sinh and one cosh. Changing addition to subtraction reverses only the second term’s sign.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Sum and difference identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-cosh-addition",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Expand $\\cosh(x\\pm y)$.",
+    "answer": "$\\cosh(x+y)=\\cosh x\\cosh y+\\sinh x\\sinh y$; $\\cosh(x-y)=\\cosh x\\cosh y-\\sinh x\\sinh y$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The products pair like functions. The sinh product takes the same sign as the sign between the arguments.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Sum and difference identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-tanh-addition",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Expand $\\tanh(x\\pm y)$.",
+    "answer": "$\\tanh(x+y)=\\frac{\\tanh x+\\tanh y}{1+\\tanh x\\tanh y}$; $\\tanh(x-y)=\\frac{\\tanh x-\\tanh y}{1-\\tanh x\\tanh y}$. For real $x,y$, these denominators are nonzero.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Dividing the sinh addition formula by the cosh addition formula yields the quotient identity. Real tanh values lie strictly between minus one and one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Sum and difference identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-sinh-double",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the double-variable formula for $\\sinh(2x)$.",
+    "answer": "$\\sinh(2x)=2\\sinh x\\cosh x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Setting both arguments equal in the sinh addition formula combines two identical product terms.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Double-variable and half-variable identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-cosh-double",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give three equivalent expressions for $\\cosh(2x)$.",
+    "answer": "$\\cosh(2x)=\\cosh^2x+\\sinh^2x=1+2\\sinh^2x=2\\cosh^2x-1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The addition formula with equal arguments gives the sum of squares; the fundamental identity converts it to either single-square form.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Double-variable and half-variable identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-hyperbolic-square-reduction",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express $\\sinh^2x$ and $\\cosh^2x$ using $\\cosh(2x)$.",
+    "answer": "$\\sinh^2x=\\frac{\\cosh(2x)-1}{2}$ and $\\cosh^2x=\\frac{\\cosh(2x)+1}{2}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Rearrange the cosh double-variable formulas to replace squares by a constant term and a function of twice the argument.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Double-variable and half-variable identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-tanh-double",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the double-variable formula for $\\tanh(2x)$.",
+    "answer": "$\\tanh(2x)=\\frac{2\\tanh x}{1+\\tanh^2x}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Equal arguments in the tanh addition formula give a denominator with a plus sign, which cannot vanish for real inputs.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Double-variable and half-variable identities"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-inverse-sinh-log",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express $\\sinh^{-1}x$ as a logarithm and state its real domain.",
+    "answer": "$\\sinh^{-1}x=\\ln(x+\\sqrt{x^2+1})$, $x\\in\\mathbb R$. The superscript denotes the inverse function, not a reciprocal.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The logarithm’s argument is positive for every real input because the square root is strictly larger than the input’s absolute value.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Inverse hyperbolic functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-inverse-cosh-log",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express the principal $\\cosh^{-1}x$ as a logarithm and state its domain and range.",
+    "answer": "$\\cosh^{-1}x=\\ln(x+\\sqrt{x^2-1})$, $x\\ge1$, with values in $[0,\\infty)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Cosh must be restricted to non-negative arguments to have a single-valued inverse; this gives both the stated inverse domain and non-negative range.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Inverse hyperbolic functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-inverse-tanh-log",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express $\\tanh^{-1}x$ as a logarithm and state its real domain.",
+    "answer": "$\\tanh^{-1}x=\\frac12\\ln\\left(\\frac{1+x}{1-x}\\right)$, $-1<x<1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The logarithm ratio is positive on the open interval between minus one and one; the endpoints are excluded from the real inverse domain.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 6,
+      "section": "Inverse hyperbolic functions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-sinh-cosh-derivatives",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the derivatives of sinh and cosh.",
+    "answer": "$\\frac{d}{dx}\\sinh x=\\cosh x$, $\\frac{d}{dx}\\cosh x=\\sinh x$, for all real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiating the exponential formulas swaps sinh and cosh, with no minus sign in either derivative.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 8,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-tanh-derivative",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the derivative of $\\tanh x$.",
+    "answer": "$\\frac{d}{dx}\\tanh x=\\operatorname{sech}^2x$, for all real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The quotient rule together with the fundamental hyperbolic identity reduces the derivative to the reciprocal of cosh squared.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 8,
+      "section": "Standard derivatives"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-sinh-cosh-integrals",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the standard indefinite integrals of sinh and cosh.",
+    "answer": "$\\int\\sinh x\\,dx=\\cosh x+C$, $\\int\\cosh x\\,dx=\\sinh x+C$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Since differentiation interchanges sinh and cosh, their antiderivatives interchange them as well; each indefinite integral needs an arbitrary constant.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 8,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-tanh-integral",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the standard indefinite integral of $\\tanh x$.",
+    "answer": "$\\int\\tanh x\\,dx=\\ln(\\cosh x)+C$. No absolute value is needed because $\\cosh x>0$ for real $x$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The derivative of cosh is sinh, so the logarithmic derivative of cosh is tanh. Positivity of real cosh removes an absolute-value requirement.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 8,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-sech-square-integral",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the standard indefinite integral of $\\operatorname{sech}^2x$.",
+    "answer": "$\\int\\operatorname{sech}^2x\\,dx=\\tanh x+C$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "This reverses the standard derivative of tanh; the arbitrary constant accounts for all antiderivatives.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 8,
+      "section": "Standard indefinite integrals"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-sinh-substitution",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What hyperbolic substitution simplifies $a^2+x^2$?",
+    "answer": "For $a>0$, let $x=a\\sinh u$, $u\\in\\mathbb R$. Then $a^2+x^2=a^2\\cosh^2u$, $dx=a\\cosh u\\,du$, and $\\sqrt{a^2+x^2}=a\\cosh u$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The identity one plus sinh squared equals cosh squared removes the square root, and cosh is positive for every real parameter.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 100,
+      "section": "Hyperbolic substitutions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-cosh-substitution",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What hyperbolic substitution simplifies $x^2-a^2$ on the branch $x\\ge a>0$?",
+    "answer": "Let $x=a\\cosh u$ with $u\\ge0$. Then $x^2-a^2=a^2\\sinh^2u$, $dx=a\\sinh u\\,du$, and $\\sqrt{x^2-a^2}=a\\sinh u$. Other branches need an appropriate sign choice.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The branch and parameter restrictions make sinh non-negative, allowing the square root to be removed without a missing absolute value.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 100,
+      "section": "Hyperbolic substitutions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-odd-trigonometric-power",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which substitution handles a product of non-negative integer powers of sine and cosine when one power is odd?",
+    "answer": "For $\\int\\sin^m x\\cos^n x\\,dx$: if $m$ is odd, retain one $\\sin x$ and use $u=\\cos x$, $du=-\\sin x\\,dx$; if $n$ is odd, retain one $\\cos x$ and use $u=\\sin x$, $du=\\cos x\\,dx$. Rewrite remaining even powers using $\\sin^2x+\\cos^2x=1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Saving one factor supplies the derivative needed for substitution; the remaining even powers convert to a polynomial in the new variable.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 100,
+      "section": "Integrating trigonometric expressions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-sine-substitution",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What trigonometric substitution simplifies $a^2-x^2$?",
+    "answer": "For $a>0$, use $x=a\\sin u$. Then $a^2-x^2=a^2\\cos^2u$ and $dx=a\\cos u\\,du$. On $-\\pi/2\\le u\\le\\pi/2$, $\\sqrt{a^2-x^2}=a\\cos u$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The sine–cosine identity turns the radicand into a square. The chosen parameter interval makes cosine non-negative when taking the square root.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 100,
+      "section": "Trigonometric substitutions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-secant-substitution",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What trigonometric substitution simplifies $x^2-a^2$?",
+    "answer": "For $a>0$, use $x=a\\sec u$. Then $x^2-a^2=a^2\\tan^2u$ and $dx=a\\sec u\\tan u\\,du$. In general $\\sqrt{x^2-a^2}=a|\\tan u|$; choose the parameter interval for the desired branch.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The secant–tangent identity removes the difference of squares, but the square root requires an absolute value unless the tangent sign is controlled.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 100,
+      "section": "Trigonometric substitutions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-tangent-substitution",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "What trigonometric substitution simplifies $a^2+x^2$?",
+    "answer": "For $a>0$, use $x=a\\tan u$, $-\\pi/2<u<\\pi/2$. Then $a^2+x^2=a^2\\sec^2u$, $dx=a\\sec^2u\\,du$, and $\\sqrt{a^2+x^2}=a\\sec u$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The chosen interval makes tangent one-to-one and secant positive, so it covers every real input without an ambiguous square-root sign.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 100,
+      "section": "Trigonometric substitutions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-7-even-trigonometric-powers",
+    "topicId": "MST125-7-hyperbolic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Which identities reduce products of even powers of sine and cosine for integration?",
+    "answer": "Use $\\sin^2x=(1-\\cos2x)/2$ and $\\cos^2x=(1+\\cos2x)/2$ repeatedly. The additional identity $\\sin x\\cos x=\\frac12\\sin2x$ can simplify mixed products.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Half-angle identities reduce even powers to lower powers and doubled arguments, making termwise integration possible.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 100,
+      "section": "Integrating trigonometric expressions"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-direct-integration",
+    "topicId": "MST125-8-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the solution rule for $dy/dx=f(x)$.",
+    "answer": "$y=\\int f(x)\\,dx+C$, with one arbitrary constant (or include $C$ in the indefinite integral).",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "When the derivative depends only on the independent variable, a single integration supplies the general first-order solution.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 102,
+      "section": "Directly integrable differential equations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-separation",
+    "topicId": "MST125-8-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the separation-of-variables rule for $dy/dx=f(x)g(y)$, including the division caveat.",
+    "answer": "Where $g(y)\\ne0$, $\\int\\frac{1}{g(y)}\\,dy=\\int f(x)\\,dx+C$. Also check constant solutions $y=y_*$ with $g(y_*)=0$, which division can discard.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Division by the dependent-variable factor is valid only where it is nonzero. Its zeros must be checked separately to avoid losing equilibrium solutions.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 102,
+      "section": "Separable differential equations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-integrating-factor",
+    "topicId": "MST125-8-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "For $y\\prime+g(x)y=h(x)$, give the integrating factor and resulting product derivative.",
+    "answer": "$p(x)=\\exp\\left(\\int g(x)\\,dx\\right)$; then $(p(x)y)\\prime=p(x)h(x)$. No integration constant is needed in the exponent.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The factor is chosen so its derivative equals itself times the coefficient of the unknown, making the left side a product derivative.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 102,
+      "section": "Linear differential equations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-linear-ode-solution",
+    "topicId": "MST125-8-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the general solution of $y\\prime+g(x)y=h(x)$ using an integrating factor.",
+    "answer": "$y=\\frac1{p(x)}\\left(\\int p(x)h(x)\\,dx+C\\right)$, where $p(x)=\\exp(\\int g(x)\\,dx)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "After multiplying by the integrating factor, integrate the product derivative and then divide by the nonzero factor. Include exactly one arbitrary constant.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 102,
+      "section": "Linear differential equations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-initial-constant-rule",
+    "topicId": "MST125-8-initial",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is an initial condition imposed on a general first-order solution?",
+    "answer": "If the solution is $y=F(x,C)$ and $y(x_0)=y_0$, solve $F(x_0,C)=y_0$ for $C$ and substitute back. For an implicit solution $G(x,y)=C$, use $C=G(x_0,y_0)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The initial condition selects a member of the general solution family by fixing its arbitrary constant rather than introducing an additional one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 102,
+      "section": "To solve an initial value problem"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-exponential-population",
+    "topicId": "MST125-8-models",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the exponential population model and its solution with an initial value.",
+    "answer": "$\\frac{dP}{dt}=KP$, $P(0)=P_0$ gives $P(t)=P_0e^{Kt}$, for constant proportionate growth rate $K$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A constant proportional growth rate makes the rate of change proportional to the current population, leading to exponential change.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 103,
+      "section": "Exponential model for population change"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-doubling-halving",
+    "topicId": "MST125-8-models",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give doubling and halving times for the exponential population model.",
+    "answer": "For $P=P_0e^{Kt}$ with $P_0>0$: doubling time $\\ln2/K$ if $K>0$; halving time $-\\ln2/K$ if $K<0$. If $K=0$, the population is constant.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Dividing the target population by its initial value leaves an exponential factor of two or one half; taking logarithms gives the corresponding time.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 103,
+      "section": "Exponential model for population change"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-radioactive-decay",
+    "topicId": "MST125-8-models",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the radioactive-decay initial value model and its solution.",
+    "answer": "$\\frac{dm}{dt}=-km$, $m(0)=m_0$ gives $m=m_0e^{-kt}$, with constant $k>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The negative sign and positive decay constant make the mass decrease, while the initial mass is recovered at time zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 103,
+      "section": "Exponential model for radioactive decay"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-half-life",
+    "topicId": "MST125-8-models",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Relate radioactive half-life to the decay constant.",
+    "answer": "$T_{1/2}=\\frac{\\ln2}{k}$ for $m=m_0e^{-kt}$, $m_0>0$, $k>0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The half-life is obtained by setting the remaining mass to half its starting value; the starting mass cancels out.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 103,
+      "section": "Exponential model for radioactive decay"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-8-cooling-model",
+    "topicId": "MST125-8-models",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State Newton’s cooling equation and its solution for constant ambient temperature.",
+    "answer": "$\\frac{dT}{dt}=-\\lambda(T-T_a)$, $T(0)=T_0$, with $\\lambda>0$ and constant $T_a$, gives $T(t)=T_a+(T_0-T_a)e^{-\\lambda t}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Subtracting a constant ambient temperature converts the equation to exponential decay of the temperature difference, not decay of absolute temperature towards zero.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 103,
+      "section": "Newton’s law of cooling"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-and-truth-rule",
+    "topicId": "MST125-9-logic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the truth rule for $P\\land Q$.",
+    "answer": "$P\\land Q$ is true only when both $P$ and $Q$ are true. For $(P,Q)=(T,T),(T,F),(F,T),(F,F)$ the results are $T,F,F,F$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Conjunction requires both component statements, so any false component makes the combined statement false.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 104,
+      "section": "AND and OR"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-or-truth-rule",
+    "topicId": "MST125-9-logic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the inclusive-OR truth rule for $P\\lor Q$.",
+    "answer": "$P\\lor Q$ is true when at least one is true, including when both are true. For $(P,Q)=(T,T),(T,F),(F,T),(F,F)$ the results are $T,T,T,F$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Mathematical OR is inclusive: simultaneous truth is allowed, and only simultaneous falsehood makes the disjunction false.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 104,
+      "section": "AND and OR"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-negation-truth-rule",
+    "topicId": "MST125-9-logic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the truth rule for $\\neg P$.",
+    "answer": "If $P=T$, $\\neg P=F$; if $P=F$, $\\neg P=T$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Negation reverses the truth value of the whole statement to which it applies.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Negating statements"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-de-morgan-and",
+    "topicId": "MST125-9-logic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Negate $P\\land Q$ using De Morgan’s law.",
+    "answer": "$\\neg(P\\land Q)\\iff(\\neg P)\\lor(\\neg Q)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "To deny that both statements hold, it is enough that at least one fails; the connective changes from AND to OR.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Negating combinations of statements"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-de-morgan-or",
+    "topicId": "MST125-9-logic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Negate $P\\lor Q$ using De Morgan’s law.",
+    "answer": "$\\neg(P\\lor Q)\\iff(\\neg P)\\land(\\neg Q)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "To deny that either statement holds, both must fail; the connective changes from OR to AND.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Negating combinations of statements"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-negate-universal",
+    "topicId": "MST125-9-logic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Negate a universally quantified statement $\\forall x\\in A,\\ P(x)$.",
+    "answer": "$\\neg(\\forall x\\in A,\\ P(x))\\iff\\exists x\\in A:\\neg P(x)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A universal claim fails exactly when there is at least one counterexample in the same quantified domain.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Negating existential and universal statements"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-negate-existential",
+    "topicId": "MST125-9-logic",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Negate an existential statement $\\exists x\\in A:\\ P(x)$.",
+    "answer": "$\\neg(\\exists x\\in A:\\ P(x))\\iff\\forall x\\in A,\\ \\neg P(x)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An existence claim fails exactly when every candidate in the stated domain fails the underlying proposition.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Negating existential and universal statements"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-implication-truth-rule",
+    "topicId": "MST125-9-implication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "When is an implication $P\\Rightarrow Q$ false?",
+    "answer": "Only when $P$ is true and $Q$ is false. For $(P,Q)=(T,T),(T,F),(F,T),(F,F)$ the implication has values $T,F,T,T$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An implication excludes a true premise paired with a false conclusion; a false premise does not make the implication false.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Implications and equivalences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-contrapositive",
+    "topicId": "MST125-9-implication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the contrapositive equivalence for an implication.",
+    "answer": "$(P\\Rightarrow Q)\\iff(\\neg Q\\Rightarrow\\neg P)$. The converse $Q\\Rightarrow P$ is not generally equivalent to the original.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Contraposition reverses the direction and negates both statements. Reversing direction without negation gives the generally inequivalent converse.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Implications and equivalences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-equivalence-directions",
+    "topicId": "MST125-9-implication",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express $P\\iff Q$ as two implications.",
+    "answer": "$(P\\iff Q)\\iff[(P\\Rightarrow Q)\\land(Q\\Rightarrow P)]$. Both directions are required.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An equivalence asserts necessity and sufficiency together, so proving just one direction is insufficient.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 105,
+      "section": "Implications and equivalences"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-modus-ponens",
+    "topicId": "MST125-9-proof-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the key deductive rule for an implication.",
+    "answer": "From $P$ and $P\\Rightarrow Q$, infer $Q$: $[P\\land(P\\Rightarrow Q)]\\Rightarrow Q$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A true premise activates a valid implication, allowing its conclusion to be deduced.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 106,
+      "section": "Key deductive step"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-equivalence-deduction",
+    "topicId": "MST125-9-proof-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the deductive rule for an equivalence when its right-hand statement is known.",
+    "answer": "From $Q$ and $P\\iff Q$, infer $P$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "An equivalence allows deduction in either direction; here the true right-hand statement yields the left-hand one.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 106,
+      "section": "Deductive step using equivalence"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-induction",
+    "topicId": "MST125-9-proof-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State mathematical induction beginning at an integer $N$.",
+    "answer": "If $P(N)$ is true and $P(k)\\Rightarrow P(k+1)$ for every integer $k\\ge N$, then $P(n)$ is true for all integers $n\\ge N$. For positive-integer induction take $N=1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The base case starts the chain and the inductive implication extends it one integer at a time. Neither part alone proves all cases.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 107,
+      "section": "Proof by induction"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-contradiction-rule",
+    "topicId": "MST125-9-proof-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express the proof-by-contradiction principle symbolically.",
+    "answer": "If assuming $\\neg P$ implies a contradiction, then $P$: $(\\neg P\\Rightarrow\\bot)\\Rightarrow P$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "If the negation cannot be true without forcing a known false conclusion, the original statement must hold.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 107,
+      "section": "To prove a statement P using proof by contradiction"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-9-counterexample-rule",
+    "topicId": "MST125-9-proof-methods",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the counterexample rule for disproving a universal statement.",
+    "answer": "One $x_0\\in A$ with $\\neg P(x_0)$ establishes $\\neg(\\forall x\\in A,\\ P(x))$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A universal statement asserts every case, so one verified failure is enough to refute it; many successful cases cannot establish it.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 107,
+      "section": "To prove by counter-example that a universal statement is false"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-one-dimensional-derivatives",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Relate position, velocity and acceleration in one-dimensional motion.",
+    "answer": "$v=\\frac{dx}{dt}$, $a=\\frac{dv}{dt}=\\frac{d^2x}{dt^2}$. Signs describe direction along the chosen positive axis.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Differentiation gives rates of change along the chosen axis. A negative velocity or acceleration indicates direction, not a negative magnitude.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 109,
+      "section": "Position, velocity and acceleration in one dimension"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-acceleration-position",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Express one-dimensional acceleration in terms of velocity as a function of position.",
+    "answer": "$a=v\\frac{dv}{dx}$ wherever velocity can be treated differentiably as a function of position.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Apply the chain rule to velocity as a function of position, then use the fact that the position derivative is velocity.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 109,
+      "section": "Position, velocity and acceleration in one dimension"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-signed-area-laws",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the signed-area rules for velocity–time and acceleration–time graphs.",
+    "answer": "$x(t_2)-x(t_1)=\\int_{t_1}^{t_2}v(t)\\,dt$ and $v(t_2)-v(t_1)=\\int_{t_1}^{t_2}a(t)\\,dt$. The first integral is displacement, not generally total distance.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Integrating a rate gives the net change of its quantity. Oppositely signed parts cancel in displacement even though both contribute to travelled distance.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 109,
+      "section": "Graphs of position, velocity and acceleration against time"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-speed-change-sign",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How do the signs of velocity and acceleration determine whether speed increases or decreases?",
+    "answer": "In one dimension, $va>0$ means increasing speed; $va<0$ means decreasing speed. This sign test alone does not settle an instant with $v=0$ or $a=0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Acceleration in the velocity direction increases its magnitude, while acceleration in the opposite direction decreases it.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 109,
+      "section": "Position, velocity and acceleration in one dimension"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-constant-acceleration-velocity",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give velocity as a function of time for constant acceleration.",
+    "answer": "$v=v_0+at$ for constant $a$ and initial velocity $v(0)=v_0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Integrating a constant acceleration gives a linear velocity–time relation, with the initial velocity as the integration constant.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 110,
+      "section": "Equations of motion for constant acceleration along a straight line"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-constant-acceleration-position",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give displacement using initial velocity and constant acceleration.",
+    "answer": "$x=v_0t+\\frac12at^2$, for constant $a$, $x(0)=0$, $v(0)=v_0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Integrating the linear velocity law yields the quadratic displacement law. It applies over an interval with one constant acceleration.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 110,
+      "section": "Equations of motion for constant acceleration along a straight line"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-constant-acceleration-average",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give displacement using initial and final velocities for constant acceleration.",
+    "answer": "$x=\\frac12(v_0+v)t$, with $x(0)=0$ and constant acceleration.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "With constant acceleration, velocity changes linearly, so its average over the interval is the mean of its endpoint values.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 110,
+      "section": "Equations of motion for constant acceleration along a straight line"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-constant-acceleration-final-velocity",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give displacement using final velocity and constant acceleration.",
+    "answer": "$x=vt-\\frac12at^2$, for constant $a$ and $x(0)=0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Eliminating the initial velocity from the standard displacement law expresses the same displacement using the final velocity instead.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 110,
+      "section": "Equations of motion for constant acceleration along a straight line"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-constant-acceleration-no-time",
+    "topicId": "MST125-10-kinematics",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the constant-acceleration equation eliminating time.",
+    "answer": "$v^2=v_0^2+2ax$, for constant $a$, $x(0)=0$, $v(0)=v_0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Eliminating time from the constant-acceleration velocity and displacement equations gives a relation useful when duration is unknown.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 110,
+      "section": "Equations of motion for constant acceleration along a straight line"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-newton-second-law",
+    "topicId": "MST125-10-forces",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State Newton’s second law for a particle of constant mass.",
+    "answer": "$\\sum_i\\mathbf F_i=m\\mathbf a$. The force is the resultant of all external forces on the particle, and $m$ is constant.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Acceleration follows the net force, not any individual force. Resolve both sides along the same axes before solving component equations.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 110,
+      "section": "Newton’s second law of motion"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-sliding-friction",
+    "topicId": "MST125-10-forces",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the sliding-friction magnitude rule and its direction.",
+    "answer": "$|\\mathbf F_f|=\\mu|\\mathbf N|$, where $\\mu$ is the coefficient of sliding friction. The force is parallel to the surface and opposite to sliding motion.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The coefficient is the sliding-friction coefficient, not necessarily the static one. Unlike non-limiting static friction, its magnitude is prescribed by the model.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 111,
+      "section": "Sliding friction"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-vector-kinematic-derivatives",
+    "topicId": "MST125-10-projectiles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give componentwise velocity and acceleration from a position vector.",
+    "answer": "For $\\mathbf r=x\\mathbf i+y\\mathbf j+z\\mathbf k$, $\\mathbf v=\\dot x\\mathbf i+\\dot y\\mathbf j+\\dot z\\mathbf k=\\dot{\\mathbf r}$ and $\\mathbf a=\\ddot x\\mathbf i+\\ddot y\\mathbf j+\\ddot z\\mathbf k=\\dot{\\mathbf v}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "For fixed Cartesian basis vectors, differentiate each coordinate separately to obtain the corresponding velocity and acceleration components.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 111,
+      "section": "Determining velocity and acceleration from position"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-vector-kinematic-integrals",
+    "topicId": "MST125-10-projectiles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the integration rules for recovering velocity and position in vector motion.",
+    "answer": "$\\mathbf v=\\int\\mathbf a\\,dt+\\mathbf c_1$, $\\mathbf r=\\int\\mathbf v\\,dt+\\mathbf c_2$, integrating each Cartesian component. Initial conditions determine the constant vectors.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each component integral introduces its own constant, collectively forming a vector constant determined by the initial data.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 111,
+      "section": "Determining position from velocity"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-10-projectile-acceleration",
+    "topicId": "MST125-10-projectiles",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the acceleration vector for the handbook’s gravity-only projectile model.",
+    "answer": "$\\mathbf a=-g\\mathbf j$, where $\\mathbf j$ points vertically upwards and $g>0$ is constant. Horizontal acceleration is zero; air resistance is neglected.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "After launch, the idealised projectile is acted on only by gravity; choosing upward as positive gives the negative vertical component.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 111,
+      "section": "Projectiles"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-eigenvector-equation",
+    "topicId": "MST125-11-eigenpairs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the eigenvector equation and its nonzero-vector restriction.",
+    "answer": "$A\\mathbf x=\\lambda\\mathbf x$, equivalently $(A-\\lambda I)\\mathbf x=\\mathbf0$, with $\\mathbf x\\ne\\mathbf0$. Every nonzero scalar multiple of $\\mathbf x$ has the same eigenvalue.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The zero vector is excluded because it satisfies the equation for every scalar and therefore cannot identify an eigenvalue.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 112,
+      "section": "Terminology for eigenvalues and eigenvectors"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-characteristic-equation",
+    "topicId": "MST125-11-eigenpairs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the characteristic equation for a $2\\times2$ matrix.",
+    "answer": "$\\lambda^2-(\\operatorname{tr}A)\\lambda+\\det A=0$. For $A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ this is $\\lambda^2-(a+d)\\lambda+(ad-bc)=0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The eigenvector equation needs a nontrivial solution, so its coefficient matrix must be singular; expanding that determinant gives the quadratic.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 112,
+      "section": "Finding eigenvalues and eigenvectors"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-eigenvalue-sum-product",
+    "topicId": "MST125-11-special",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Relate the two eigenvalues of a $2\\times2$ matrix to trace and determinant.",
+    "answer": "$\\lambda_1+\\lambda_2=\\operatorname{tr}A$, $\\lambda_1\\lambda_2=\\det A$, counting a repeated eigenvalue twice.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "These identities follow by comparing the characteristic polynomial with the product of its two linear factors, including multiplicity.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 112,
+      "section": "Finding eigenvalues and eigenvectors"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-scalar-matrix-eigenvectors",
+    "topicId": "MST125-11-eigenpairs",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Distinguish the eigenspace of a real eigenvalue for a scalar and a non-scalar $2\\times2$ matrix.",
+    "answer": "If $A=\\lambda I$, every nonzero vector is a $\\lambda$-eigenvector. If $A\\ne\\lambda I$ and $\\lambda$ is a real eigenvalue, the $\\lambda$-eigenvectors are the nonzero vectors on one line through the origin.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A scalar matrix stretches every direction equally. A non-scalar planar matrix has a one-dimensional eigenspace for each real eigenvalue.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 112,
+      "section": "Eigenvectors of a 2 × 2 matrix A corresponding to a real eigenvalue λ"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-triangular-eigenpairs",
+    "topicId": "MST125-11-special",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give eigenvalues and a guaranteed eigenvector for upper and lower triangular $2\\times2$ matrices.",
+    "answer": "$\\begin{pmatrix}a&b\\\\0&d\\end{pmatrix}$ has eigenvalues $a,d$ with $(1,0)^T$ an $a$-eigenvector. $\\begin{pmatrix}a&0\\\\c&d\\end{pmatrix}$ has eigenvalues $a,d$ with $(0,1)^T$ a $d$-eigenvector.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The characteristic determinant factors using the diagonal entries. A coordinate axis already supplies the indicated eigenvector in each triangular case.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 113,
+      "section": "Triangular matrices"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-shear-eigenpairs",
+    "topicId": "MST125-11-special",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the real eigenpairs of a nontrivial horizontal or vertical shear.",
+    "answer": "For $\\begin{pmatrix}1&k\\\\0&1\\end{pmatrix}$ with $k\\ne0$, $\\lambda=1$ is repeated and eigenvectors are nonzero multiples of $(1,0)^T$. For $\\begin{pmatrix}1&0\\\\k&1\\end{pmatrix}$, they are nonzero multiples of $(0,1)^T$, also with repeated eigenvalue $1$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A nontrivial shear fixes its shear axis pointwise but does not provide a second independent eigenvector, despite the repeated eigenvalue.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 113,
+      "section": "Matrices of some geometric transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-rotation-real-eigenvalues",
+    "topicId": "MST125-11-special",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "When does a planar rotation matrix $R_\\theta$ have real eigenvectors?",
+    "answer": "Only when $\\theta=n\\pi$, $n\\in\\mathbb Z$. Then $R_\\theta=I$ for even $n$ (eigenvalue $1$), or $-I$ for odd $n$ (eigenvalue $-1$), and every nonzero vector is an eigenvector. Otherwise there are no real eigenvalues or eigenvectors.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Except at integer multiples of a half-turn, a rotation changes every line’s direction, so no real eigenvector direction is preserved.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 113,
+      "section": "Matrices of some geometric transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-reflection-eigenpairs",
+    "topicId": "MST125-11-special",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give eigenvectors and eigenvalues for reflection in the line inclined at $\\alpha$ through the origin.",
+    "answer": "$\\begin{pmatrix}\\cos\\alpha\\\\\\sin\\alpha\\end{pmatrix}$ is an eigenvector with $\\lambda=1$ (along the line); $\\begin{pmatrix}-\\sin\\alpha\\\\\\cos\\alpha\\end{pmatrix}$ has $\\lambda=-1$ (normal to the line).",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Vectors along the mirror line stay unchanged, while perpendicular vectors reverse direction, giving eigenvalues of opposite sign.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 113,
+      "section": "Matrices of some geometric transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-scaling-eigenpairs",
+    "topicId": "MST125-11-special",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give eigenpairs for a diagonal scaling and a dilation.",
+    "answer": "$\\operatorname{diag}(k,l)$ with $k\\ne l$ has eigenpairs $(k,(1,0)^T)$ and $(l,(0,1)^T)$. For $kI$, the only eigenvalue is $k$, repeated, and every nonzero vector is an eigenvector.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Coordinate-axis directions are preserved by a diagonal scaling. Equal scale factors remove the special role of those axes because every direction is preserved.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 113,
+      "section": "Matrices of some geometric transformations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-singular-eigenpairs",
+    "topicId": "MST125-11-special",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the eigenvalue and nonzero-column rules for a singular $2\\times2$ matrix.",
+    "answer": "If $\\det A=0$, its eigenvalues are $0$ and $\\operatorname{tr}A$. Every nonzero column of $A$ is an eigenvector for $\\operatorname{tr}A$; if the trace is zero, $0$ is repeated. For $A=0$ there is no nonzero column, but every nonzero vector has eigenvalue $0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A zero determinant forces one root of the characteristic polynomial to be zero; the trace gives the other, and nonzero columns supply its eigenvector direction.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 113,
+      "section": "Matrices with determinant zero"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-diagonalisation",
+    "topicId": "MST125-11-diagonalisation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the eigenvector construction of $A=PDP^{-1}$ for two distinct real eigenvalues.",
+    "answer": "Choose corresponding nonzero eigenvectors $\\mathbf x_1,\\mathbf x_2$ for $\\lambda_1\\ne\\lambda_2$. Then $P=[\\,\\mathbf x_1\\ \\ \\mathbf x_2\\,]$ is invertible and $D=\\operatorname{diag}(\\lambda_1,\\lambda_2)$, in matching order; $A=PDP^{-1}$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Distinct real eigenvalues give independent eigenvectors. Their column order must agree with the diagonal order of their eigenvalues.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 114,
+      "section": "To diagonalise a 2 × 2 matrix A with two distinct real eigenvalues"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-trace-similarity",
+    "topicId": "MST125-11-diagonalisation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the trace invariance formula under similarity.",
+    "answer": "$\\operatorname{tr}(PBP^{-1})=\\operatorname{tr}B$ for a $2\\times2$ matrix $B$ and invertible $P$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Changing basis by an invertible similarity transformation does not alter the trace, allowing it to be read from a diagonal representation.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 114,
+      "section": "Trace formula for a 2 × 2 matrix"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-diagonal-powers",
+    "topicId": "MST125-11-diagonalisation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give powers of a diagonal matrix.",
+    "answer": "If $D=\\operatorname{diag}(a,d)$, then $D^n=\\operatorname{diag}(a^n,d^n)$ for positive integers $n$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Off-diagonal zero entries stay zero under multiplication, so only the diagonal elements need to be raised to the required power.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 114,
+      "section": "Powers of a 2 × 2 diagonal matrix"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-matrix-powers",
+    "topicId": "MST125-11-diagonalisation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is diagonalisation used to compute a positive integer power of $A$?",
+    "answer": "If $A=PDP^{-1}$, then $A^n=PD^nP^{-1}$ for $n=1,2,\\ldots$. In particular, $\\operatorname{tr}(A^n)=\\operatorname{tr}(D^n)$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "In repeated multiplication, adjacent inverse and forward change-of-basis matrices cancel, leaving only the power of the diagonal matrix.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 114,
+      "section": "To find A^n, where A is a 2 × 2 diagonalisable matrix and n is a positive integer"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-linear-system-matrix",
+    "topicId": "MST125-11-diagonalisation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Write a coupled two-variable linear differential system as a matrix equation.",
+    "answer": "$\\dot x=ax+by$, $\\dot y=cx+dy$ become $\\dot{\\mathbf x}=A\\mathbf x$, with $\\mathbf x=(x,y)^T$ and $A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$. It is decoupled when $b=c=0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The matrix rows collect the coefficients in each differential equation; vanishing off-diagonal coefficients remove coupling between the two variables.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 115,
+      "section": "Systems of differential equations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-11-linear-system-solution",
+    "topicId": "MST125-11-diagonalisation",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the general solution of $\\dot{\\mathbf x}=A\\mathbf x$ when $A$ has two distinct real eigenvalues.",
+    "answer": "For eigenpairs $(\\lambda_1,\\mathbf x_1)$, $(\\lambda_2,\\mathbf x_2)$, $\\mathbf x(t)=Ce^{\\lambda_1t}\\mathbf x_1+De^{\\lambda_2t}\\mathbf x_2$, with arbitrary real constants $C,D$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each eigenvector supplies an exponential solution mode. Distinct real eigenvalues provide two independent modes whose linear combinations give the general solution.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 115,
+      "section": "To find the general solution of a system ẋ=Ax, where A has two distinct real eigenvalues"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-subset-count",
+    "topicId": "MST125-12-counting",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How many subsets does a set with $n$ elements have?",
+    "answer": "$2^n$, including the empty set and the entire set, for every non-negative integer $n$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each element is either included or excluded independently, giving two choices per element; this also gives one subset when the original set is empty.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 116,
+      "section": "The number of subsets of an n-element set"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-multiplication-principle",
+    "topicId": "MST125-12-counting",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the multiplication principle for successive choices.",
+    "answer": "If at stage $i$ there are $n_i$ choices regardless of earlier selections, the number of complete outcomes is $\\prod_{i=1}^k n_i=n_1n_2\\cdots n_k$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A product counts all complete paths through the choice stages when each stage has the stated number of options for every earlier path.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 116,
+      "section": "The multiplication principle"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-addition-principle",
+    "topicId": "MST125-12-counting",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the addition principle for a finite partition.",
+    "answer": "If $S=S_1\\cup\\cdots\\cup S_k$ with pairwise disjoint subsets, $|S|=|S_1|+\\cdots+|S_k|$. Disjointness prevents double counting.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Each element belongs to exactly one part of the partition, so adding the separate counts neither omits nor repeats an element.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 116,
+      "section": "The addition principle"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-complement-count",
+    "topicId": "MST125-12-counting",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the subtraction principle for counting a subset of a finite set.",
+    "answer": "For $S\\subseteq U$, $|U\\setminus S|=|U|-|S|$, equivalently $|S|=|U|-|U\\setminus S|$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A finite universe splits into a subset and its disjoint complement. Counting the easier complement can avoid counting the desired set directly.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 116,
+      "section": "The subtraction principle"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-ordered-repetition",
+    "topicId": "MST125-12-combinations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Count length-$k$ sequences chosen from $n$ distinct objects, allowing repetition.",
+    "answer": "$n^k$, since each of the $k$ ordered positions has $n$ choices.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Repetition keeps all objects available for every position, and changing the order can produce a different sequence.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 118,
+      "section": "Sequences, permutations and combinations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-permutations",
+    "topicId": "MST125-12-combinations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Count ordered selections of $k$ different objects from $n$ distinct objects.",
+    "answer": "${}^nP_k=n(n-1)\\cdots(n-k+1)=\\frac{n!}{(n-k)!}$ for integers $0\\le k\\le n$; repetition is not allowed.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Every selection removes one available object for the next position. The falling product therefore counts ordered choices without repetition.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 118,
+      "section": "Sequences, permutations and combinations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-combinations",
+    "topicId": "MST125-12-combinations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Count unordered selections of $k$ different objects from $n$ distinct objects.",
+    "answer": "${}^nC_k=\\binom nk=\\frac{n!}{k!(n-k)!}=\\frac{{}^nP_k}{k!}$ for integers $0\\le k\\le n$; repetition is not allowed.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Every unordered selection corresponds to the same number of orderings, so dividing the permutation count by the number of internal orders removes overcounting.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 118,
+      "section": "Sequences, permutations and combinations"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-equiprobable-probability",
+    "topicId": "MST125-12-combinations",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the probability rule for an event in a finite equally likely sample space.",
+    "answer": "$P(E)=\\frac{|E|}{|S|}$ for $E\\subseteq S$, $0<|S|<\\infty$, when all outcomes in $S$ are equally likely.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A ratio of counts is valid only when all sample-space outcomes have equal probability and the finite sample space is nonempty.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 118,
+      "section": "The probability of an event"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-first-order-general-solution",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the closed-form pattern for a constant-coefficient first-order affine recurrence with $r\\ne1$.",
+    "answer": "For $x_n=rx_{n-1}+d$, $n\\ge2$, $r\\ne0,1$, use $x_n=Cr^{n-1}+D$, where $D=d/(1-r)$ and the initial value fixes $C$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The constant term is the fixed point of the affine recurrence; subtracting it leaves a geometric sequence. The displayed form excludes the unit-ratio case.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 120,
+      "section": "To find a closed form for a first-order recurrence sequence"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-first-order-initial-values",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the closed form for $x_1=a$, $x_n=rx_{n-1}+d$, with $r\\ne0,1$.",
+    "answer": "$x_n=\\left(a-\\frac{d}{1-r}\\right)r^{n-1}+\\frac{d}{1-r}$ for $n\\ge1$. This is $Cr^{n-1}+D$ with $C+D=a$ and $Cr+D=ra+d$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The initial term fixes the coefficient of the geometric part after the constant fixed-point contribution has been separated.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 120,
+      "section": "To find a closed form for a first-order recurrence sequence"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-second-order-auxiliary",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the auxiliary equation for a homogeneous second-order constant-coefficient recurrence.",
+    "answer": "For $u_n=pu_{n-1}+qu_{n-2}$, $q\\ne0$, the auxiliary equation is $r^2-pr-q=0$. Two initial values are required.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Substituting a trial geometric sequence into the recurrence produces the auxiliary polynomial; its roots determine the allowed exponential modes.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 122,
+      "section": "To find a closed form for a second-order recurrence sequence"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-distinct-root-recurrence",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the general recurrence solution when the auxiliary equation has distinct real roots $\\alpha,\\beta$.",
+    "answer": "$u_n=A\\alpha^n+B\\beta^n$. For $u_0=a$, $u_1=b$, determine $A,B$ from $A+B=a$, $A\\alpha+B\\beta=b$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Distinct real roots produce two independent geometric modes, and the two initial terms determine their two coefficients.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 122,
+      "section": "To find a closed form for a second-order recurrence sequence"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-repeated-root-recurrence",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "Give the general recurrence solution when the auxiliary equation has a repeated real root $\\alpha$.",
+    "answer": "$u_n=(A+Bn)\\alpha^n$. With $u_0=a$, $u_1=b$, use $A=a$ and $(A+B)\\alpha=b$. The handbook’s second-order assumption $q\\ne0$ ensures $\\alpha\\ne0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "A repeated root requires a second mode with a linear factor in the index; two pure multiples of the same geometric mode would not be independent.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 122,
+      "section": "To find a closed form for a second-order recurrence sequence"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-fibonacci-recurrence",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State the Fibonacci recurrence with its initial terms.",
+    "answer": "$F_1=F_2=1$, $F_n=F_{n-1}+F_{n-2}$ for $n\\ge3$. It extends consistently to $F_0=0$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "Two starting values and the sum-of-previous-two rule determine every later term; including the zero-index term keeps the same rule consistent.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 122,
+      "section": "The Fibonacci sequence"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-binet",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "State Binet’s exact formula for the Fibonacci sequence.",
+    "answer": "$F_n=\\frac{\\phi^n-\\psi^n}{\\sqrt5}$, $n\\ge0$, where $\\phi=(1+\\sqrt5)/2$ and $\\psi=(1-\\sqrt5)/2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The two exponential bases are the roots of the Fibonacci auxiliary equation, and their coefficients enforce its initial values.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 122,
+      "section": "Binet’s formula"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  },
+  {
+    "id": "formula-MST125-12-binet-rounding",
+    "topicId": "MST125-12-recurrences",
+    "kind": "flashcard",
+    "difficulty": "quick",
+    "prompt": "How is a Fibonacci number obtained by rounding a power of the golden ratio?",
+    "answer": "$F_n$ is the nearest integer to $\\phi^n/\\sqrt5$ for every integer $n\\ge0$, where $\\phi=(1+\\sqrt5)/2$.",
+    "acceptedAnswers": [],
+    "choices": [],
+    "hints": [],
+    "explanation": "The omitted term in Binet’s exact formula has magnitude below one half for non-negative indices, so nearest-integer rounding recovers the exact term.",
+    "answerFormat": "self",
+    "source": {
+      "handbook": "MST125 Handbook",
+      "page": 122,
+      "section": "Binet’s approximation"
+    },
+    "verification": {
+      "method": "handbook",
+      "models": [],
+      "checkedAt": null
+    },
+    "flagged": false
+  }
+]

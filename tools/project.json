@@ -4,5 +4,11 @@
   "sourceRoot": "tools",
   "projectType": "library",
   "tags": ["scope:shared", "type:tooling"],
-  "targets": {}
+  "targets": {
+    "test": {
+      "executor": "nx:run-commands",
+      "inputs": ["default", "{workspaceRoot}/data/formulas-*.json"],
+      "options": { "command": "tsx --test tools/handbook-decks.test.ts" }
+    }
+  }
 }

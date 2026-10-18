@@ -82,7 +82,7 @@ pnpm exec tsx tools/verify-deployment.ts
 
 `STAGE` defaults to `prod`; another stage uses a separate `MathOnTheGo-<stage>` stack and generated domain. `AWS_REGION` selects the region.
 
-Deployment stores the OpenRouter key in Secrets Manager under `math-on-the-go/<stage>/openrouter`. The deploy helper sends the secret via AWS CLI stdin, not command-line arguments. CloudFormation receives a versioned dynamic reference, not the plaintext key. The API can invoke the worker; only the worker needs the production provider key. Required permissions include secret describe/create/put, CloudFormation secret resolution, CDK bootstrap asset access and normal resource provisioning. Treat deployment access and generated templates as sensitive infrastructure access even though plaintext provider credentials are not embedded.
+Deployment stores the OpenRouter key in Secrets Manager under `math-on-the-go/<stage>/openrouter`. The deploy helper gives AWS CLI a mode-0600 temporary JSON file inside a private temporary directory, never the key in command-line arguments or child environments. The file is removed in `finally`, including on failure; diagnostics expose only error codes, not secret payloads. CloudFormation receives a versioned dynamic reference, not the plaintext key. The API can invoke the worker; only the worker needs the production provider key. Required permissions include secret describe/create/put, CloudFormation secret resolution, CDK bootstrap asset access and normal resource provisioning. Treat deployment access and generated templates as sensitive infrastructure access even though plaintext provider credentials are not embedded.
 
 Create your account using the emitted **UserPoolId**; self-registration is disabled:
 

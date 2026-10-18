@@ -87,6 +87,7 @@ pub async fn run_session(state: &AppState, event: WorkerEvent) -> ApiResult<()> 
     let Some(record) = sessions::claim(state, &event.user_id, &event.session_id).await? else {
         return Ok(());
     };
+    let generation_id = record.generation_id.clone();
     let pipelines: Vec<_> = record
         .plans
         .into_iter()
@@ -97,20 +98,43 @@ pub async fn run_session(state: &AppState, event: WorkerEvent) -> ApiResult<()> 
         .collect();
     let work = async {
         let questions = prepare_parallel(pipelines, |generated| {
-            sessions::progress(state, &event.user_id, &event.session_id, generated)
+            sessions::progress(
+                state,
+                &event.user_id,
+                &event.session_id,
+                &generation_id,
+                generated,
+            )
         })
         .await?;
-        sessions::publish(state, &event.user_id, &event.session_id, questions).await
+        sessions::publish(
+            state,
+            &event.user_id,
+            &event.session_id,
+            &generation_id,
+            questions,
+        )
+        .await
     };
     let result = tokio::time::timeout(JOB_TIMEOUT, work).await;
     match result {
         Ok(Ok(())) => Ok(()),
-        Ok(Err(error)) => sessions::fail(state, &event.user_id, &event.session_id, error.1).await,
+        Ok(Err(error)) => {
+            sessions::fail(
+                state,
+                &event.user_id,
+                &event.session_id,
+                &generation_id,
+                error.1,
+            )
+            .await
+        }
         Err(_) => {
             sessions::fail(
                 state,
                 &event.user_id,
                 &event.session_id,
+                &generation_id,
                 "Session preparation exceeded the worker deadline; no partial queue was published"
                     .into(),
             )
@@ -166,6 +190,9 @@ where
 }
 
 async fn generate_question(state: &AppState, plan: &GenerationPlan) -> ApiResult<Question> {
+    if plan.kind != Kind::Task {
+        return Err(ApiError::bad("AI generation is restricted to tasks"));
+    }
     let unit = state
         .catalog
         .units
@@ -180,15 +207,15 @@ async fn generate_question(state: &AppState, plan: &GenerationPlan) -> ApiResult
     let reference = state
         .bank
         .iter()
-        .filter(|q| q.topic_id == plan.topic_id)
-        .max_by_key(|q| (q.kind == plan.kind, q.template.is_some()))
+        .filter(|q| q.topic_id == plan.topic_id && q.kind == Kind::Task)
+        .max_by_key(|q| q.template.is_some())
         .ok_or_else(|| ApiError::bad("Topic has no curated source reference"))?;
     let specification = json!({
         "count": 1, "slot": plan.slot + 1,
         "variationGuidance": format!("Independent session slot {}: choose a distinctive example, assumptions, values and formulation; do not copy the reference prompt.", plan.slot + 1),
         "module": unit.module, "unit": unit.title, "topic": topic.title,
         "topicId": plan.topic_id, "kind": plan.kind, "difficulty": plan.difficulty,
-        "formulaOnly": plan.formula_only, "source": reference.source,
+        "source": reference.source,
         "allowedAnswerFormats": ["text", "choice", "self"],
         "templateParameterLimits": {
             "linear-evaluation": {"a": "nonzero integer -9..9", "b": "integer -9..9", "x": "integer -9..9"},
@@ -206,8 +233,7 @@ Use exactly the Question object shape shown by this example: {}.
 Do not reproduce its prompt. Include all required fields. acceptedAnswers, choices, hints, and verification.models are arrays. answerFormat must be one of text, choice, self, never algebraic.
 For numeric text tasks, choose a mathematically relevant supported template family from templateParameterLimits and use template {{\"type\":family,\"parameters\":numericParameterObject}}. The values must satisfy all listed limits. The answer field must contain only a number or arithmetic expression such as 3/4, with no variable assignment, units, or LaTeX delimiters. Set acceptedAnswers to [] for numeric tasks: the server already accepts numerically equivalent fractions and expressions, so do not add aliases such as x=4.
 If the requested topic does NOT match a supported numerical template, use an exact finite choice set or self-assessed reasoning on the actual requested topic. NEVER substitute irrelevant algebra, elementary arithmetic or a supported template from another topic merely to enable numeric grading.
-For expressions with variables, explanations, proofs, or counterexamples, use self assessment or a finite choice set: never claim general symbolic automatic grading. Reasoning tasks and flashcards use answerFormat self and template null.
-If formulaOnly is true, create a FLASHCARD recalling an actual formula, identity or mathematical rule, including necessary assumptions and domains. A plain definition, descriptive fact, worked calculation or 'compute this value' task is NOT a formula recall card and will be rejected. Ask to state or complete the general formula/rule, not apply it to specific numbers.
+For expressions with variables, explanations, proofs, or counterexamples, use self assessment or a finite choice set: never claim general symbolic automatic grading. Reasoning tasks use answerFormat self and template null. Generate only TASKS: never a flashcard or a prompt that merely asks to recall a formula.
 Use only the requested topic and studied prerequisites. Every question must be mentally tractable, with two staged hints and a short worked explanation. No graph needed. Verification is assigned by the server: use method self-assessed, models [], checkedAt null. flagged is false.",
         serde_json::to_string(reference).map_err(|_| ApiError::bad("Invalid reference"))?
     );
@@ -236,7 +262,7 @@ async fn vet(
 ) -> ApiResult<Question> {
     validate_question(&q, &state.catalog)?;
     if q.topic_id != plan.topic_id
-        || q.kind != plan.kind
+        || q.kind != Kind::Task
         || q.difficulty != plan.difficulty
         || q.source.handbook != reference.source.handbook
         || q.source.page != reference.source.page
@@ -246,12 +272,6 @@ async fn vet(
         return Err(ApiError::bad(
             "Generated question topic, kind, difficulty or source does not match request",
         ));
-    }
-    if q.kind == Kind::Flashcard && q.answer_format != AnswerFormat::SelfAssessed {
-        return Err(ApiError::bad("Flashcards require self assessment"));
-    }
-    if plan.formula_only && q.kind != Kind::Flashcard {
-        return Err(ApiError::bad("Formula mode requires actual flashcards"));
     }
     if q.answer_format == AnswerFormat::Text
         && (grading::numeric(&q.answer).is_none() || !q.accepted_answers.is_empty())
@@ -314,9 +334,8 @@ async fn vet(
         .flat_map(|u| &u.topics)
         .find(|t| t.id == plan.topic_id)
         .ok_or_else(|| ApiError::bad("Unknown topic"))?;
-    let blind = json!({"topic":topic.title,"prompt":q.prompt,"choices":q.choices,"answerFormat":q.answer_format,"graph":q.graph,"formulaOnly":plan.formula_only});
-    let solved=completion(state,SOLVER_MODEL,"Independently solve this mathematics problem. You have not been given any candidate answer. Output JSON {\"answer\":string,\"reasoning\":string,\"unambiguous\":boolean,\"topicAligned\":boolean,\"formulaCard\":boolean}. Set formulaCard true ONLY when the prompt asks to recall an actual general formula, identity or mathematical rule with appropriate assumptions. Plain definitions, descriptive facts and calculations/applications at specific values are NOT formula recall; set formulaCard false for those, even if the input requests formulaOnly. For choice return exact choice text. For numerical text answers, return only the number or arithmetic expression in answer, with no variable assignment, units or LaTeX delimiters; explain the calculation in reasoning. For self-assessed reasoning, answer may be a mathematical explanation. Mark unambiguous false if underspecified, invalid, or not solvable. Never invent missing assumptions.",&blind.to_string()).await?;
-    validate_formula_verdict(plan.formula_only, &q, &solved)?;
+    let blind = json!({"topic":topic.title,"prompt":q.prompt,"choices":q.choices,"answerFormat":q.answer_format,"graph":q.graph});
+    let solved=completion(state,SOLVER_MODEL,"Independently solve this mathematics problem. You have not been given any candidate answer. Output JSON {\"answer\":string,\"reasoning\":string,\"unambiguous\":boolean,\"topicAligned\":boolean}. For choice return exact choice text. For numerical text answers, return only the number or arithmetic expression in answer, with no variable assignment, units or LaTeX delimiters; explain the calculation in reasoning. For self-assessed reasoning, answer may be a mathematical explanation. Mark unambiguous false if underspecified, invalid, or not solvable. Never invent missing assumptions.",&blind.to_string()).await?;
     let answer = solved
         .get("answer")
         .and_then(Value::as_str)
@@ -365,19 +384,4 @@ async fn vet(
     q.flagged = false;
     validate_question(&q, &state.catalog)?;
     Ok(q)
-}
-
-pub fn validate_formula_verdict(
-    formula_only: bool,
-    question: &Question,
-    verdict: &Value,
-) -> ApiResult<()> {
-    if formula_only
-        && (question.kind != Kind::Flashcard
-            || question.answer_format != AnswerFormat::SelfAssessed
-            || verdict.get("formulaCard").and_then(Value::as_bool) != Some(true))
-    {
-        return Err(ApiError::bad("Independent solver rejected this as not a formula, identity or mathematical-rule recall flashcard"));
-    }
-    Ok(())
 }

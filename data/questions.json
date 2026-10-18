@@ -1,32 +1,5 @@
 [
   {
-    "id": "MST124-1-numbers-recall",
-    "topicId": "MST124-1-numbers",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How do prime factorisations give the HCF and LCM of positive integers?",
-    "answer": "HCF: common primes with their minimum exponents. LCM: every occurring prime with its maximum exponent.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Compare exponents in the two prime factorisations.",
-      "A divisor uses the smaller available count; a multiple needs the larger."
-    ],
-    "explanation": "A common divisor cannot use more copies of a prime than either input. A common multiple must contain enough copies for both.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 16,
-      "section": "Common factors and common multiples of integers"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-1-numbers-hcf",
     "topicId": "MST124-1-numbers",
     "kind": "task",
@@ -75,33 +48,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-1-powers-recall",
-    "topicId": "MST124-1-powers",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "For $a>0$, recall the quotient law for powers and the meaning of a negative exponent.",
-    "answer": "$a^m/a^n=a^{m-n}$ and $a^{-n}=1/a^n$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Division cancels repeated factors.",
-      "A negative exponent reverses a power into the denominator."
-    ],
-    "explanation": "Cancellation subtracts exponents; a negative exponent represents the reciprocal, not a negative value.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 16,
-      "section": "Powers and roots"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-1-powers-negative-power",
     "topicId": "MST124-1-powers",
     "kind": "task",
@@ -133,33 +79,6 @@
     }
   },
   {
-    "id": "MST124-1-equations-recall",
-    "topicId": "MST124-1-equations",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "When dividing both sides of an equation by an expression, what condition must be checked?",
-    "answer": "The expression must be nonzero; otherwise solutions may be lost or the operation is undefined.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Think about an expression that might equal zero.",
-      "Try dividing $x(x-1)=0$ by $x$."
-    ],
-    "explanation": "For instance, dividing $x(x-1)=0$ by $x$ would discard the valid solution $x=0$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 18,
-      "section": "To rearrange an equation"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-1-equations-lost-root",
     "topicId": "MST124-1-equations",
     "kind": "task",
@@ -178,33 +97,6 @@
       "handbook": "MST124 Handbook",
       "page": 18,
       "section": "To rearrange an equation"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-2-lines-recall",
-    "topicId": "MST124-2-lines",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the gradient through two points with different x-coordinates and the perpendicular-gradient relation.",
-    "answer": "$m=(y_2-y_1)/(x_2-x_1)$; nonvertical, nonhorizontal perpendicular lines have gradients with product $-1$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Use rise over run.",
-      "For perpendicular non-axis lines, compare the product of their slopes."
-    ],
-    "explanation": "Gradient is rise divided by run. The perpendicular relation excludes the horizontal/vertical pair, for which one gradient is undefined.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 19,
-      "section": "Straight-line graphs"
     },
     "verification": {
       "method": "self-assessed",
@@ -238,33 +130,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-2-simultaneous-recall",
-    "topicId": "MST124-2-simultaneous",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What do the solutions of two linear equations represent geometrically?",
-    "answer": "Their common points: one intersection, no intersection, or an entire coincident line.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Look at the lines represented by the equations.",
-      "Distinguish crossing, parallel and coincident lines."
-    ],
-    "explanation": "Distinct nonparallel lines intersect once; distinct parallel lines never meet; coincident lines have infinitely many common points.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 20,
-      "section": "Simultaneous linear equations"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-2-simultaneous-eliminate",
     "topicId": "MST124-2-simultaneous",
     "kind": "task",
@@ -283,33 +148,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-2-quadratics-recall",
-    "topicId": "MST124-2-quadratics",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "For $ax^2+bx+c=0$, $a\\ne0$, how does the discriminant determine the number of distinct real roots?",
-    "answer": "$D=b^2-4ac$: two if $D>0$, one if $D=0$, none if $D<0$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Inspect the expression inside the quadratic formula’s square root.",
-      "Its sign determines whether there are two, one or no real choices."
-    ],
-    "explanation": "The quadratic formula contains $\\sqrt D$; its sign determines two real choices, a repeated real root, or nonreal roots.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 22,
-      "section": "The number of real solutions of a quadratic equation"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -364,33 +202,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-3-composition-recall",
-    "topicId": "MST124-3-composition",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What is the rule and domain condition for $(g\\circ f)(x)$?",
-    "answer": "It is $g(f(x))$; $x$ must be in the domain of $f$ and $f(x)$ in the domain of $g$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "The function next to $x$ acts first.",
-      "The intermediate output must be an allowed input for the outer function."
-    ],
-    "explanation": "Apply the inner function first. Both stages must be defined, so merely belonging to the domain of $f$ is not enough.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 26,
-      "section": "Composite functions"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-3-composition-compose",
     "topicId": "MST124-3-composition",
     "kind": "task",
@@ -409,33 +220,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-3-transformations-recall",
-    "topicId": "MST124-3-transformations",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How does $y=f(x-c)+d$ move the graph of $y=f(x)$?",
-    "answer": "Translate right by $c$ and up by $d$, with signed values allowed.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Track a point $(u,f(u))$ through the new equation.",
-      "To keep the inner input equal to $u$, solve $x-c=u$."
-    ],
-    "explanation": "A point $(u,f(u))$ becomes $(u+c,f(u)+d)$ because the new input satisfies $x-c=u$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 28,
-      "section": "Translating graphs horizontally"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -499,33 +283,6 @@
     }
   },
   {
-    "id": "MST124-3-logs-recall",
-    "topicId": "MST124-3-logs",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "State the real-domain restrictions and inverse relation for $\\log_b x$.",
-    "answer": "$b>0$, $b\\ne1$, $x>0$; $y=\\log_b x$ exactly when $b^y=x$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "A logarithm returns an exponent.",
-      "A real logarithm needs a positive argument and a positive nonunit base."
-    ],
-    "explanation": "A logarithm returns the exponent needed to produce a positive input from a positive nonunit base.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 30,
-      "section": "Logarithms"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-3-logs-log-domain",
     "topicId": "MST124-3-logs",
     "kind": "task",
@@ -577,33 +334,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-4-angles-recall",
-    "topicId": "MST124-4-angles",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How are radians related to arc length, and how many radians make a full turn?",
-    "answer": "$s=r\\theta$ with $\\theta$ in radians; a full turn is $2\\pi$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Radian measure divides arc length by radius.",
-      "Use the circumference $2\\pi r$ for one complete turn."
-    ],
-    "explanation": "At radius $r$, a full circumference is $2\\pi r$, so dividing arc length by radius gives $2\\pi$ radians.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 33,
-      "section": "Radians"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-4-angles-arc",
     "topicId": "MST124-4-angles",
     "kind": "task",
@@ -628,33 +358,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-4-circle-recall",
-    "topicId": "MST124-4-circle",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What are the coordinates on the unit circle at angle $\\theta$, and which identity follows?",
-    "answer": "$(\\cos\\theta,\\sin\\theta)$ and $\\cos^2\\theta+\\sin^2\\theta=1$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Cosine is the horizontal coordinate.",
-      "Apply the equation of the radius-one circle."
-    ],
-    "explanation": "The coordinates satisfy the circle equation $x^2+y^2=1$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 34,
-      "section": "Trigonometric ratios for angles of any size"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-4-circle-sine-count",
     "topicId": "MST124-4-circle",
     "kind": "task",
@@ -673,33 +376,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-4-triangle-rules-recall",
-    "topicId": "MST124-4-triangle-rules",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "State the cosine rule for side $a$ opposite angle $A$.",
-    "answer": "$a^2=b^2+c^2-2bc\\cos A$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "The angle is enclosed by the two known sides.",
-      "Start from Pythagoras, then include a cosine correction."
-    ],
-    "explanation": "The angle must be the included angle between sides $b$ and $c$. For a right angle the cosine term vanishes, recovering Pythagoras.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 37,
-      "section": "Cosine rule"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -757,33 +433,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-5-geometry-recall",
-    "topicId": "MST124-5-geometry",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the equation of the circle with centre $(a,b)$ and radius $r>0$.",
-    "answer": "$(x-a)^2+(y-b)^2=r^2$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Use the distance from $(x,y)$ to the centre.",
-      "Set the squared distance equal to the squared radius."
-    ],
-    "explanation": "The squared distance from $(x,y)$ to the centre is $(x-a)^2+(y-b)^2$, and every point on the circle has distance $r$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 38,
-      "section": "Distance formula (for two or three dimensions)"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-5-geometry-distance",
     "topicId": "MST124-5-geometry",
     "kind": "task",
@@ -808,33 +457,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-5-components-recall",
-    "topicId": "MST124-5-components",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How do you find the magnitude of $(a,b,c)$, and the unit vector in its direction?",
-    "answer": "$\\sqrt{a^2+b^2+c^2}$; divide the vector by its magnitude, provided it is nonzero.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Apply Pythagoras to the components.",
-      "To normalise, divide by length; check that length is not zero."
-    ],
-    "explanation": "The magnitude is the Euclidean length. Dividing by it rescales the length to one without changing direction.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 42,
-      "section": "To find the magnitude of a two- or three-dimensional vector from its components"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-5-components-resultant",
     "topicId": "MST124-5-components",
     "kind": "task",
@@ -853,33 +475,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-5-dot-product-recall",
-    "topicId": "MST124-5-dot-product",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the dot-product formula and its perpendicularity test for nonzero vectors.",
-    "answer": "$u\\cdot v=|u||v|\\cos\\theta$; nonzero vectors are perpendicular exactly when their dot product is zero.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "The geometric formula uses the cosine of the included angle.",
-      "A right angle has cosine zero."
-    ],
-    "explanation": "In components, multiply matching coordinates and add. Zero cosine corresponds to a right angle.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 43,
-      "section": "Scalar product"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -939,33 +534,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-6-derivatives-recall",
-    "topicId": "MST124-6-derivatives",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the power rule and the geometric meaning of $f'(a)$.",
-    "answer": "For $f(x)=x^n$, $f'(x)=nx^{n-1}$ where defined; $f'(a)$ is the tangent gradient at $(a,f(a))$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Differentiate the power by reducing its exponent.",
-      "The derivative at a point is a local slope."
-    ],
-    "explanation": "The derivative is the limiting rise/run of secants approaching the point. Power differentiation lowers the exponent by one.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 44,
-      "section": "Power functions"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-6-derivatives-power-slope",
     "topicId": "MST124-6-derivatives",
     "kind": "task",
@@ -996,33 +564,6 @@
         "x": 2
       }
     }
-  },
-  {
-    "id": "MST124-6-stationary-recall",
-    "topicId": "MST124-6-stationary",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How does a derivative changing from negative to positive classify a stationary point?",
-    "answer": "It is a local minimum.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Read negative derivative as falling and positive as rising.",
-      "A falling-then-rising graph has its low point in between."
-    ],
-    "explanation": "The function decreases on the left and increases on the right, making the stationary value smaller than nearby values.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 45,
-      "section": "First derivative test"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
   },
   {
     "id": "MST124-6-stationary-stationary-graph",
@@ -1090,33 +631,6 @@
     }
   },
   {
-    "id": "MST124-6-applications-recall",
-    "topicId": "MST124-6-applications",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How are displacement $s(t)$, velocity and acceleration related in one-dimensional motion?",
-    "answer": "$v=s'(t)$ and $a=v'(t)=s''(t)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Velocity is the first rate of change.",
-      "Differentiate displacement once for velocity, twice for acceleration."
-    ],
-    "explanation": "Velocity records signed rate of displacement; acceleration records signed rate of velocity. Speed is $|v|$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 47,
-      "section": "Displacement, velocity and acceleration"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-6-applications-motion",
     "topicId": "MST124-6-applications",
     "kind": "task",
@@ -1168,33 +682,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-7-chain-recall",
-    "topicId": "MST124-7-chain",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the chain rule for $g(f(x))$.",
-    "answer": "$(g\\circ f)'(x)=g'(f(x))f'(x)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Work from the outside in.",
-      "Multiply the outer derivative by the inner derivative."
-    ],
-    "explanation": "Differentiate the outer function at the unchanged inner expression, then multiply by the derivative of the inner expression.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 48,
-      "section": "Chain rule"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-7-chain-chain-value",
     "topicId": "MST124-7-chain",
     "kind": "task",
@@ -1219,30 +706,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-7-products-recall",
-    "topicId": "MST124-7-products",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the product rule for differentiable functions $u$ and $v$.",
-    "answer": "$(uv)'=u'v+uv'$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": ["Both factors change.", "There are two terms, each differentiating one factor only."],
-    "explanation": "Both factors change, so there are two contributions. Multiplying the two derivatives alone omits them.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 48,
-      "section": "Product rule"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-7-products-product-value",
     "topicId": "MST124-7-products",
     "kind": "task",
@@ -1261,33 +724,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-7-antiderivatives-recall",
-    "topicId": "MST124-7-antiderivatives",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Why is an arbitrary constant included in an indefinite integral?",
-    "answer": "Differentiation removes constants, so all functions $F(x)+C$ have the same derivative $F'(x)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Different constants have identical derivatives.",
-      "Compare the derivatives of $x^2$ and $x^2+7$."
-    ],
-    "explanation": "On an interval, any two antiderivatives differ by a constant. The constant describes the entire family rather than one representative.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 50,
-      "section": "Antiderivatives and indefinite integrals"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -1345,33 +781,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-8-definite-recall",
-    "topicId": "MST124-8-definite",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "State the fundamental theorem for a continuous $f$ with antiderivative $F$.",
-    "answer": "$\\int_a^b f(x)\\,dx=F(b)-F(a)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Use an antiderivative rather than a sum of areas.",
-      "Evaluate it at the upper endpoint and subtract the lower endpoint value."
-    ],
-    "explanation": "The integral measures signed accumulation. Evaluating an antiderivative at the endpoints avoids taking a limit of area sums.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 51,
-      "section": "Fundamental theorem of calculus"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-8-definite-power-integral",
     "topicId": "MST124-8-definite",
     "kind": "task",
@@ -1405,33 +814,6 @@
     }
   },
   {
-    "id": "MST124-8-substitution-recall",
-    "topicId": "MST124-8-substitution",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "In a definite integral, what must change when substituting $u=g(x)$?",
-    "answer": "Replace the integrand and differential consistently, and change each endpoint to its corresponding u-value.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "The new integral has a different variable.",
-      "Its endpoint labels must also be values of that new variable."
-    ],
-    "explanation": "Since $du=g'(x)dx$, the transformed integral is in $u$, so its bounds must also be values of $u$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 52,
-      "section": "Integration by substitution"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-8-substitution-substitute",
     "topicId": "MST124-8-substitution",
     "kind": "task",
@@ -1450,33 +832,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-8-parts-recall",
-    "topicId": "MST124-8-parts",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall integration by parts in $u,v$ notation.",
-    "answer": "$\\int u\\,dv=uv-\\int v\\,du$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Start with the product rule.",
-      "Integrate it and move one of the resulting integrals to the other side."
-    ],
-    "explanation": "Integrate the product-rule identity $d(uv)=u\\,dv+v\\,du$ and rearrange.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 53,
-      "section": "Integration by parts"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -1534,33 +889,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-9-multiplication-recall",
-    "topicId": "MST124-9-multiplication",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "When is $AB$ defined, and what size is it, if $A$ is $m\\times n$?",
-    "answer": "$B$ must have $n$ rows; if $B$ is $n\\times p$, then $AB$ is $m\\times p$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Pair each row of the first matrix with a column of the second.",
-      "The paired row and column must have the same length."
-    ],
-    "explanation": "Each entry pairs one row of $A$ with one column of $B$, so the inner dimensions must match.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 55,
-      "section": "Matrix multiplication"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-9-multiplication-entry",
     "topicId": "MST124-9-multiplication",
     "kind": "task",
@@ -1585,33 +913,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-9-inverse-recall",
-    "topicId": "MST124-9-inverse",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the determinant and invertibility condition for $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$.",
-    "answer": "$\\det A=ad-bc$; the matrix is invertible exactly when $ad-bc\\ne0$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Use products across the two diagonals.",
-      "The inverse formula divides by their difference."
-    ],
-    "explanation": "The inverse is $(ad-bc)^{-1}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$, which requires a nonzero denominator.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 56,
-      "section": "Determinant and inverse of a 2 × 2 matrix"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-9-inverse-singular",
     "topicId": "MST124-9-inverse",
     "kind": "task",
@@ -1630,33 +931,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-9-systems-recall",
-    "topicId": "MST124-9-systems",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What can be concluded about $Ax=b$ when a square matrix $A$ is singular?",
-    "answer": "It has either no solutions or infinitely many; singularity alone does not distinguish them.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "A singular coefficient matrix lacks an inverse.",
-      "Compare dependent equations with their right-hand sides for consistency."
-    ],
-    "explanation": "Dependent rows cannot give a unique solution. Consistency with the right-hand side decides whether any solutions exist.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 57,
-      "section": "Solutions of a system of linear equations"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -1714,33 +988,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-10-arithmetic-recall",
-    "topicId": "MST124-10-arithmetic",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the nth term of an arithmetic sequence starting with $a$ and common difference $d$, with index starting at one.",
-    "answer": "$a_n=a+(n-1)d$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Count the number of steps after the first term.",
-      "The nth term is $n-1$ common differences beyond the first."
-    ],
-    "explanation": "Reaching the nth term requires $n-1$ additions of $d$ after the first term.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 58,
-      "section": "Arithmetic sequences"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-10-arithmetic-nth-term",
     "topicId": "MST124-10-arithmetic",
     "kind": "task",
@@ -1773,33 +1020,6 @@
     }
   },
   {
-    "id": "MST124-10-geometric-recall",
-    "topicId": "MST124-10-geometric",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the infinite geometric sum and its convergence condition for nonzero first term $a$.",
-    "answer": "$\\sum_{n=0}^\\infty ar^n=a/(1-r)$ for $|r|<1$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Use the finite geometric partial-sum formula.",
-      "Ask when the leftover power of the ratio tends to zero."
-    ],
-    "explanation": "The nth partial sum is $a(1-r^n)/(1-r)$. It approaches $a/(1-r)$ when $r^n$ tends to zero.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 8,
-      "section": "Geometric series"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-10-geometric-geometric-sum",
     "topicId": "MST124-10-geometric",
     "kind": "task",
@@ -1818,33 +1038,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-10-binomial-recall",
-    "topicId": "MST124-10-binomial",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What is the coefficient of $a^{n-k}b^k$ in $(a+b)^n$ for a nonnegative integer $n$?",
-    "answer": "$\\binom nk=n!/(k!(n-k)!)$, for $0\\le k\\le n$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Choose which factors contribute $b$.",
-      "Divide the number of ordered choices by $k!$."
-    ],
-    "explanation": "Choosing which $k$ factors contribute $b$ determines each occurrence of the term; the remaining factors contribute $a$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 61,
-      "section": "The binomial theorem"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -1899,33 +1092,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-11-coefficients-recall",
-    "topicId": "MST124-11-coefficients",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What is the coefficient of $(x-a)^k$ in the Taylor polynomial about $a$?",
-    "answer": "$f^{(k)}(a)/k!$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Differentiate the kth power exactly k times.",
-      "It produces a factor of $k!$ at the centre."
-    ],
-    "explanation": "Differentiating $(x-a)^k$ exactly $k$ times produces $k!$ at the centre, so dividing by $k!$ matches the derivative.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 62,
-      "section": "Taylor polynomials"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-11-coefficients-quadratic-coefficient",
     "topicId": "MST124-11-coefficients",
     "kind": "task",
@@ -1944,33 +1110,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-11-approximation-recall",
-    "topicId": "MST124-11-approximation",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Why choose a Taylor centre close to the point being approximated, and check validity?",
-    "answer": "Small $|x-a|$ suppresses higher powers; a series must represent the function at the target before truncation is meaningful.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Approximation uses a local polynomial.",
-      "Higher powers are small near the centre, but the series must represent the function."
-    ],
-    "explanation": "A short polynomial is a local approximation, not an exact identity or a guarantee of accuracy everywhere.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 63,
-      "section": "Using Taylor polynomials for approximation"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -1998,30 +1137,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-11-parity-recall",
-    "topicId": "MST124-11-parity",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Which powers can occur in the Maclaurin series of an even function?",
-    "answer": "Only even powers have potentially nonzero coefficients.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": ["Replace $x$ by $-x$.", "Odd powers change sign, whereas an even function must not."],
-    "explanation": "Replacing $x$ by $-x$ must leave the series unchanged, so coefficients of odd powers vanish.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 63,
-      "section": "Taylor polynomials and series about 0 for even and odd functions"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -2076,33 +1191,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-12-arithmetic-recall",
-    "topicId": "MST124-12-arithmetic",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "For $z=a+bi$, recall its conjugate and the product $z\\overline z$.",
-    "answer": "$\\overline z=a-bi$ and $z\\overline z=a^2+b^2$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Conjugation reverses the imaginary sign.",
-      "In the product, the imaginary cross terms cancel."
-    ],
-    "explanation": "Expanding $(a+bi)(a-bi)$ cancels the imaginary terms, and $i^2=-1$ turns $-b^2i^2$ into $b^2$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 65,
-      "section": "Complex numbers and their arithmetic"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-12-arithmetic-real-product",
     "topicId": "MST124-12-arithmetic",
     "kind": "task",
@@ -2130,33 +1218,6 @@
     "flagged": false
   },
   {
-    "id": "MST124-12-polar-recall",
-    "topicId": "MST124-12-polar",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall Euler’s formula and the exponential form of a nonzero complex number.",
-    "answer": "$e^{i\\theta}=\\cos\\theta+i\\sin\\theta$, so $z=re^{i\\theta}$ with $r=|z|>0$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Relate unit-circle coordinates to an exponential.",
-      "Then multiply the unit-circle number by the modulus."
-    ],
-    "explanation": "The argument locates the direction in the complex plane, and the modulus gives the distance from the origin.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 66,
-      "section": "Cartesian, polar and exponential form"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST124-12-polar-modulus",
     "topicId": "MST124-12-polar",
     "kind": "task",
@@ -2175,33 +1236,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST124-12-powers-roots-recall",
-    "topicId": "MST124-12-powers-roots",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "State de Moivre’s formula for integer powers.",
-    "answer": "$[r(\\cos\\theta+i\\sin\\theta)]^n=r^n(\\cos n\\theta+i\\sin n\\theta)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Multiplication adds arguments and multiplies moduli.",
-      "Repeat that operation n times."
-    ],
-    "explanation": "Multiplication multiplies moduli and adds arguments. Repeating this operation gives the integer-power rule; negative powers require $r>0$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST124 Handbook",
-      "page": 67,
-      "section": "De Moivre’s formula (formula for powers)"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -2259,33 +1293,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-3-euclid-recall",
-    "topicId": "MST125-3-euclid",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "In Euclid’s algorithm, which value is the HCF when the remainder first becomes zero?",
-    "answer": "The last nonzero remainder (or the divisor in the final division).",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Each division preserves common divisors.",
-      "Stop at a zero remainder and look one remainder earlier."
-    ],
-    "explanation": "Each division preserves the set of common divisors. The final exact division therefore exposes the greatest common divisor.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 73,
-      "section": "Euclid’s algorithm"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-3-euclid-euclid-hcf",
     "topicId": "MST125-3-euclid",
     "kind": "task",
@@ -2310,33 +1317,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-3-modular-recall",
-    "topicId": "MST125-3-modular",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What is the least residue of an integer modulo a positive integer $n$?",
-    "answer": "The unique congruent integer $r$ with $0\\le r<n$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "A residue is a preferred representative of a congruence class.",
-      "Choose the representative between zero inclusive and the modulus exclusive."
-    ],
-    "explanation": "The division theorem writes $a=qn+r$ with exactly one remainder in that interval, including when $a$ is negative.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 75,
-      "section": "Residues"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-3-modular-negative-residue",
     "topicId": "MST125-3-modular",
     "kind": "task",
@@ -2355,33 +1335,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-3-inverses-recall",
-    "topicId": "MST125-3-inverses",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "When does $a$ have a multiplicative inverse modulo $n$?",
-    "answer": "Exactly when $\\gcd(a,n)=1$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "An inverse solves $av\\equiv1\\pmod n$.",
-      "Think of the condition in Bézout’s identity that makes the right side one."
-    ],
-    "explanation": "Bézout then gives $av+nw=1$, so $av\\equiv1\\pmod n$. A common divisor greater than one would divide the left side but not one.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 76,
-      "section": "Multiplicative inverses"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -2436,30 +1389,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-4-eccentricity-recall",
-    "topicId": "MST125-4-eccentricity",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How does positive eccentricity classify focus–directrix conics?",
-    "answer": "$0<e<1$: ellipse; $e=1$: parabola; $e>1$: hyperbola.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": ["Compare eccentricity with one.", "The boundary case is a parabola."],
-    "explanation": "The defining ratio is distance to the focus divided by perpendicular distance to the directrix. A circle is not represented by a positive-e focus–directrix definition.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 79,
-      "section": "Focus–directrix definitions of conics"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-4-eccentricity-classify",
     "topicId": "MST125-4-eccentricity",
     "kind": "task",
@@ -2484,33 +1413,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-4-standard-recall",
-    "topicId": "MST125-4-standard",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "For $x^2/a^2+y^2/b^2=1$, $a>b>0$, where are the foci?",
-    "answer": "$(\\pm c,0)$, where $c^2=a^2-b^2$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "The longer semiaxis lies along the x-axis.",
-      "The squared focal distance is the difference of the squared semiaxes."
-    ],
-    "explanation": "The major semiaxis is $a$ along the x-axis. Its focal distance satisfies $c=ae$ and $e^2=1-b^2/a^2$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 80,
-      "section": "Properties of ellipses, parabolas and hyperbolas in standard position"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-4-standard-ellipse-foci",
     "topicId": "MST125-4-standard",
     "kind": "task",
@@ -2529,33 +1431,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-4-parametric-recall",
-    "topicId": "MST125-4-parametric",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How do you translate $x=f(t),y=g(t)$ right by $p$ and up by $q$?",
-    "answer": "Use $x=p+f(t)$ and $y=q+g(t)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Translate each coordinate of every point.",
-      "The parameter itself does not need to change."
-    ],
-    "explanation": "Every original point gains the same horizontal and vertical displacement, without changing its parameter value.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 83,
-      "section": "Parametric equations"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -2659,33 +1534,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-5-equilibrium-recall",
-    "topicId": "MST125-5-equilibrium",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What is the equilibrium condition for a particle, and does it imply the particle is at rest?",
-    "answer": "The vector sum of forces is zero. It may be at rest or move at constant velocity.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Add forces as vectors.",
-      "Zero resultant controls acceleration, not initial velocity."
-    ],
-    "explanation": "Zero resultant means no acceleration, not necessarily zero velocity. Static equilibrium additionally requires rest.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 84,
-      "section": "Equilibrium condition for a particle"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-5-equilibrium-balance",
     "topicId": "MST125-5-equilibrium",
     "kind": "task",
@@ -2710,33 +1558,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-5-friction-recall",
-    "topicId": "MST125-5-friction",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "When is static friction equal to $\\mu N$, and what inequality holds before slipping?",
-    "answer": "At limiting equilibrium $F=\\mu N$; otherwise $0\\le F\\le\\mu N$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Static friction adjusts up to a maximum.",
-      "Equality with the maximum occurs only at the point of slipping."
-    ],
-    "explanation": "Static friction adjusts to balance the needed tangential force, up to its maximum. It is not automatically at the maximum.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 85,
-      "section": "Static friction"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-5-friction-friction-limit",
     "topicId": "MST125-5-friction",
     "kind": "task",
@@ -2755,33 +1576,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-5-resolution-recall",
-    "topicId": "MST125-5-resolution",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "For a force of magnitude $F$ at angle $\\theta$ anticlockwise from the positive horizontal, recall its components.",
-    "answer": "$(F\\cos\\theta,F\\sin\\theta)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Draw a right triangle using the force as hypotenuse.",
-      "Horizontal is adjacent to the stated angle, vertical is opposite."
-    ],
-    "explanation": "The horizontal component is adjacent to the angle; the vertical component is opposite. Trigonometric signs encode the quadrant.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 86,
-      "section": "Resolving forces"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -2842,33 +1636,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-6-isometry-recall",
-    "topicId": "MST125-6-isometry",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Which four types of plane isometry occur?",
-    "answer": "Translations, rotations, reflections and glide-reflections.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "An isometry preserves all pairwise distances.",
-      "There are two orientation-preserving types and two orientation-reversing types."
-    ],
-    "explanation": "An isometry preserves the distance between every pair of points. Reflections and glide-reflections reverse orientation; translations and rotations preserve it.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 88,
-      "section": "Isometries"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-6-isometry-reflection",
     "topicId": "MST125-6-isometry",
     "kind": "task",
@@ -2896,33 +1663,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-6-linear-recall",
-    "topicId": "MST125-6-linear",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What do the magnitude and sign of a nonzero $2\\times2$ transformation determinant tell you?",
-    "answer": "Its absolute value is the area scale factor; positive preserves orientation, negative reverses it.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Track the image of the unit square.",
-      "Its unsigned area uses absolute determinant; orientation uses the sign."
-    ],
-    "explanation": "The image of the unit square is a parallelogram with area $|\\det A|$. Its oriented area carries the determinant’s sign.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 90,
-      "section": "Properties of one-to-one linear transformations"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-6-linear-area-scale",
     "topicId": "MST125-6-linear",
     "kind": "task",
@@ -2941,33 +1681,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-6-affine-recall",
-    "topicId": "MST125-6-affine",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What is the general form of an affine transformation of the plane?",
-    "answer": "$f(x)=Ax+a$, with a $2\\times2$ matrix $A$ and a constant two-component vector $a$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Allow a translation as well as a matrix action.",
-      "A constant vector accounts for the image of the origin."
-    ],
-    "explanation": "It combines a linear transformation with a translation; it need not fix the origin.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 93,
-      "section": "Affine transformations"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -3022,33 +1735,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-7-partial-fractions-recall",
-    "topicId": "MST125-7-partial-fractions",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What preliminary step is needed before decomposing an improper rational expression into proper partial fractions?",
-    "answer": "Polynomial division to separate a polynomial part and a proper rational remainder.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Compare the numerator and denominator degrees.",
-      "Separate a polynomial quotient before decomposing the remaining proper fraction."
-    ],
-    "explanation": "The remainder degree must be below the denominator degree. Partial fractions then decompose the proper part.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 95,
-      "section": "Partial fraction expansion of a rational expression"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-7-partial-fractions-remainder",
     "topicId": "MST125-7-partial-fractions",
     "kind": "task",
@@ -3073,33 +1759,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-7-rational-graphs-recall",
-    "topicId": "MST125-7-rational-graphs",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How do you find the horizontal asymptote of a rational function with numerator and denominator of the same degree?",
-    "answer": "Take the ratio of the leading coefficients.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Divide top and bottom by their highest power.",
-      "Only the leading coefficients survive as $|x|$ grows."
-    ],
-    "explanation": "Dividing top and bottom by the highest power of $x$ makes every lower-power term tend to zero as $|x|$ grows.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 98,
-      "section": "To determine the asymptotic behaviour of a rational function"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-7-rational-graphs-horizontal",
     "topicId": "MST125-7-rational-graphs",
     "kind": "task",
@@ -3118,33 +1777,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-7-hyperbolic-recall",
-    "topicId": "MST125-7-hyperbolic",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the basic hyperbolic identity connecting $\\cosh x$ and $\\sinh x$.",
-    "answer": "$\\cosh^2x-\\sinh^2x=1$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "The trigonometric identity has a hyperbolic analogue.",
-      "The sign between the two squared functions is subtraction."
-    ],
-    "explanation": "Substituting their exponential definitions and expanding leaves $(4e^xe^{-x})/4=1$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 99,
-      "section": "Hyperbolic functions"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -3199,33 +1831,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-8-initial-recall",
-    "topicId": "MST125-8-initial",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What distinguishes a general solution from the solution of an initial value problem?",
-    "answer": "A general solution contains arbitrary constants; initial conditions select their particular values.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "A differential equation normally allows a family of curves.",
-      "The initial condition fixes an arbitrary constant."
-    ],
-    "explanation": "The differential equation specifies rates and may allow many curves. Initial data selects the curve passing through the prescribed point.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 101,
-      "section": "Terminology for differential equations"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-8-initial-initial-value",
     "topicId": "MST125-8-initial",
     "kind": "task",
@@ -3250,33 +1855,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-8-methods-recall",
-    "topicId": "MST125-8-methods",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "For $y'+g(x)y=h(x)$, recall an integrating factor.",
-    "answer": "$\\mu(x)=e^{\\int g(x)dx}$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Try to turn the left side into a product derivative.",
-      "The multiplier must satisfy $\\mu'=g\\mu$."
-    ],
-    "explanation": "Multiplication makes the left side $(\\mu y)'$ because $\\mu'=g\\mu$. The equation can then be integrated.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 102,
-      "section": "Linear differential equations"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-8-methods-integrating-factor",
     "topicId": "MST125-8-methods",
     "kind": "task",
@@ -3295,33 +1873,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-8-models-recall",
-    "topicId": "MST125-8-models",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "In Newton cooling with constant ambient temperature $T_a$, what decays exponentially?",
-    "answer": "The temperature excess $T-T_a$, not generally the absolute temperature $T$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Subtract the fixed ambient temperature.",
-      "It is the excess above ambient that obeys the homogeneous decay equation."
-    ],
-    "explanation": "The equation $T'=-\\lambda(T-T_a)$ gives $T-T_a=(T_0-T_a)e^{-\\lambda t}$ for $\\lambda>0$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 103,
-      "section": "Newton’s law of cooling"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -3382,33 +1933,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-9-logic-recall",
-    "topicId": "MST125-9-logic",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "How do you negate “for every $x$ in $A$, $P(x)$ holds”?",
-    "answer": "“There exists $x$ in $A$ for which $P(x)$ does not hold.”",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "To falsify “every”, one failure is enough.",
-      "Swap the universal quantifier for an existential one and negate its proposition."
-    ],
-    "explanation": "A universal claim fails if at least one counterexample exists. Negation changes both the quantifier and the underlying proposition.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 105,
-      "section": "Negating existential and universal statements"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-9-logic-quantifier",
     "topicId": "MST125-9-logic",
     "kind": "task",
@@ -3441,33 +1965,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-9-implication-recall",
-    "topicId": "MST125-9-implication",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "State the contrapositive of $P\\Rightarrow Q$ and its relation to the original implication.",
-    "answer": "$\\neg Q\\Rightarrow\\neg P$; it is logically equivalent to the original.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Negate both parts and reverse their order.",
-      "Compare the case where the original implication is false."
-    ],
-    "explanation": "Both are false exactly in the case where $P$ is true and $Q$ is false. The converse $Q\\Rightarrow P$ need not be equivalent.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 105,
-      "section": "Implications and equivalences"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-9-implication-converse",
     "topicId": "MST125-9-implication",
     "kind": "task",
@@ -3486,33 +1983,6 @@
       "handbook": "MST125 Handbook",
       "page": 105,
       "section": "Implications and equivalences"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-9-proof-methods-recall",
-    "topicId": "MST125-9-proof-methods",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What two ingredients establish a statement for all integers $n\\ge N$ by induction?",
-    "answer": "A base case at $N$, and a proof that $P(k)$ implies $P(k+1)$ for every $k\\ge N$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "A chain needs both a starting link and a propagation rule.",
-      "Prove the first allowed case, then the implication from k to k+1."
-    ],
-    "explanation": "The base starts the chain, while the implication propagates truth from each integer to the next. Checking finitely many cases cannot replace the implication.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 107,
-      "section": "Proof by induction"
     },
     "verification": {
       "method": "self-assessed",
@@ -3573,33 +2043,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-10-kinematics-recall",
-    "topicId": "MST125-10-kinematics",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall displacement after time $t$ with initial velocity $u$ and constant acceleration $a$, measured from initial position.",
-    "answer": "$s=ut+\\tfrac12at^2$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Integrate the constant-acceleration velocity formula.",
-      "The added velocity grows linearly, contributing a triangular area."
-    ],
-    "explanation": "Velocity changes linearly as $u+at$; integrating over time gives displacement. This formula requires constant acceleration.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 110,
-      "section": "Equations of motion for constant acceleration along a straight line"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-10-kinematics-velocity",
     "topicId": "MST125-10-kinematics",
     "kind": "task",
@@ -3624,33 +2067,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-10-forces-recall",
-    "topicId": "MST125-10-forces",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What is Newton’s second law for a particle with constant mass?",
-    "answer": "$F_{\\mathrm{net}}=ma$ as a vector equation.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Use all forces acting on the chosen particle.",
-      "Their vector resultant is mass times acceleration."
-    ],
-    "explanation": "Use the resultant of all forces, not one selected force. Resolving the vector equation gives one scalar equation per axis.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 110,
-      "section": "Newton’s second law of motion"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-10-forces-net-force",
     "topicId": "MST125-10-forces",
     "kind": "task",
@@ -3669,33 +2085,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-10-projectiles-recall",
-    "topicId": "MST125-10-projectiles",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Ignoring air resistance with upward y-axis, what is projectile acceleration and how does horizontal velocity change?",
-    "answer": "$a=(0,-g)$; horizontal velocity is constant.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Gravity points vertically downward.",
-      "There is no horizontal force in the idealised model."
-    ],
-    "explanation": "Gravity acts only vertically in this model, so there is no horizontal acceleration. The vertical velocity decreases linearly.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 111,
-      "section": "Projectiles"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -3750,33 +2139,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-11-eigenpairs-recall",
-    "topicId": "MST125-11-eigenpairs",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What defines an eigenvector of a square matrix, and why is the zero vector excluded?",
-    "answer": "$Av=\\lambda v$ with $v\\ne0$; zero satisfies the equation for every $\\lambda$ and identifies no direction.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "The matrix maps the vector to a multiple of itself.",
-      "The zero vector would satisfy this equation for every proposed multiplier."
-    ],
-    "explanation": "The matrix scales an eigenvector without sending it off its line. Excluding zero makes the associated scale and direction meaningful.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 112,
-      "section": "Terminology for eigenvalues and eigenvectors"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-11-eigenpairs-diagonal",
     "topicId": "MST125-11-eigenpairs",
     "kind": "task",
@@ -3801,33 +2163,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-11-special-recall",
-    "topicId": "MST125-11-special",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What are the eigenvalues of a triangular $2\\times2$ matrix?",
-    "answer": "Its two diagonal entries, counting a repeated value twice.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Form $A-\\lambda I$.",
-      "For a triangular matrix its determinant is the product of the shifted diagonal entries."
-    ],
-    "explanation": "The determinant of $A-\\lambda I$ factors as $(a-\\lambda)(d-\\lambda)$, since one off-diagonal entry is zero.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 113,
-      "section": "Eigenvalues and eigenvectors of special types of matrices"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-11-special-other-eigenvalue",
     "topicId": "MST125-11-special",
     "kind": "task",
@@ -3846,33 +2181,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-11-diagonalisation-recall",
-    "topicId": "MST125-11-diagonalisation",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "If $A=PDP^{-1}$, how do you compute $A^n$ for a positive integer $n$?",
-    "answer": "$A^n=PD^nP^{-1}$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Expand two factors $PDP^{-1}$.",
-      "The middle inverse and matrix cancel at every join."
-    ],
-    "explanation": "Adjacent $P^{-1}P$ factors cancel in the product. For diagonal $D$, raise each diagonal entry to the nth power.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 114,
-      "section": "Diagonalising matrices"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },
@@ -3930,33 +2238,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-12-counting-recall",
-    "topicId": "MST125-12-counting",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "When can the addition principle count a union by simply adding set sizes?",
-    "answer": "When the sets are pairwise disjoint.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Check that no object belongs to two counted cases.",
-      "Overlap causes double-counting."
-    ],
-    "explanation": "Overlapping objects would be counted more than once. Multiplication instead counts successive independent-option choices with the specified number of options at each stage.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 116,
-      "section": "Principles of counting"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-12-counting-product-count",
     "topicId": "MST125-12-counting",
     "kind": "task",
@@ -3984,33 +2265,6 @@
     "flagged": false
   },
   {
-    "id": "MST125-12-combinations-recall",
-    "topicId": "MST125-12-combinations",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "Recall the number of ways to choose $k$ of $n$ distinct objects without repetition when order does not matter.",
-    "answer": "$\\binom nk=n!/(k!(n-k)!)$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Begin with ordered selections without repetition.",
-      "Each k-element selection has $k!$ orderings to divide out."
-    ],
-    "explanation": "Ordered selections give $n!/(n-k)!$ possibilities, but each unordered set occurs in $k!$ orders, so divide by $k!$.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 118,
-      "section": "Sequences, permutations and combinations"
-    },
-    "verification": {
-      "method": "self-assessed",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
     "id": "MST125-12-combinations-committee",
     "topicId": "MST125-12-combinations",
     "kind": "task",
@@ -4029,33 +2283,6 @@
     },
     "verification": {
       "method": "deterministic",
-      "models": [],
-      "checkedAt": null
-    },
-    "flagged": false
-  },
-  {
-    "id": "MST125-12-recurrences-recall",
-    "topicId": "MST125-12-recurrences",
-    "kind": "flashcard",
-    "difficulty": "quick",
-    "prompt": "What auxiliary equation corresponds to $u_n=pu_{n-1}+qu_{n-2}$?",
-    "answer": "$r^2-pr-q=0$.",
-    "acceptedAnswers": [],
-    "choices": [],
-    "hints": [
-      "Try a solution of the form $r^n$.",
-      "Substitute and divide the common power to obtain a quadratic in r."
-    ],
-    "explanation": "Substituting a trial solution $u_n=r^n$ and simplifying gives the quadratic. Distinct real roots lead to a linear combination of their powers.",
-    "answerFormat": "self",
-    "source": {
-      "handbook": "MST125 Handbook",
-      "page": 122,
-      "section": "To find a closed form for a second-order recurrence sequence"
-    },
-    "verification": {
-      "method": "self-assessed",
       "models": [],
       "checkedAt": null
     },

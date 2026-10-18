@@ -1,7 +1,7 @@
 use math_api::{
     actions, grading,
     model::*,
-    practice::{eligible_topics, generation_plan, review_queue, topic_stats},
+    practice::{eligible_topics, formula_queue, generation_plan, review_queue, topic_stats},
     schedule::{self, CardState},
     variants,
 };
@@ -59,6 +59,16 @@ fn question(id: &str, topic: &str) -> Question {
             parameters: HashMap::from([("a".into(), 2.0), ("b".into(), 1.0), ("x".into(), 3.0)]),
         }),
     }
+}
+fn handbook_card(id: &str, topic: &str) -> Question {
+    let mut q = question(id, topic);
+    q.kind = Kind::Flashcard;
+    q.difficulty = Difficulty::Quick;
+    q.answer_format = AnswerFormat::SelfAssessed;
+    q.source.handbook = "MST124 Handbook".into();
+    q.verification.method = "handbook".into();
+    q.template = None;
+    q
 }
 fn attempt(id: &str, topic: &str, outcome: Outcome, at: i64) -> Attempt {
     let mut a = Attempt::new(question(id, topic), at);
@@ -158,49 +168,29 @@ fn suggested_tasks_follow_topic_performance_not_fsrs() {
 #[test]
 fn review_is_due_or_new_flashcards_only() {
     let task = question("task", "weak");
-    let mut flash = question("flash", "weak");
-    flash.kind = Kind::Flashcard;
-    flash.template = None;
+    let flash = handbook_card("formula-MST124-1-flash", "weak");
     let mut r = request(PracticeMode::Review);
     r.kind = RequestedKind::Mixed;
+    let eligible = eligible_topics(&catalog(), &settings(), &r.unit_ids, &r.topic_ids);
     let card = schedule::grade(&CardState::fresh(), Rating::Good, 100).unwrap();
-    let cards = HashMap::from([("flash".into(), card)]);
-    assert!(review_queue(
-        &[task.clone(), flash.clone()],
-        &catalog(),
-        &settings(),
-        &r,
-        &cards,
-        101,
-        20
-    )
-    .is_err());
+    let cards = HashMap::from([(flash.id.clone(), card)]);
+    assert!(review_queue(&[task.clone(), flash.clone()], &eligible, &cards, 101, 20).is_err());
     // Difficulty never hides a due review card; a session is finite and distinct.
     r.difficulty = RequestedDifficulty::Stretch;
     let chosen = review_queue(
         &[task, flash.clone(), flash.clone()],
-        &catalog(),
-        &settings(),
-        &r,
+        &eligible,
         &cards,
         card.due,
         20,
     )
     .unwrap();
     assert_eq!(chosen.len(), 1);
-    assert_eq!(chosen[0].id, "flash");
+    assert_eq!(chosen[0].id, "formula-MST124-1-flash");
     assert_eq!(
-        review_queue(
-            &[flash],
-            &catalog(),
-            &settings(),
-            &r,
-            &HashMap::new(),
-            101,
-            20
-        )
-        .unwrap()
-        .len(),
+        review_queue(&[flash], &eligible, &HashMap::new(), 101, 20)
+            .unwrap()
+            .len(),
         1
     );
 }
@@ -300,54 +290,51 @@ fn settings_ignore_old_model_fields_without_resetting_preferences() {
 }
 
 #[test]
-fn formula_mode_requires_flashcards_and_a_positive_blind_verdict() {
-    let mut request = request(PracticeMode::Focused);
-    request.kind = RequestedKind::Formula;
-    request.topic_ids = vec!["weak".into()];
-    let plans = generation_plan(&catalog(), &settings(), &request, &[], 20).unwrap();
-    assert_eq!(plans.len(), 20);
-    assert!(plans
-        .iter()
-        .all(|p| p.kind == Kind::Flashcard && p.formula_only && p.topic_id == "weak"));
-    let mut q = question("formula", "weak");
-    q.kind = Kind::Flashcard;
-    q.answer_format = AnswerFormat::SelfAssessed;
-    q.prompt = "State the power rule, including its assumptions.".into();
-    assert!(math_api::ai::validate_formula_verdict(
-        true,
-        &q,
-        &serde_json::json!({"formulaCard":false})
-    )
-    .is_err());
-    assert!(math_api::ai::validate_formula_verdict(true, &q, &serde_json::json!({})).is_err());
-    assert!(math_api::ai::validate_formula_verdict(
-        true,
-        &q,
-        &serde_json::json!({"formulaCard":true})
-    )
-    .is_ok());
-    q.kind = Kind::Task;
-    assert!(math_api::ai::validate_formula_verdict(
-        true,
-        &q,
-        &serde_json::json!({"formulaCard":true})
-    )
-    .is_err());
+fn fixed_formulas_prioritize_due_new_future_ignore_task_difficulty_and_private_cards() {
+    let mut r = request(PracticeMode::Focused);
+    r.kind = RequestedKind::Formula;
+    r.difficulty = RequestedDifficulty::Stretch;
+    r.topic_ids = vec!["weak".into()];
+    let eligible = eligible_topics(&catalog(), &settings(), &r.unit_ids, &r.topic_ids);
+    assert!(generation_plan(&catalog(), &settings(), &r, &[], 20).is_err());
+    let due = handbook_card("formula-MST124-1-due", "weak");
+    let new = handbook_card("formula-MST124-1-new", "weak");
+    let future = handbook_card("formula-MST124-1-future", "weak");
+    let excluded = handbook_card("formula-MST124-1-outside", "strong");
+    let mut private = due.clone();
+    private.id = "ai-old-formula".into();
+    let mut due_state = CardState::fresh();
+    due_state.due = 50;
+    let mut future_state = CardState::fresh();
+    future_state.due = 200;
+    let cards = HashMap::from([
+        (due.id.clone(), due_state),
+        (future.id.clone(), future_state),
+    ]);
+    let bank = vec![future, new, due, excluded, private];
+    let queue = formula_queue(&bank, &eligible, &cards, 100, 20, true).unwrap();
+    assert_eq!(
+        queue.iter().map(|q| q.id.as_str()).collect::<Vec<_>>(),
+        [
+            "formula-MST124-1-due",
+            "formula-MST124-1-new",
+            "formula-MST124-1-future"
+        ]
+    );
+    let review = review_queue(&bank, &eligible, &cards, 100, 20).unwrap();
+    assert_eq!(review.len(), 2);
+    assert_eq!(review[0].id, queue[0].id);
 }
 
 #[test]
-fn mixed_plan_varies_actual_kinds_and_difficulty_without_leaving_scope() {
+fn mixed_generation_plans_are_tasks_only_and_keep_difficulty_and_scope() {
     let mut r = request(PracticeMode::Suggested);
     r.kind = RequestedKind::Mixed;
     r.topic_ids = vec!["strong".into()];
     let plans = generation_plan(&catalog(), &settings(), &r, &[], 6).unwrap();
     assert!(plans
         .iter()
-        .all(|p| p.topic_id == "strong" && !p.formula_only));
-    assert_eq!(
-        plans.iter().filter(|p| p.kind == Kind::Flashcard).count(),
-        3
-    );
+        .all(|p| p.topic_id == "strong" && p.kind == Kind::Task));
     assert_eq!(
         plans
             .iter()
@@ -422,7 +409,9 @@ async fn a_rejected_slot_fails_the_full_queue_without_shorter_fallback() {
             async move {
                 barrier.wait().await;
                 if slot == 1 {
-                    return Err(math_api::store::ApiError::bad("Rejected formula policy"));
+                    return Err(math_api::store::ApiError::bad(
+                        "Independent task solution disagrees",
+                    ));
                 }
                 Ok(question(&format!("q{slot}"), "weak"))
             }
@@ -445,6 +434,7 @@ async fn a_rejected_slot_fails_the_full_queue_without_shorter_fallback() {
 fn preparing_session(length: u32) -> math_api::sessions::SessionRecord {
     let selection = request(PracticeMode::Focused);
     let id = uuid::Uuid::new_v4().to_string();
+    let plans = generation_plan(&catalog(), &settings(), &selection, &[], length).unwrap();
     math_api::sessions::SessionRecord {
         session: PracticeSession {
             id: id.clone(),
@@ -462,9 +452,11 @@ fn preparing_session(length: u32) -> math_api::sessions::SessionRecord {
             request_id: id,
             length,
         },
-        plans: vec![],
-        queue: vec![],
+        plans,
+        queue: vec![String::new(); length as usize],
         worker_started: true,
+        handbook_version: 1,
+        generation_id: uuid::Uuid::new_v4().to_string(),
     }
 }
 
@@ -476,11 +468,11 @@ fn publication_is_complete_unique_ordered_and_does_not_create_attempts() {
     second.prompt = "A different verified prompt".into();
     assert!(math_api::sessions::publish_queue(&mut record, std::slice::from_ref(&first)).is_err());
     assert_eq!(record.session.status, SessionStatus::Generating);
-    assert!(record.queue.is_empty());
+    assert!(record.queue.iter().all(String::is_empty));
     assert!(
         math_api::sessions::publish_queue(&mut record, &[first.clone(), first.clone()]).is_err()
     );
-    assert!(record.queue.is_empty());
+    assert!(record.queue.iter().all(String::is_empty));
     math_api::sessions::publish_queue(&mut record, &[first, second]).unwrap();
     assert_eq!(record.session.status, SessionStatus::Ready);
     assert_eq!(record.session.generated, 2);
@@ -527,17 +519,4 @@ fn next_requires_exact_predecessor_and_terminal_outcome_and_never_reuses_queue_s
         ..next
     };
     assert!(math_api::sessions::next_slot(&record, &end, Some(&last)).is_err());
-}
-
-#[test]
-fn flat_session_wire_request_round_trips_exactly() {
-    let wire = serde_json::json!({
-        "requestId":uuid::Uuid::new_v4().to_string(), "length":3,
-        "mode":"focused", "kind":"formula", "unitIds":["u"], "topicIds":["weak"],
-        "difficulty":"any"
-    });
-    let request: CreateSession = serde_json::from_value(wire.clone()).unwrap();
-    assert_eq!(request.selection.kind, RequestedKind::Formula);
-    assert_eq!(request.length, 3);
-    assert_eq!(serde_json::to_value(request).unwrap(), wire);
 }

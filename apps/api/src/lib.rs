@@ -51,11 +51,7 @@ impl AppState {
         }
         let config = loader.load().await;
         let catalog: Catalog = serde_json::from_str(include_str!("../../../data/catalog.json"))?;
-        let bank: Vec<Question> =
-            serde_json::from_str(include_str!("../../../data/questions.json"))?;
-        for q in &bank {
-            validate_question(q, &catalog)?;
-        }
+        let bank = embedded_bank(&catalog)?;
         Ok(Self {
             store: Store {
                 client: aws_sdk_dynamodb::Client::new(&config),
@@ -93,7 +89,8 @@ impl AppState {
                 .list::<Question>(user, "QUESTION#")
                 .await?
                 .into_iter()
-                .map(|r| r.value),
+                .map(|r| r.value)
+                .filter(|q| q.kind == Kind::Task),
         );
         let flags = self.store.list::<QuestionFlag>(user, "FLAG#").await?;
         let excluded: std::collections::HashSet<_> =
@@ -124,6 +121,37 @@ impl AppState {
         });
         Ok(attempts)
     }
+}
+
+/// Only embedded, validated handbook cards belong to the active formula pool.
+pub fn embedded_bank(catalog: &Catalog) -> ApiResult<Vec<Question>> {
+    let mut bank: Vec<Question> =
+        serde_json::from_str(include_str!("../../../data/questions.json"))
+            .map_err(|_| ApiError::bad("Invalid embedded task bank"))?;
+    if bank.iter().any(|q| q.kind != Kind::Task) {
+        return Err(ApiError::bad(
+            "The task bank must not contain formula cards",
+        ));
+    }
+    for data in [
+        include_str!("../../../data/formulas-mst124.json"),
+        include_str!("../../../data/formulas-mst125.json"),
+    ] {
+        let deck: Vec<Question> = serde_json::from_str(data)
+            .map_err(|_| ApiError::bad("Invalid embedded handbook deck"))?;
+        if deck.iter().any(|q| !practice::is_handbook_card(q)) {
+            return Err(ApiError::bad("Invalid handbook formula card"));
+        }
+        bank.extend(deck);
+    }
+    let mut ids = std::collections::HashSet::new();
+    for question in &bank {
+        validate_question(question, catalog)?;
+        if !ids.insert(&question.id) {
+            return Err(ApiError::bad("Duplicate embedded question ID"));
+        }
+    }
+    Ok(bank)
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]

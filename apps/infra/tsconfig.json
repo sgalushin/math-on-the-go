@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2024", "dom"],
+    "module": "preserve",
+    "types": ["node"],
+    "noEmit": true,
+    "strict": true,
+    "isolatedModules": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "experimentalDecorators": false
+  },
+  "include": ["src/**/*.ts", "../../tools/**/*.ts"]
+}

@@ -1,0 +1,8 @@
+{
+  "app": "tsx --tsconfig tsconfig.base.json apps/infra/src/main.ts",
+  "output": "cdk.out",
+  "context": {
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:defaultCrossStackReferences": "weak"
+  }
+}

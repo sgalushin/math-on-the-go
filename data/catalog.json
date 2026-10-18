@@ -1,0 +1,532 @@
+{
+  "units": [
+    {
+      "id": "MST124-1",
+      "module": "MST124",
+      "number": 1,
+      "title": "Algebra",
+      "sourcePage": 15,
+      "topics": [
+        {
+          "id": "MST124-1-numbers",
+          "title": "Factors, multiples and number types",
+          "prerequisites": []
+        },
+        {
+          "id": "MST124-1-powers",
+          "title": "Powers, roots and surds",
+          "prerequisites": []
+        },
+        {
+          "id": "MST124-1-equations",
+          "title": "Expressions and equivalent equations",
+          "prerequisites": []
+        }
+      ]
+    },
+    {
+      "id": "MST124-2",
+      "module": "MST124",
+      "number": 2,
+      "title": "Graphs and equations",
+      "sourcePage": 19,
+      "topics": [
+        {
+          "id": "MST124-2-lines",
+          "title": "Straight lines and gradients",
+          "prerequisites": ["MST124-1"]
+        },
+        {
+          "id": "MST124-2-simultaneous",
+          "title": "Simultaneous linear equations",
+          "prerequisites": ["MST124-1"]
+        },
+        {
+          "id": "MST124-2-quadratics",
+          "title": "Quadratics and discriminants",
+          "prerequisites": ["MST124-1"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-3",
+      "module": "MST124",
+      "number": 3,
+      "title": "Functions",
+      "sourcePage": 24,
+      "topics": [
+        {
+          "id": "MST124-3-composition",
+          "title": "Domains, composition and inverses",
+          "prerequisites": ["MST124-1", "MST124-2"]
+        },
+        {
+          "id": "MST124-3-transformations",
+          "title": "Graph translations and reflections",
+          "prerequisites": ["MST124-1", "MST124-2"]
+        },
+        {
+          "id": "MST124-3-logs",
+          "title": "Exponential and logarithmic functions",
+          "prerequisites": ["MST124-1", "MST124-2"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-4",
+      "module": "MST124",
+      "number": 4,
+      "title": "Trigonometry",
+      "sourcePage": 33,
+      "topics": [
+        {
+          "id": "MST124-4-angles",
+          "title": "Radians and right triangles",
+          "prerequisites": ["MST124-2", "MST124-3"]
+        },
+        {
+          "id": "MST124-4-circle",
+          "title": "Unit circle and trigonometric equations",
+          "prerequisites": ["MST124-2", "MST124-3"]
+        },
+        {
+          "id": "MST124-4-triangle-rules",
+          "title": "Sine rule, cosine rule and triangle area",
+          "prerequisites": ["MST124-2", "MST124-3"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-5",
+      "module": "MST124",
+      "number": 5,
+      "title": "Coordinate geometry and vectors",
+      "sourcePage": 38,
+      "topics": [
+        {
+          "id": "MST124-5-geometry",
+          "title": "Distances, midpoints and circles",
+          "prerequisites": ["MST124-2", "MST124-4"]
+        },
+        {
+          "id": "MST124-5-components",
+          "title": "Vector components and magnitudes",
+          "prerequisites": ["MST124-2", "MST124-4"]
+        },
+        {
+          "id": "MST124-5-dot-product",
+          "title": "Scalar products and perpendicularity",
+          "prerequisites": ["MST124-2", "MST124-4"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-6",
+      "module": "MST124",
+      "number": 6,
+      "title": "Differentiation",
+      "sourcePage": 44,
+      "topics": [
+        {
+          "id": "MST124-6-derivatives",
+          "title": "Derivative meaning and power rule",
+          "prerequisites": ["MST124-3", "MST124-4"]
+        },
+        {
+          "id": "MST124-6-stationary",
+          "title": "Stationary points and sign tests",
+          "prerequisites": ["MST124-3", "MST124-4"]
+        },
+        {
+          "id": "MST124-6-applications",
+          "title": "Higher derivatives and motion",
+          "prerequisites": ["MST124-3", "MST124-4"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-7",
+      "module": "MST124",
+      "number": 7,
+      "title": "Differentiation methods and integration",
+      "sourcePage": 48,
+      "topics": [
+        {
+          "id": "MST124-7-chain",
+          "title": "Chain rule and composites",
+          "prerequisites": ["MST124-6"]
+        },
+        {
+          "id": "MST124-7-products",
+          "title": "Product and quotient rules",
+          "prerequisites": ["MST124-6"]
+        },
+        {
+          "id": "MST124-7-antiderivatives",
+          "title": "Antiderivatives and constants",
+          "prerequisites": ["MST124-6"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-8",
+      "module": "MST124",
+      "number": 8,
+      "title": "Integration methods",
+      "sourcePage": 50,
+      "topics": [
+        {
+          "id": "MST124-8-definite",
+          "title": "Definite integrals and signed area",
+          "prerequisites": ["MST124-7"]
+        },
+        {
+          "id": "MST124-8-substitution",
+          "title": "Integration by substitution",
+          "prerequisites": ["MST124-7"]
+        },
+        {
+          "id": "MST124-8-parts",
+          "title": "Integration by parts",
+          "prerequisites": ["MST124-7"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-9",
+      "module": "MST124",
+      "number": 9,
+      "title": "Matrices",
+      "sourcePage": 54,
+      "topics": [
+        {
+          "id": "MST124-9-multiplication",
+          "title": "Matrix products and dimensions",
+          "prerequisites": ["MST124-2", "MST124-5"]
+        },
+        {
+          "id": "MST124-9-inverse",
+          "title": "Determinants and invertibility",
+          "prerequisites": ["MST124-2", "MST124-5"]
+        },
+        {
+          "id": "MST124-9-systems",
+          "title": "Matrix systems and solution counts",
+          "prerequisites": ["MST124-2", "MST124-5"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-10",
+      "module": "MST124",
+      "number": 10,
+      "title": "Sequences and series",
+      "sourcePage": 58,
+      "topics": [
+        {
+          "id": "MST124-10-arithmetic",
+          "title": "Arithmetic sequences and recurrences",
+          "prerequisites": ["MST124-1", "MST124-3"]
+        },
+        {
+          "id": "MST124-10-geometric",
+          "title": "Geometric sequences and convergence",
+          "prerequisites": ["MST124-1", "MST124-3"]
+        },
+        {
+          "id": "MST124-10-binomial",
+          "title": "Sigma notation and the binomial theorem",
+          "prerequisites": ["MST124-1", "MST124-3"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-11",
+      "module": "MST124",
+      "number": 11,
+      "title": "Taylor polynomials",
+      "sourcePage": 62,
+      "topics": [
+        {
+          "id": "MST124-11-coefficients",
+          "title": "Taylor coefficients and matching derivatives",
+          "prerequisites": ["MST124-6", "MST124-10"]
+        },
+        {
+          "id": "MST124-11-approximation",
+          "title": "Taylor approximation and validity",
+          "prerequisites": ["MST124-6", "MST124-10"]
+        },
+        {
+          "id": "MST124-11-parity",
+          "title": "Even, odd and hyperbolic series",
+          "prerequisites": ["MST124-6", "MST124-10"]
+        }
+      ]
+    },
+    {
+      "id": "MST124-12",
+      "module": "MST124",
+      "number": 12,
+      "title": "Complex numbers",
+      "sourcePage": 65,
+      "topics": [
+        {
+          "id": "MST124-12-arithmetic",
+          "title": "Complex arithmetic and conjugates",
+          "prerequisites": ["MST124-4", "MST124-5"]
+        },
+        {
+          "id": "MST124-12-polar",
+          "title": "Modulus, argument and exponential form",
+          "prerequisites": ["MST124-4", "MST124-5"]
+        },
+        {
+          "id": "MST124-12-powers-roots",
+          "title": "De Moivre and complex roots",
+          "prerequisites": ["MST124-4", "MST124-5"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-3",
+      "module": "MST125",
+      "number": 3,
+      "title": "Number theory",
+      "sourcePage": 73,
+      "topics": [
+        {
+          "id": "MST125-3-euclid",
+          "title": "Division, Euclid and Bézout",
+          "prerequisites": ["MST124-1"]
+        },
+        {
+          "id": "MST125-3-modular",
+          "title": "Congruences and least residues",
+          "prerequisites": ["MST124-1"]
+        },
+        {
+          "id": "MST125-3-inverses",
+          "title": "Modular inverses and linear congruences",
+          "prerequisites": ["MST124-1"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-4",
+      "module": "MST125",
+      "number": 4,
+      "title": "Conics",
+      "sourcePage": 78,
+      "topics": [
+        {
+          "id": "MST125-4-eccentricity",
+          "title": "Focus–directrix and eccentricity",
+          "prerequisites": ["MST124-2", "MST124-4", "MST124-5"]
+        },
+        {
+          "id": "MST125-4-standard",
+          "title": "Standard conic equations and features",
+          "prerequisites": ["MST124-2", "MST124-4", "MST124-5"]
+        },
+        {
+          "id": "MST125-4-parametric",
+          "title": "Parametric curves and translated conics",
+          "prerequisites": ["MST124-2", "MST124-4", "MST124-5"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-5",
+      "module": "MST125",
+      "number": 5,
+      "title": "Statics",
+      "sourcePage": 84,
+      "topics": [
+        {
+          "id": "MST125-5-equilibrium",
+          "title": "Forces and equilibrium",
+          "prerequisites": ["MST124-4", "MST124-5"]
+        },
+        {
+          "id": "MST125-5-friction",
+          "title": "Normal reaction and limiting friction",
+          "prerequisites": ["MST124-4", "MST124-5"]
+        },
+        {
+          "id": "MST125-5-resolution",
+          "title": "Resolving forces into components",
+          "prerequisites": ["MST124-4", "MST124-5"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-6",
+      "module": "MST125",
+      "number": 6,
+      "title": "Geometric transformations",
+      "sourcePage": 87,
+      "topics": [
+        {
+          "id": "MST125-6-isometry",
+          "title": "Isometries and composition",
+          "prerequisites": ["MST124-5", "MST124-9"]
+        },
+        {
+          "id": "MST125-6-linear",
+          "title": "Linear maps, determinants and area",
+          "prerequisites": ["MST124-5", "MST124-9"]
+        },
+        {
+          "id": "MST125-6-affine",
+          "title": "Affine maps and fixed points",
+          "prerequisites": ["MST124-5", "MST124-9"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-7",
+      "module": "MST125",
+      "number": 7,
+      "title": "Topics in calculus",
+      "sourcePage": 94,
+      "topics": [
+        {
+          "id": "MST125-7-partial-fractions",
+          "title": "Polynomial division and partial fractions",
+          "prerequisites": ["MST124-7", "MST124-8"]
+        },
+        {
+          "id": "MST125-7-rational-graphs",
+          "title": "Rational functions and asymptotes",
+          "prerequisites": ["MST124-7", "MST124-8"]
+        },
+        {
+          "id": "MST125-7-hyperbolic",
+          "title": "Hyperbolic functions and substitutions",
+          "prerequisites": ["MST124-7", "MST124-8"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-8",
+      "module": "MST125",
+      "number": 8,
+      "title": "Differential equations",
+      "sourcePage": 101,
+      "topics": [
+        {
+          "id": "MST125-8-initial",
+          "title": "Differential equations and initial conditions",
+          "prerequisites": ["MST124-7", "MST124-8"]
+        },
+        {
+          "id": "MST125-8-methods",
+          "title": "Separation and integrating factors",
+          "prerequisites": ["MST124-7", "MST124-8"]
+        },
+        {
+          "id": "MST125-8-models",
+          "title": "Growth, decay and cooling",
+          "prerequisites": ["MST124-7", "MST124-8"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-9",
+      "module": "MST125",
+      "number": 9,
+      "title": "Mathematical language and proof",
+      "sourcePage": 104,
+      "topics": [
+        {
+          "id": "MST125-9-logic",
+          "title": "Statements, quantifiers and negation",
+          "prerequisites": ["MST124-1", "MST124-3"]
+        },
+        {
+          "id": "MST125-9-implication",
+          "title": "Implications, converse and contraposition",
+          "prerequisites": ["MST124-1", "MST124-3"]
+        },
+        {
+          "id": "MST125-9-proof-methods",
+          "title": "Induction and counterexamples",
+          "prerequisites": ["MST124-1", "MST124-3"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-10",
+      "module": "MST125",
+      "number": 10,
+      "title": "Dynamics",
+      "sourcePage": 109,
+      "topics": [
+        {
+          "id": "MST125-10-kinematics",
+          "title": "Position, velocity and constant acceleration",
+          "prerequisites": ["MST124-6", "MST125-5"]
+        },
+        {
+          "id": "MST125-10-forces",
+          "title": "Newton’s second law and friction",
+          "prerequisites": ["MST124-6", "MST125-5"]
+        },
+        {
+          "id": "MST125-10-projectiles",
+          "title": "Vector motion and projectiles",
+          "prerequisites": ["MST124-6", "MST125-5"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-11",
+      "module": "MST125",
+      "number": 11,
+      "title": "Eigenvalues and eigenvectors",
+      "sourcePage": 112,
+      "topics": [
+        {
+          "id": "MST125-11-eigenpairs",
+          "title": "Eigenvectors and characteristic equations",
+          "prerequisites": ["MST124-9", "MST125-6"]
+        },
+        {
+          "id": "MST125-11-special",
+          "title": "Trace, determinant and special matrices",
+          "prerequisites": ["MST124-9", "MST125-6"]
+        },
+        {
+          "id": "MST125-11-diagonalisation",
+          "title": "Diagonalisation and powers",
+          "prerequisites": ["MST124-9", "MST125-6"]
+        }
+      ]
+    },
+    {
+      "id": "MST125-12",
+      "module": "MST125",
+      "number": 12,
+      "title": "Combinatorics",
+      "sourcePage": 116,
+      "topics": [
+        {
+          "id": "MST125-12-counting",
+          "title": "Counting principles and complements",
+          "prerequisites": ["MST124-10", "MST125-9"]
+        },
+        {
+          "id": "MST125-12-combinations",
+          "title": "Permutations, combinations and probability",
+          "prerequisites": ["MST124-10", "MST125-9"]
+        },
+        {
+          "id": "MST125-12-recurrences",
+          "title": "First- and second-order recurrence systems",
+          "prerequisites": ["MST124-10", "MST125-9"]
+        }
+      ]
+    }
+  ]
+}
